@@ -132,167 +132,226 @@ slots:
 responses:
   utter_greet:
     - text: "Chào bạn 👋! Mình là trợ lý ảo của Đại học Văn Hiến. Bạn muốn tìm hiểu thông tin gì nè?"
-    - text: "Xin chào! Mình là trợ lý Văn Hiến, có thể giúp gì cho bạn hôm nay?"
-    - text: "Rất vui được gặp bạn👋! mình có thể giúp gì được cho bạn?"
-    - text: "Bạn cứ đưa ra bất kì câu hỏi nào, mình sẽ giúp bạn trong khả năng của mình."
+    - text: "Hiii! Mình là trợ lý VHU đây, có gì cần giúp không nè? 😊"
+    - text: "Xin chào bạn! Mình ở đây để giúp bạn tìm hiểu về VHU nha ✨"
+    - text: "Chào bạn nha! Cứ hỏi mình bất cứ điều gì về Văn Hiến nhé 💙"
 
   utter_goodbye:
-    - text: "Tạm biệt nhé! Chúc bạn một ngày học tập vui vẻ 💪"
-    - text: "Hẹn gặp lại bạn nha 👋"
-    - text: "Mình rất vui khi được giúp đỡ bạn, nếu có gì thắc mắc cứ hỏi mình nhé!"
+    - text: "Bye bye! Chúc bạn một ngày vui vẻ nha 💪✨"
+    - text: "Hẹn gặp lại bạn nha 👋 Chúc học tốt!"
+    - text: "Tạm biệt bạn nè! Có gì cần giúp cứ nhắn mình nhé! 💙"
 
   utter_thank:
-    - text: "Rất vui được giúp bạn 😊"
-    - text: "Không có gì đâu nè, chúc bạn học tốt nha!"
-    - text: "Cảm ơn bạn đã tin tưởng trợ lý Văn Hiến 💖"
+    - text: "Không có gì đâu nè, vui là được rồi 😊"
+    - text: "Hehe, được giúp bạn mình cũng vui lắm! 💖"
+    - text: "Đó là nhiệm vụ của mình mà! Chúc bạn học tốt nha 🌟"
 
   utter_about_school:
     - text: |
-        🎓 Đại học Văn Hiến (VHU) là trường đại học tư thục thành lập năm 1997,
-        trực thuộc Bộ Giáo dục & Đào tạo.
-        Trường hướng đến đào tạo toàn diện cả kiến thức và nhân cách cho sinh viên.
+        Bạn ơi, cho mình giới thiệu về VHU nè:
+        
+        🎓 **Đại học Văn Hiến** (VHU) được thành lập năm 1997 nha, là trường đại học tư thục uy tín, 
+        trực thuộc Bộ Giáo dục & Đào tạo đó. Trường mình hướng đến việc đào tạo toàn diện 
+        cả kiến thức lẫn nhân cách cho sinh viên luôn! 💪
 
   utter_list_programs:
     - text: |
-        Trường có nhiều ngành đào tạo nổi bật như:
-        - Công nghệ thông tin  
-        - Quản trị kinh doanh  
-        - Du lịch - Nhà hàng - Khách sạn  
-        - Ngôn ngữ Anh, Nhật, Trung  
-        - Tâm lý học  
-        - Truyền thông đa phương tiện  
-        - Kế toán - Tài chính  
+        Mình liệt kê một số ngành hot của trường cho bạn nha:
+        
+        ✨ **Công nghệ thông tin**  
+        ✨ **Quản trị kinh doanh**  
+        ✨ **Du lịch - Nhà hàng - Khách sạn**  
+        ✨ **Ngôn ngữ Anh, Nhật, Trung**  
+        ✨ **Tâm lý học**  
+        ✨ **Truyền thông đa phương tiện**  
+        ✨ **Kế toán - Tài chính**
+        
+        Và còn nhiều ngành khác nữa đó! Bạn muốn biết chi tiết ngành nào không nè? 😊
 
   utter_tuition:
-    - text: "💰 Học phí trung bình khoảng 20–25 triệu đồng/năm tùy ngành và chương trình học nha."
+    - text: "Bạn ơi, học phí trung bình khoảng **20-25 triệu đồng/năm** tùy ngành và chương trình học nha! 💰 Bạn muốn biết rõ ngành nào không?"
 
   utter_scholarship:
     - text: |
-        🎓 Trường có nhiều loại học bổng:
-        - Học bổng tuyển sinh (dành cho tân sinh viên)
-        - Học bổng thành tích học tập
-        - Học bổng hỗ trợ tài chính cho sinh viên có hoàn cảnh khó khăn.
+        Để mình kể cho bạn nghe về học bổng nè:
+        
+        🎓 **Học bổng tuyển sinh** - Dành cho tân sinh viên đạt điểm cao
+        🎓 **Học bổng thành tích học tập** - Cho bạn nào học giỏi mỗi kỳ
+        🎓 **Học bổng hỗ trợ tài chính** - Giúp đỡ bạn có hoàn cảnh khó khăn
+        
+        Bạn muốn biết chi tiết loại học bổng nào không nè?
 
   utter_admission_methods:
     - text: |
-        📝 Trường tuyển sinh bằng 4 phương thức:
-        1️⃣ Xét điểm thi THPT  
-        2️⃣ Xét học bạ  
-        3️⃣ Xét điểm đánh giá năng lực  
-        4️⃣ Xét tuyển thẳng theo quy định của Bộ GD&ĐT.
+        Mình tra giúp bạn nè, trường có **4 phương thức tuyển sinh** đó:
+        
+        1️⃣ **Xét điểm thi THPT** - Dùng điểm thi tốt nghiệp
+        2️⃣ **Xét học bạ** - Xét điểm học bạ 3 năm THPT
+        3️⃣ **Xét điểm đánh giá năng lực** - Từ ĐHQG TP.HCM hoặc Hà Nội
+        4️⃣ **Xét tuyển thẳng** - Theo quy định của Bộ GD&ĐT
+        
+        Bạn định xét theo phương thức nào nè? 😊
 
   utter_admission_documents:
     - text: |
-        📂 Hồ sơ gồm có:
-        - Phiếu đăng ký  
-        - Bản sao học bạ THPT  
-        - CMND/CCCD  
-        - Giấy khai sinh  
-        - 4 ảnh 3x4.
+        Bạn ơi, đây là danh sách hồ sơ cần chuẩn bị nha:
+        
+        📂 **Phiếu đăng ký** xét tuyển
+        📂 **Bản sao học bạ THPT** (có công chứng)
+        📂 **CMND/CCCD** (bản sao)
+        📂 **Giấy khai sinh** (bản sao)
+        📂 **4 ảnh 3x4** (chụp trong vòng 6 tháng)
+        
+        Chuẩn bị đầy đủ là OK rồi nha! ✅
 
   utter_admission_time:
-    - text: "⏰ Thời gian tuyển sinh thường bắt đầu từ tháng 3 đến tháng 9 hàng năm nhé!"
+    - text: "Bạn ơi, thời gian tuyển sinh thường từ **tháng 3 đến tháng 9** hàng năm nè! ⏰ Nhớ theo dõi thông báo trên website để không bỏ lỡ nhé!"
 
   utter_location:
     - text: |
-        🏫 Cơ sở chính: 665-667-669 Điện Biên Phủ, Quận 3, TP.HCM  
-        🏢 Cơ sở 2: 624 Âu Cơ, Quận Tân Bình, TP.HCM
+        Mình cho bạn địa chỉ 2 cơ sở nha:
+        
+        🏫 **Cơ sở MyU Campus**: 665-667-669 Điện Biên Phủ, Phường 1, Quận 3, TP.HCM
+        🏢 **Cơ sở Harmony Campus**: 624 Âu Cơ, Phường 10, Quận Tân Bình, TP.HCM
+        
+        Bạn muốn đến thăm cơ sở nào không nè? 😊
 
   utter_contact:
     - text: |
-        📞 Hotline: 028 6295 1517  
-        📧 Email: tuyensinh@vhu.edu.vn  
-        🌐 Website: [www.vhu.edu.vn](https://www.vhu.edu.vn)
+        Bạn ơi, đây là thông tin liên hệ của trường nha:
+        
+        📞 **Hotline**: 028 6295 1517  
+        📧 **Email**: tuyensinh@vhu.edu.vn  
+        🌐 **Website**: www.vhu.edu.vn
+        
+        Cứ liên hệ thoải mái nha! 😊
 
   utter_schedule:
     - text: |
-        🗓️ Lịch học kỳ I thường bắt đầu vào **tháng 9 hằng năm**,  
-        và học kỳ II bắt đầu vào **tháng 2 năm sau**.  
-        Xem chi tiết trên **cổng thông tin sinh viên VHU Portal** nhé.
+        Bạn ơi, mình cho bạn biết lịch học nè:
+        
+        🗓️ **Học kỳ 1**: Bắt đầu từ tháng 9 hàng năm
+        🗓️ **Học kỳ 2**: Bắt đầu từ tháng 2 năm sau
+        
+        Lịch chi tiết bạn xem trên **VHU Portal** (student.vhu.edu.vn) nha!
 
   utter_facility:
     - text: |
-        🏢 Trường có hệ thống **phòng học hiện đại, đầy đủ máy lạnh, projector**.  
-        Ngoài ra còn có **thư viện lớn, khu tự học, căn tin, ký túc xá và phòng thực hành máy tính** cho sinh viên.
+        Bạn ơi, cơ sở vật chất của trường xịn lắm đó:
+        
+        🏢 **Phòng học** hiện đại, máy lạnh, projector đầy đủ
+        📚 **Thư viện** lớn với nhiều tài liệu
+        💻 **Phòng thực hành** máy tính
+        ☕ **Căn tin** sạch sẽ, đồ ăn ngon
+        🏠 **Ký túc xá** tiện nghi
+        🏃 **Khu tự học** yên tĩnh
+        
+        Cơ sở vật chất đầy đủ cho việc học tập của bạn luôn! 💪
 
   utter_dorm:
     - text: |
-        🏠 Trường Đại học Văn Hiến **có ký túc xá dành cho sinh viên**,  
-        nằm gần khuôn viên trường, đầy đủ tiện nghi: phòng máy lạnh, wifi, khu sinh hoạt chung và căn tin.  
-        Liên hệ **Phòng Công tác Sinh viên (P.CTSV)** để được hỗ trợ đăng ký chỗ ở nhé!
+        Bạn ơi, trường có ký túc xá cho sinh viên nha:
+        
+        🏠 Nằm gần khuôn viên trường, đi lại siêu tiện
+        ❄️ Phòng máy lạnh, wifi tốc độ cao
+        🍜 Có căn tin, khu sinh hoạt chung
+        💰 Giá cả hợp lý, phù hợp sinh viên
+        
+        Bạn muốn ở KTX thì liên hệ **Phòng CTSV** để đăng ký nha! ✨
 
   utter_club:
     - text: |
-        🎶 Đại học Văn Hiến có hơn **15 câu lạc bộ sinh viên** như:  
-        - CLB Âm nhạc  
-        - CLB Tiếng Anh  
-        - CLB Tình nguyện  
-        - CLB Nhiếp ảnh  
-        - Và nhiều CLB khác nữa!  
-        Đăng ký tại **Phòng Công tác Sinh viên** nha.
+        Wao, trường mình có hơn **15 CLB** cho bạn tham gia nè:
+        
+        🎵 CLB Âm nhạc  
+        🗣️ CLB Tiếng Anh  
+        ❤️ CLB Tình nguyện  
+        📸 CLB Nhiếp ảnh  
+        ⚽ CLB Thể thao
+        🎨 CLB Nghệ thuật
+        
+        Và còn nhiều CLB khác nữa! Đăng ký tại **Phòng CTSV** nha! 🌟
 
   utter_support:
     - text: |
-        💡 Nếu bạn cần hỗ trợ học vụ (đăng ký môn, đổi lớp, xem điểm...),  
-        hãy liên hệ **Phòng Đào tạo** hoặc **Phòng CTSV** qua cổng **student.vhu.edu.vn**.  
-        Trường cũng có hỗ trợ **tài chính, tâm lý học đường, và học bổng khuyến khích học tập**.
+        Bạn ơi, trường có nhiều dịch vụ hỗ trợ sinh viên lắm:
+        
+        📚 **Học vụ**: Đăng ký môn, đổi lớp, xem điểm → Phòng Đào tạo
+        💰 **Tài chính**: Học bổng, hỗ trợ chi phí → Phòng Tài chính
+        💙 **Tâm lý**: Tư vấn, hỗ trợ tinh thần → Phòng CTSV
+        🎯 **Nghề nghiệp**: Hướng nghiệp, việc làm → Trung tâm TVVL
+        
+        Cần gì cứ liên hệ, trường luôn sẵn sàng giúp đỡ bạn nha! 💪
 
   utter_bot_challenge:
-    - text: "Mình là trợ lý ảo của Đại học Văn Hiến 🤖, được tạo ra để hỗ trợ sinh viên và thí sinh tìm hiểu thông tin về trường!"
+    - text: "Mình là trợ lý ảo của Đại học Văn Hiến đây 🤖, được tạo ra để giúp đỡ bạn tìm hiểu thông tin về trường nha! Cứ hỏi mình thoải mái! 😊"
 
-  utter_fallback:            # COMMENT: phản hồi khi bot không hiểu
-    - text: "Mình chưa hiểu ý bạn lắm 😅, bạn có thể nói lại rõ hơn được không?"
-    - text: "Xin lỗi nha, câu này hơi khó hiểu. Bạn thử nói lại ngắn gọn giúp mình nhé!"
+  utter_fallback:
+    - text: "Mình chưa hiểu ý bạn lắm 😅, bạn có thể nói lại rõ hơn được không nè?"
+    - text: "Ủa, câu này hơi khó hiểu quá! Bạn thử nói lại ngắn gọn giúp mình nhé! 🤔"
     - text: |
-        Xin lỗi, mình chưa hiểu rõ câu hỏi của bạn. 🤔
+        Xin lỗi bạn nha, mình chưa hiểu rõ câu hỏi. 🤔
         
-        Bạn có thể hỏi rõ hơn được không? Ví dụ:
-        • "Học phí ngành công nghệ thông tin"
-        • "Điều kiện nhận học bổng"
-        • "Phương thức tuyển sinh"
+        Bạn có thể hỏi rõ hơn không nè? Ví dụ:
+        💡 "Học phí ngành công nghệ thông tin"
+        💡 "Điều kiện nhận học bổng"
+        💡 "Phương thức tuyển sinh"
         
-        Hoặc liên hệ: 028 7301 5555 để được tư vấn trực tiếp!
+        Hoặc gọi: **028 6295 1517** để được tư vấn trực tiếp nha!
 
   utter_major_count:
     - text: |
-        📊 Trường Đại học Văn Hiến hiện có **hơn 20 ngành đào tạo** bậc đại học và cao đẳng,
-        bao gồm các lĩnh vực: Công nghệ thông tin, Kinh tế - Quản lý, Ngoại ngữ,
-        Du lịch - Khách sạn, Truyền thông, Tâm lý học và nhiều ngành khác!
+        Bạn ơi, trường mình có **44 ngành đào tạo** bậc đại học đó, 
+        bao gồm nhiều lĩnh vực như:
+        
+        💻 Công nghệ thông tin
+        💼 Kinh tế - Quản lý  
+        🗣️ Ngoại ngữ
+        ✈️ Du lịch - Khách sạn
+        📺 Truyền thông
+        💙 Tâm lý học
+        
+        Và còn nhiều ngành khác nữa! Bạn muốn biết ngành nào nè? 😊
 
   utter_study_mode:
     - text: |
-        📚 Trường có các hình thức đào tạo:
-        - **Chính quy**: Học tại trường từ thứ 2 đến thứ 6
-        - **Vừa làm vừa học**: Học cuối tuần (thứ 7, chủ nhật)
-        - **Liên thông**: Dành cho sinh viên đã có bằng cao đẳng
-        - **Văn bằng 2**: Dành cho người đã có bằng đại học ngành khác
+        Mình kể cho bạn nghe về các hình thức học nha:
+        
+        📚 **Chính quy**: Học thứ 2-6, toàn thời gian
+        💼 **Vừa làm vừa học**: Học cuối tuần (T7-CN)
+        🎓 **Liên thông**: Dành cho bạn đã có bằng cao đẳng
+        📖 **Văn bằng 2**: Dành cho bạn đã có bằng ĐH ngành khác
+        
+        Bạn định học hình thức nào nè? 🤔
 
   utter_fee_payment:
     - text: |
-        💳 Các cách đóng học phí tại VHU:
-        - **Trực tiếp** tại phòng Tài chính - Kế toán
-        - **Chuyển khoản** vào tài khoản trường
-        - **Qua ứng dụng** ngân hàng (có thông tin TK trên website)
-        - **Trả góp** theo từng học kỳ
-        Bạn có thể liên hệ phòng Tài chính để biết thêm chi tiết!
+        Bạn ơi, có nhiều cách đóng học phí lắm:
+        
+        💵 **Trực tiếp**: Đến Phòng Tài chính đóng tiền mặt
+        🏦 **Chuyển khoản**: Chuyển vào TK trường
+        📱 **Qua app**: Dùng app ngân hàng (có TK trên website)
+        💳 **Trả góp**: Chia nhỏ theo từng học kỳ
+        
+        Bạn liên hệ Phòng Tài chính để biết thêm chi tiết nha! 💰
 
   utter_out_of_scope:
     - text: |
-        Xin lỗi, câu hỏi này nằm ngoài phạm vi hỗ trợ của mình. 😅
+        Ôi, câu hỏi này nằm ngoài chuyên môn của mình rồi bạn ơi! 😅
         
         Mình chỉ có thể giúp bạn về:
-        • 📚 Thông tin ngành học, học phí
-        • 🎓 Học bổng, tuyển sinh
-        • 🏫 Cơ sở vật chất, địa chỉ
-        • 📞 Thông tin liên hệ
+        📚 Thông tin ngành học, học phí
+        🎓 Học bổng, tuyển sinh
+        🏫 Cơ sở vật chất, địa chỉ
+        📞 Thông tin liên hệ
         
-        Bạn có câu hỏi nào về VHU không?
+        Bạn có câu hỏi nào về VHU không nè?
     - text: |
-        Ồ, mình chỉ trả lời về Đại học Văn Hiến thôi nhé! 😊
+        Híc, mình chỉ trả lời về Đại học Văn Hiến thôi bạn ơi! 😊
         
-        Hỏi mình về học phí, tuyển sinh, học bổng hay thông tin liên hệ đi!
+        Hỏi mình về học phí, tuyển sinh, học bổng hay thông tin liên hệ đi nha!
         
-        📞 Hoặc gọi: 028 7301 5555
+        📞 Hoặc gọi: **028 6295 1517** để được tư vấn nhé!
 
 actions:
   - utter_greet

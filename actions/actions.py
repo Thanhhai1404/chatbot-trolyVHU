@@ -87,8 +87,7 @@ class ActionTuitionSpecific(Action):
         if not program:
             program = next(tracker.get_latest_entity_values("program"), None)
         
-        if program:
-            # Tìm program từ JSON
+        if program:            # Tìm program từ JSON
             prog_info = find_program_by_alias(program)
             
             if prog_info:
@@ -96,36 +95,57 @@ class ActionTuitionSpecific(Action):
                 tuition_info = find_tuition_by_program_id(prog_info["id"])
                 
                 if tuition_info:
-                    message = f"📚 **Học phí ngành {prog_info['name']}:**\n\n"
-                    message += f"💰 **Học phí mỗi tín chỉ:** {tuition_info['fee_per_credit']:,} VNĐ\n"
-                    message += f"📊 **Tổng số tín chỉ:** {tuition_info['total_credits']} tín chỉ\n"
-                    message += f"💵 **Học phí mỗi học kỳ:** {tuition_info['fee_per_semester']}\n"
-                    message += f"💸 **Học phí mỗi năm:** {tuition_info['fee_per_year']}\n"
-                    message += f"📈 **Tổng dự tính cả khóa:** ~{tuition_info['estimated_total']:,} VNĐ\n\n"
-                    message += f"ℹ️ {tuition_info['note']}\n\n"
+                    # Tính toán tự động học phí
+                    credit_fee = tuition_info['fee_per_credit']
+                    total_credits = tuition_info['total_credits']
+                    total_fee = credit_fee * total_credits
                     
+                    # Tính học phí theo năm (giả sử 4 năm = 8 học kỳ)
+                    fee_per_semester = total_fee / 8
+                    fee_per_year = total_fee / 4
+                    
+                    # Tạo message thân thiện
+                    message = f"Bạn ơi, mình tra giúp bạn học phí nè! 💰\n\n"
+                    message += f"📚 **Ngành: {prog_info['name']}**\n\n"
+                    
+                    message += "💡 **Chi tiết học phí:**\n"
+                    message += f"├─ Học phí/tín chỉ: **{credit_fee:,} VNĐ**\n"
+                    message += f"├─ Tổng số tín chỉ: **{total_credits} tín chỉ**\n"
+                    message += f"└─ Tổng cả khóa (4 năm): **~{total_fee:,} VNĐ**\n\n"
+                    
+                    message += "📊 **Học phí ước tính theo thời gian:**\n"
+                    message += f"• Mỗi học kỳ: **~{fee_per_semester:,.0f} VNĐ** (~{fee_per_semester/1000000:.1f} triệu)\n"
+                    message += f"• Mỗi năm: **~{fee_per_year:,.0f} VNĐ** (~{fee_per_year/1000000:.1f} triệu)\n"
+                    message += f"• Cả 4 năm: **~{total_fee:,} VNĐ** (~{total_fee/1000000:.1f} triệu)\n\n"
+                    
+                    # Thông tin bổ sung
                     if "general_info" in TUITION_DATA:
                         gen_info = TUITION_DATA["general_info"]
-                        if gen_info.get("installment_available"):
-                            message += f"✅ **Trả góp:** {gen_info.get('installment_note', 'Có hỗ trợ')}\n"
+                        message += "💳 **Hỗ trợ thanh toán:**\n"
+                        if gen_info.get("payment_deadline"):
+                            message += f"⏰ Hạn đóng: {gen_info.get('payment_deadline')}\n"
+                        if gen_info.get("discount_policy") and isinstance(gen_info['discount_policy'], list):
+                            message += f"🎁 Ưu đãi: {gen_info['discount_policy'][0]}\n"
+                        message += "\n"
                     
-                    message += "\n📞 **Liên hệ:** 028 7301 5555 để biết thêm chi tiết!"
+                    message += f"ℹ️ *Lưu ý: {tuition_info.get('note', 'Học phí có thể thay đổi theo từng năm học')}*\n\n"
+                    message += "📞 Liên hệ **028 6295 1517** để được tư vấn chi tiết nha!"
                     
                     dispatcher.utter_message(text=message)
                     return [SlotSet("program", program)]
             
             # Nếu không tìm thấy
             dispatcher.utter_message(
-                text=f"Xin lỗi, mình chưa có thông tin chi tiết về học phí ngành **{program}**.\n\n"
-                     "📚 **Các ngành hiện có:** CNTT, QTKD, Marketing, Kế toán, Ngôn ngữ Anh, "
+                text=f"Ôi bạn ơi, mình chưa có thông tin chi tiết về học phí ngành **{program}** nè.\n\n"
+                     "📚 **Các ngành có sẵn:** CNTT, QTKD, Marketing, Kế toán, Ngôn ngữ Anh, "
                      "Du lịch, Tâm lý học, Logistics, Thiết kế đồ họa, Luật.\n\n"
-                     "📞 **Hoặc liên hệ:** 028 7301 5555 để được tư vấn chi tiết!"
+                     "📞 **Hoặc gọi:** 028 6295 1517 để được tư vấn nha!"
             )
         else:
             # Gợi ý nếu không có program
             dispatcher.utter_message(
-                text="💰 Bạn muốn biết học phí của ngành nào ạ?\n\n"
-                     "📚 **Ví dụ:** Học phí ngành Công nghệ thông tin, Học phí CNTT, Học phí Marketing...\n\n"
+                text="Bạn ơi, bạn muốn biết học phí của ngành nào nè? 💰\n\n"
+                     "📚 **Ví dụ nè:** Học phí ngành Công nghệ thông tin, Học phí CNTT, Học phí Marketing...\n\n"
                      "📋 **Các ngành có sẵn:** CNTT, QTKD, Marketing, Kế toán, Ngôn ngữ Anh, "
                      "Du lịch, Tâm lý học, Logistics, Thiết kế đồ họa, Luật."
             )
