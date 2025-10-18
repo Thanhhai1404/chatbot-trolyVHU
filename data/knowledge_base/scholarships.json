@@ -1,0 +1,135 @@
+{
+  "scholarships": [
+    {
+      "id": "hb-toan-phan",
+      "name": "Học bổng toàn phần",
+      "type": "Học bổng đầu vào",
+      "value": "100% học phí",
+      "duration": "Toàn khóa học (nếu duy trì điều kiện)",
+      "conditions": [
+        "Điểm thi THPT Quốc gia đạt từ 27 điểm trở lên (khối thi tương ứng)",
+        "Hoặc đạt giải Nhất, Nhì, Ba trong các kỳ thi HSG Quốc gia",
+        "Hoặc thủ khoa đầu vào của ngành",
+        "Duy trì GPA >= 3.6/4.0 mỗi học kỳ"
+      ],
+      "application_process": "Nộp hồ sơ kèm giấy chứng nhận kết quả thi đến phòng Công tác sinh viên",
+      "deadline": "Trong vòng 1 tháng sau khi nhập học"
+    },
+    {
+      "id": "hb-khkt-hoc-tap",
+      "name": "Học bổng khuyến khích học tập",
+      "type": "Học bổng học tập",
+      "value": "500,000 - 3,000,000 đồng/học kỳ",
+      "duration": "Từng học kỳ",
+      "conditions": [
+        "GPA học kỳ đạt từ 3.2/4.0 trở lên",
+        "Không có môn nào dưới điểm C",
+        "Không vi phạm nội quy, quy chế",
+        "Tham gia đầy đủ các hoạt động học tập, rèn luyện"
+      ],
+      "levels": [
+        {
+          "level": "Xuất sắc",
+          "gpa_requirement": "GPA >= 3.8",
+          "value": "3,000,000 đồng"
+        },
+        {
+          "level": "Giỏi",
+          "gpa_requirement": "3.6 <= GPA < 3.8",
+          "value": "2,000,000 đồng"
+        },
+        {
+          "level": "Khá",
+          "gpa_requirement": "3.2 <= GPA < 3.6",
+          "value": "1,000,000 đồng"
+        }
+      ],
+      "application_process": "Tự động xét dựa trên kết quả học tập",
+      "deadline": "Không cần nộp hồ sơ"
+    },
+    {
+      "id": "hb-xa-hoi",
+      "name": "Học bổng xã hội",
+      "type": "Hỗ trợ xã hội",
+      "value": "50% - 100% học phí",
+      "duration": "Từng học kỳ hoặc cả năm",
+      "conditions": [
+        "Thuộc diện hộ nghèo, cận nghèo (có giấy chứng nhận)",
+        "Con em gia đình chính sách, liệt sĩ",
+        "Học sinh vùng sâu, vùng xa, dân tộc thiểu số",
+        "Hoàn cảnh khó khăn đặc biệt (mồ côi, tai nạn,...)",
+        "GPA >= 2.0/4.0"
+      ],
+      "application_process": "Nộp hồ sơ chứng minh hoàn cảnh đến phòng Công tác sinh viên",
+      "deadline": "Đầu mỗi học kỳ",
+      "required_documents": [
+        "Đơn xin học bổng",
+        "Giấy chứng nhận hộ nghèo/cận nghèo",
+        "Hoặc giấy xác nhận hoàn cảnh từ chính quyền địa phương",
+        "Bảng điểm học kỳ trước"
+      ]
+    },
+    {
+      "id": "hb-tai-nang",
+      "name": "Học bổng tài năng",
+      "type": "Học bổng đặc biệt",
+      "value": "3,000,000 - 10,000,000 đồng/năm",
+      "duration": "Cả năm học",
+      "conditions": [
+        "Đạt giải trong các cuộc thi học thuật cấp trường trở lên",
+        "Có bài báo khoa học được công bố",
+        "Tham gia nghiên cứu khoa học sinh viên xuất sắc",
+        "Đạt thành tích cao trong các hoạt động văn hóa, thể thao, nghệ thuật",
+        "GPA >= 3.0/4.0"
+      ],
+      "application_process": "Nộp hồ sơ kèm minh chứng thành tích đến phòng Khoa học - Công nghệ",
+      "deadline": "Cuối mỗi học kỳ"
+    }
+  ],  "general_info": {
+    "total_scholarship_budget": "Hàng tỷ đồng mỗi năm",
+    "percentage_students_receive": "Khoảng 30-40% sinh viên được nhận học bổng",
+    "application_process": {
+      "step1": "Điền đầy đủ thông tin vào phiếu đăng ký học bổng",
+      "step2": "Chuẩn bị hồ sơ chứng minh (nếu có)",
+      "step3": "Nộp hồ sơ tại Phòng Công tác sinh viên",
+      "step4": "Chờ thông báo kết quả (trong vòng 2-3 tuần)",
+      "step5": "Nhận học bổng qua tài khoản ngân hàng"
+    },
+    "submission_deadlines": {
+      "semester1": "Tuần thứ 3 của học kỳ 1 (tháng 9-10)",
+      "semester2": "Tuần thứ 3 của học kỳ 2 (tháng 2-3)",
+      "special": "Học bổng đặc biệt có thể nộp bất kỳ lúc nào trong năm"
+    },
+    "announcement_dates": {
+      "semester1": "Cuối tháng 10",
+      "semester2": "Cuối tháng 3"
+    },
+    "payment_method": "Chuyển khoản trực tiếp vào tài khoản ngân hàng sinh viên",
+    "payment_time": "Trong vòng 1 tháng sau khi công bố kết quả",
+    "contact": {
+      "department": "Phòng Công tác sinh viên",
+      "phone": "028 7301 5555 (ext. 105)",
+      "email": "ctsv@vhu.edu.vn",
+      "office_location": "Phòng B201 - Cơ sở 1",
+      "office_hours": "Thứ 2 - Thứ 6: 7h30 - 16h30",
+      "staff_in_charge": "Cô Nguyễn Thị Lan - Trưởng phòng CTSV"
+    },
+    "additional_support": [
+      "Hỗ trợ việc làm thêm tại trường (Part-time jobs)",
+      "Hỗ trợ tìm kiếm ký túc xá giá rẻ",
+      "Tư vấn tâm lý miễn phí",
+      "Hỗ trợ vay vốn học tập từ ngân hàng",
+      "Giới thiệu việc làm sau tốt nghiệp"
+    ],
+    "scholarship_renewal": {
+      "condition": "Duy trì GPA >= 3.0 và không vi phạm nội quy",
+      "review_time": "Mỗi học kỳ",
+      "note": "Học bổng có thể bị thu hồi nếu sinh viên vi phạm quy chế"
+    },
+    "appeal_process": {
+      "available": true,
+      "deadline": "Trong vòng 7 ngày kể từ ngày công bố kết quả",
+      "contact": "Phòng Công tác sinh viên"
+    }
+  }
+}

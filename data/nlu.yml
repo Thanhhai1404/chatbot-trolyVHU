@@ -1,0 +1,877 @@
+version: "3.1"
+
+nlu:
+
+# 1. Chào hỏi
+- intent: greet
+  examples: |
+    - chào
+    - xin chào
+    - hello
+    - hi
+    - ê bot
+    - chào bạn
+    - alo
+    - chào trợ lý
+    - hey
+
+# 2. Tạm biệt
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - bye
+    - hẹn gặp lại
+    - chào tạm biệt
+    - mình đi đây
+    - gặp lại sau nhé
+    - thôi mình out nha
+
+# 3. Cảm ơn
+- intent: thank
+  examples: |
+    - cảm ơn
+    - cảm ơn bạn
+    - thanks
+    - cám ơn nhiều nha
+    - cảm ơn bot
+    - bạn giúp mình nhiều lắm
+
+# 4. Thông tin trường
+- intent: ask_about_school
+  examples: |
+    - trường đại học văn hiến là gì
+    - giới thiệu về đại học văn hiến
+    - trường có định hướng đào tạo như thế nào
+    - trường thuộc bộ nào
+    - trường VHU là trường công hay tư
+    - đại học văn hiến có uy tín không
+
+# 5. Danh sách ngành học
+- intent: ask_list_programs
+  examples: |
+    - trường có những ngành nào
+    - cho mình xem danh sách ngành học
+    - các khoa của trường là gì
+    - ngành nào hot ở VHU
+    - học ngành gì ở văn hiến
+
+# 6. Thông tin ngành cụ thể
+- intent: ask_program_info
+  examples: |
+    - thông tin ngành [công nghệ thông tin](program)
+    - ngành [quản trị kinh doanh](program) học gì
+    - học phí ngành [ngôn ngữ anh](program) bao nhiêu
+    - chương trình đào tạo ngành [tâm lý học](program) thế nao
+    - cho mình biết thêm về ngành [truyền thông đa phương tiện](program)
+    - ngành [kế toán](program) ra trường làm gì
+    - [CNTT](program) có khó không
+    - điều kiện đầu vào ngành [luật](program)
+    - ngành [du lịch](program) học những môn gì
+    - [marketing](program) có tương lai không
+
+# 7. Học phí
+- intent: ask_tuition
+  examples: |
+    - học phí bao nhiêu
+    - tiền học mỗi năm là bao nhiêu
+    - học phí của trường là bao nhiêu
+    - mức học phí trung bình ở văn hiến
+    - học phí chung
+    - học phí đại học văn hiến
+    - cho mình biết học phí nha
+    - học phí chung của trường
+    - mức học phí chung
+    - học phí trung bình là bao nhiêu
+    - cho tôi biết học phí chung
+    - học phí đại trà
+    - học phí các ngành
+    - học phí chung các ngành
+    - thông tin về học phí
+    - học phí trường
+    - học phí ở đây như thế nào
+    - học phí của các ngành
+    - tổng quan học phí
+
+# 8. Học bổng
+- intent: ask_scholarship
+  examples: |
+    - có học bổng không
+    - trường có những loại học bổng nào
+    - điều kiện nhận học bổng là gì
+    - học bổng đầu vào như thế nào
+    - có học bổng cho sinh viên giỏi không
+
+# 9. Phương thức tuyển sinh
+- intent: ask_admission_methods
+  examples: |
+    - trường tuyển sinh bằng cách nào
+    - có [xét học bạ](admission_method) không
+    - có [thi tuyển](admission_method) không
+    - phương thức xét tuyển của VHU
+    - tuyển sinh [2025](time) như thế nào
+    - cho tôi hỏi phương thức tuyển sinh
+    - phương thức tuyển sinh là gì
+    - tuyển sinh như thế nào
+    - các cách tuyển sinh của trường
+    - trường có những phương thức tuyển sinh nào
+    - muốn vào trường phải tuyển sinh thế nào
+    - xét tuyển bằng gì
+    - điều kiện tuyển sinh
+    - hình thức xét tuyển
+    - trường xét tuyển như nào
+    - phương thức tuyển sinh của VHU
+    - trường có phương thức nào tuyển sinh
+    - các hình thức xét tuyển
+    - tuyển sinh bằng phương thức gì
+    - xét tuyển bằng phương thức nào
+    - điều kiện xét tuyển là gì
+    - cho mình biết phương thức tuyển sinh
+    - tuyển sinh của trường
+    - các phương thức xét tuyển vào trường
+    - làm sao để được tuyển vào trường
+
+# 10. Hồ sơ nhập học
+- intent: ask_admission_documents
+  examples: |
+    - cần giấy tờ gì để nhập học
+    - hồ sơ xét tuyển gồm những gì
+    - nộp hồ sơ ở đâu
+    - cần mang gì khi nhập học
+    - giấy tờ đăng ký học
+
+# 11. Địa chỉ
+- intent: ask_location
+  examples: |
+    - trường ở đâu
+    - địa chỉ đại học văn hiến
+    - cơ sở của trường nằm ở đâu
+    - trường có mấy cơ sở
+    - cơ sở chính ở quận mấy
+
+# 12. Liên hệ
+- intent: ask_contact
+  examples: |
+    - liên hệ với trường bằng cách nào
+    - cho mình [số điện thoại](contact_type) của trường
+    - [email](contact_type) tuyển sinh là gì
+    - [website](contact_type) của trường là gì
+    - [hotline](contact_type) của trường
+    - [fanpage](contact_type) trường ở đâu
+    - [facebook](contact_type) VHU
+    - cho mình xin thông tin liên hệ
+    - thông tin liên hệ trường
+    - thông tin liên hệ
+    - liên hệ
+    - muốn liên hệ với trường
+    - cách liên lạc với trường
+    - thông tin liên lạc
+    - số điện thoại trường là gì
+    - email trường
+    - website trường
+    - tôi muốn liên hệ
+    - cho tôi thông tin liên hệ
+    - liên lạc với phòng tuyển sinh
+
+# 13. Lịch học
+- intent: ask_schedule
+  examples: |
+    - khi nào khai giảng
+    - lịch học kỳ 1 bắt đầu lúc nào
+    - học kỳ 2 học khi nào
+    - thời gian học trong năm
+    - thời khóa biểu xem ở đâu
+    - lịch học
+    - cho tôi lịch học
+    - xem lịch học ở đâu
+    - lịch học của tôi
+    - lịch học hôm nay
+    - lịch học tuần này
+    - thời gian học
+    - giờ học
+    - lịch học trong tuần
+    - cho mình xem lịch học
+    - lịch học như thế nào
+    - muốn xem lịch học
+
+# 14. Cơ sở vật chất
+- intent: ask_facility
+  examples: |
+    - cơ sở vật chất của trường thế nào
+    - trường có [máy lạnh](facility) không
+    - có [thư viện](facility) không
+    - có [phòng thực hành](facility) không
+    - trường có [căn tin](facility) không
+
+# 15. Ký túc xá
+- intent: ask_dorm
+  examples: |
+    - trường có ký túc xá không
+    - ký túc xá ở đâu
+    - điều kiện ở ký túc xá thế nào
+    - muốn đăng ký ký túc xá làm sao
+    - ký túc xá gần trường không
+
+# 16. Câu lạc bộ
+- intent: ask_club
+  examples: |
+    - trường có những câu lạc bộ nào
+    - có [CLB âm nhạc](club_type) không
+    - có [CLB tiếng anh](club_type) không
+    - muốn tham gia CLB thì làm sao
+    - có [CLB nhiếp ảnh](club_type) không
+
+# 17. Hỗ trợ sinh viên
+- intent: ask_support
+  examples: |
+    - trường có hỗ trợ sinh viên không
+    - có hỗ trợ tài chính không
+    - cần hỗ trợ học vụ thì liên hệ ai
+    - trường có tư vấn tâm lý không
+    - muốn đổi lớp thì liên hệ phòng nào
+
+# 18. Kiểm tra bot
+- intent: bot_challenge
+  examples: |
+    - bạn là ai
+    - bạn có phải robot không
+    - ai tạo ra bạn
+    - bạn có thật không
+    - bạn có phải trợ lý ảo của trường không
+
+# học phí 
+- intent: ask_tuition_specific
+  examples: |
+    - Học phí ngành [Công nghệ thông tin](program) là bao nhiêu?
+    - Ngành [CNTT](program) học phí nhiêu v ạ?
+    - Cho em hỏi học phí ngành [Quản trị kinh doanh](program) với
+    - Học phí ngành [ngôn ngữ Anh](program) năm nay
+    - Tuition ngành [marketing](program)?
+    - Học phí ngành [kế toán](program) 1 năm bn tiền?
+    - Ngành [thiết kế đồ họa](program) học phí thế nào
+    - Bảng học phí chi tiết của ngành [Logistics](program)
+    - Học phí cho ngành [tâm lý học](program)
+    - Ngành [luật kinh tế](program) học phí 1 tín chỉ là bao nhiêu?
+    - Học phí [IT](program)?
+    - Học phí [QTKD](program)
+    - hf ngành [du lịch](program)
+    - Cho e xin học phí ngành [logistics](program)
+    - [Công nghệ thông tin](program) một kỳ đóng bao nhiêu tiền
+    - Ngành [tài chính ngân hàng](program) học phí sao ạ
+    - Học phí ngành [ngôn ngữ Nhật](program)
+    - Báo giá học phí ngành [Quan hệ công chúng](program)
+    - Ngành [truyền thông đa phương tiện](program) có đắt không?
+    - Em muốn biết học phí ngành [kiến trúc](program)
+
+# học bổng
+- intent: ask_scholarship_condition
+  examples: |
+    - Điều kiện để nhận học bổng của trường là gì?
+    - Làm sao để được học bổng ạ?
+    - Điều kiện xét [học bổng khuyến khích học tập](scholarship_type)?
+    - GPA bao nhiêu thì được học bổng?
+    - Dk nhan hoc bong
+    - Cần những gì để apply [học bổng tân sinh viên](scholarship_type)?
+    - Tiêu chí xét học bổng của trường
+    - [Học bổng toàn phần](scholarship_type) yêu cầu gì?
+    - Hoc bong [loai gioi](academic_level) can diem tnao
+    - Để duy trì học bổng cần điều kiện gì?
+    - Có cần tham gia [hoạt động ngoại khóa](extracurricular_activity) để được học bổng không?
+    - Yêu cầu học bổng cho sinh viên có [hoàn cảnh khó khăn](financial_status)
+    - Điều kiện xét học bổng cuối kỳ?
+    - SV năm nhất có được xét học bổng không?
+    - Minh co can [ielts](language_certificate) de xin hoc bong k
+    - Học lực [khá](academic_level) có cơ hội nhận học bổng không?
+    - Quy định về việc xét học bổng
+    - Cach san hoc bong
+    - Điều kiện học bổng cho thủ khoa đầu vào
+    - Ngoài điểm số thì cần gì để có học bổng?
+
+# lịch thi
+- intent: ask_exam_schedule
+  examples: |
+    - Cho em hỏi lịch thi [cuối kỳ](exam_type)
+    - Khi nào có lịch thi [học kỳ 1](semester)?
+    - Xem lịch thi ở đâu vậy ạ?
+    - Lịch thi môn [Toán cao cấp](subject)
+    - Cho mình xin lịch thi [giữa kỳ](exam_type)
+    - Lich thi [hk2](semester)
+    - Ngày thi của môn [triết học Mác Lênin](subject)
+    - Lịch thi lại là khi nào?
+    - Có lịch thi dự kiến chưa ạ?
+    - Tuần bao nhiêu thì bắt đầu thi [cuối kỳ](exam_type)?
+    - Lich thi cua lop [21CNTT1](class)
+    - Phòng thi và ca thi môn [Xác suất thống kê](subject)
+    - Lịch thi hết học phần
+    - Khi nao thi?
+    - Lịch thi đã được cập nhật chưa?
+    - Mấy giờ thi môn [tiếng anh](subject) v ạ
+    - Lich thi online
+    - Lịch thi kết thúc học phần [2](semester)
+    - Tra cứu lịch thi cá nhân
+    - Thông báo về lịch thi
+
+# cơ sở
+- intent: ask_campuses
+  examples: |
+    - Trường mình có mấy cơ sở ạ?
+    - Địa chỉ các cơ sở của trường
+    - Cơ sở chính của trường ở đâu?
+    - Ngành [Marketing](program) học ở cơ sở nào?
+    - Cho em xin địa chỉ [cơ sở 2](campus)
+    - Campus ở [Thủ Đức](location) dạy những ngành nào?
+    - VHU có bao nhiêu campus?
+    - Co so o [Go Vap](location)
+    - Cơ sở nào có [ký túc xá](facility)?
+    - Làm sao để di chuyển giữa các cơ sở?
+    - Khoa [Công nghệ thông tin](program) học tại campus nào?
+    - Dia chi cac co so
+    - Cơ sở vật chất ở [cơ sở mới](campus) như thế nào?
+    - Tất cả sinh viên năm nhất học chung một cơ sở phải không?
+    - Cho em xem bản đồ các cơ sở
+    - Trường có cơ sở ở [trung tâm thành phố](location) không?
+    - Cac co so cua truong
+    - Thông tin về [cơ sở 3](campus)
+    - Cơ sở nào gần [bến xe](location) nhất?
+    - Di chuyển từ [cơ sở 1](campus) đến [cơ sở 2](campus) mất bao lâu?
+
+# hỗ trợ 
+- intent: ask_support_problem
+  examples: |
+    - Em bị mất [thẻ sinh viên](document) thì phải làm sao?
+    - Cần hỗ trợ [đăng ký học phần](support_type)
+    - Em quên mật khẩu đăng nhập vào [portal sinh viên](system)
+    - Rớt môn thì phải làm gì tiếp theo ạ?
+    - Làm lại [thẻ sinh viên](document) ở đâu?
+    - Em đóng [học phí](payment) bị lỗi, cần giúp đỡ
+    - Can ho tro ve viec [bao luu ket qua hoc tap](support_type)
+    - Tài khoản [thư viện](system) của em bị khóa
+    - Em muốn xin [giấy xác nhận sinh viên](document)
+    - Lỡ đăng ký sai môn học, có hủy được không?
+    - Em gặp sự cố khi [thi online](exam_type)
+    - Muốn [phúc khảo bài thi](support_type) thì liên hệ ai?
+    - Em chưa nhận được tiền [học bổng](scholarship_type)
+    - Vấn đề về [đăng ký tín chỉ](support_type)
+    - Em cần tư vấn về việc [chọn chuyên ngành](support_type)
+    - Quen mat khau [email sinh vien](system)
+    - Làm thế nào để xin [bảng điểm](document)?
+    - Em muốn [chuyển lớp](support_type)
+    - Thủ tục [thôi học](support_type) như thế nào ạ?
+    - Gặp ai để giải quyết vấn đề về [công tác sinh viên](support_type)?
+
+# 19. Số lượng ngành học
+- intent: ask_major_count
+  examples: |
+    - trường có bao nhiêu ngành
+    - có mấy ngành học
+    - tổng cộng bao nhiêu ngành đào tạo
+    - số lượng ngành của trường
+    - trường đào tạo bao nhiêu ngành
+
+# 20. Hình thức học
+- intent: ask_study_mode
+  examples: |
+    - trường có những hình thức học nào
+    - học chính quy hay vừa làm vừa học
+    - có học tại chức không
+    - hình thức đào tạo của trường
+    - có thể học online không
+    - học cuối tuần có được không
+
+# 21. Thời gian tuyển sinh
+- intent: ask_admission_time
+  examples: |
+    - khi nào bắt đầu tuyển sinh
+    - thời gian tuyển sinh [2025](time)
+    - mấy giờ nộp hồ sơ
+    - tuyển sinh từ [tháng mấy](time)
+    - deadline nộp hồ sơ khi nào
+    - thời hạn tuyển sinh
+
+# 22. Cách đóng học phí
+- intent: ask_fee_payment
+  examples: |
+    - đóng [học phí](payment) như thế nào
+    - cách thức thanh toán học phí
+    - có thể trả góp không
+    - đóng tiền học ở đâu
+    - phương thức thanh toán
+    - có chuyển khoản được không
+    - đóng học phí qua ngân hàng
+    - cách đóng học phí
+    - đóng học phí
+    - nộp học phí ở đâu
+    - nộp học phí như thế nào
+    - thanh toán học phí
+    - phương thức đóng học phí
+    - cách thanh toán học phí
+    - làm sao đóng học phí
+    - hướng dẫn đóng học phí
+    - quy trình đóng học phí
+    - đóng tiền học
+    - nộp tiền học
+
+# 23. Out of scope - Câu hỏi ngoài phạm vi
+- intent: out_of_scope
+  examples: |
+    - đặt pizza
+    - gọi pizza
+    - thời tiết hôm nay thế nào
+    - trời mưa không
+    - bóng đá
+    - xem bóng đá
+    - giá vàng hôm nay
+    - tỷ giá USD
+    - đặt vé máy bay
+    - mua vé máy bay
+    - đặt phòng khách sạn
+    - book khách sạn
+    - bạn bao nhiêu tuổi
+    - bạn sống ở đâu
+    - bạn có gia đình chưa
+    - bạn thích gì
+    - kể chuyện cười
+    - hát cho tôi nghe
+    - múa cho tôi xem
+    - chơi game
+    - xem phim
+    - nghe nhạc
+    - mua sắm online
+    - tìm bạn gái
+    - hẹn hò
+    - nấu ăn
+    - làm bánh
+    - xe máy
+    - ô tô
+    - điện thoại mới
+    - laptop giá rẻ
+
+# Entities - Các thực thể cần trích xuất
+entities:
+  # Ngành học / Chuyên ngành
+  - program:
+      values:
+        - Công nghệ thông tin
+        - CNTT
+        - IT
+        - Quản trị kinh doanh
+        - QTKD
+        - Ngôn ngữ Anh
+        - Marketing
+        - Kế toán
+        - Thiết kế đồ họa
+        - Logistics
+        - Tâm lý học
+        - Luật kinh tế
+        - Luật
+        - Du lịch
+        - Ngôn ngữ Nhật
+        - Quan hệ công chúng
+        - Truyền thông đa phương tiện
+        - Kiến trúc
+        - Tài chính ngân hàng
+        - Kinh tế
+        - Quản lý nhà hàng khách sạn
+        - Thiết kế nội thất
+        - Điều dưỡng
+        - Y tế cộng đồng
+
+  # Môn học
+  - subject:
+      values:
+        - Toán cao cấp
+        - Triết học Mác Lênin
+        - Xác suất thống kê
+        - Tiếng Anh
+        - Vật lý đại cương
+        - Hóa học đại cương
+        - Lịch sử Đảng
+        - Kinh tế chính trị
+        - Pháp luật đại cương
+        - Tin học ứng dụng
+
+  # Loại kỳ thi
+  - exam_type:
+      values:
+        - cuối kỳ
+        - giữa kỳ
+        - thi online
+        - thi lại
+        - thi cải thiện
+
+  # Học kỳ
+  - semester:
+      values:
+        - học kỳ 1
+        - học kỳ 2
+        - học kỳ 3
+        - học kỳ hè
+        - hk1
+        - hk2
+        - hk3
+        - kỳ 1
+        - kỳ 2
+        - kỳ 3
+
+  # Lớp học
+  - class:
+      values:
+        - 21CNTT1
+        - 21CNTT2
+        - 22CNTT1
+        - 21QTKD1
+        - 22QTKD1
+        - 21ANH1
+        - 22ANH1
+
+  # Cơ sở trường
+  - campus:
+      values:
+        - cơ sở 1
+        - cơ sở 2
+        - cơ sở 3
+        - cơ sở chính
+        - cơ sở mới
+        - campus chính
+        - campus mới
+
+  # Địa điểm
+  - location:
+      values:
+        - Thủ Đức
+        - Gò Vấp
+        - Quận 1
+        - Quận 3
+        - Quận 5
+        - Quận 7
+        - Quận 9
+        - Bình Thạnh
+        - Tân Bình
+        - trung tâm thành phố
+        - bến xe
+        - ga tàu
+        - sân bay
+
+  # Cơ sở vật chất
+  - facility:
+      values:
+        - ký túc xá
+        - thư viện
+        - phòng thực hành
+        - phòng lab
+        - căn tin
+        - sân thể thao
+        - hội trường
+        - phòng học
+        - máy lạnh
+        - wifi
+        - bãi xe
+
+  # Loại giấy tờ / hồ sơ
+  - document:
+      values:
+        - thẻ sinh viên
+        - giấy xác nhận sinh viên
+        - bảng điểm
+        - bằng tốt nghiệp
+        - chứng chỉ
+        - hồ sơ nhập học
+        - giấy khai sinh
+        - chứng minh nhân dân
+        - căn cước công dân
+        - học bạ
+        - phiếu điểm thi
+        - giấy khám sức khỏe
+
+  # Loại hỗ trợ
+  - support_type:
+      values:
+        - đăng ký học phần
+        - bảo lưu kết quả học tập
+        - phúc khảo bài thi
+        - đăng ký tín chỉ
+        - chọn chuyên ngành
+        - chuyển lớp
+        - thôi học
+        - công tác sinh viên
+        - tư vấn học tập
+        - hỗ trợ tài chính
+        - tư vấn tâm lý
+
+  # Hệ thống / Ứng dụng
+  - system:
+      values:
+        - portal sinh viên
+        - thư viện
+        - email sinh viên
+        - website trường
+        - hệ thống học tập
+        - LMS
+        - e-learning
+
+  # Loại thanh toán
+  - payment:
+      values:
+        - học phí
+        - phí thi
+        - phí đăng ký
+        - phí dịch vụ
+        - lệ phí
+
+  # Loại học bổng
+  - scholarship_type:
+      values:
+        - học bổng
+        - học bổng toàn phần
+        - học bổng khuyến khích học tập
+        - học bổng tài năng
+        - học bổng xã hội
+        - học bổng doanh nghiệp
+        - trợ cấp xã hội
+        - học bổng tân sinh viên
+        - học bổng học lực
+        - học bổng nghiên cứu khoa học
+        - trợ cấp sinh viên
+        - giảm học phí
+
+  # Các loại giấy tờ tài liệu bổ sung
+  - required_documents:
+      values:
+        - hồ sơ xét tuyển
+        - giấy tờ nhập học
+        - phiếu đăng ký
+        - giấy ủy quyền
+        - hợp đồng đào tạo
+        - cam kết học tập
+        - phiếu thu học phí
+        - biên lai nộp tiền
+        - thỏa thuận thanh toán
+
+  # Điểm số và thành tích
+  - grade_score:
+      values:
+        - GPA 3.5
+        - GPA 3.0
+        - điểm trung bình 8.0
+        - điểm trung bình 7.0
+        - tốt nghiệp loại giỏi
+        - tốt nghiệp loại khá
+        - thủ khoa
+        - á khoa
+
+  # Loại liên hệ
+  - contact_type:
+      values:
+        - số điện thoại
+        - email
+        - website
+        - fanpage
+        - facebook
+        - hotline
+        - zalo
+
+  # Loại câu lạc bộ
+  - club_type:
+      values:
+        - câu lạc bộ âm nhạc
+        - câu lạc bộ tiếng Anh
+        - câu lạc bộ nhiếp ảnh
+        - câu lạc bộ thể thao
+        - câu lạc bộ khiêu vũ
+        - câu lạc bộ IT
+        - câu lạc bộ tình nguyện
+        - đội tuyển bóng đá
+        - đội tuyển bóng chuyền
+
+  # Thời gian
+  - time:
+      values:
+        - buổi sáng
+        - buổi chiều
+        - buổi tối
+        - thứ hai
+        - thứ ba
+        - thứ tư
+        - thứ năm
+        - thứ sáu
+        - thứ bảy
+        - chủ nhật
+        - hôm nay
+        - ngày mai
+        - tuần này
+        - tháng này
+        - năm nay
+        - 2024
+        - 2025
+
+  # Mức độ học lực
+  - academic_level:
+      values:
+        - giỏi
+        - khá
+        - trung bình
+        - yếu
+        - xuất sắc
+        - loại giỏi
+        - loại khá
+        - loại trung bình
+
+  # Phương thức xét tuyển
+  - admission_method:
+      values:
+        - xét học bạ
+        - thi tuyển
+        - xét tuyển thẳng
+        - kết hợp
+        - thi đánh giá năng lực
+        - thi THPT quốc gia
+
+  # Bậc học
+  - education_level:
+      values:
+        - đại học
+        - cao đẳng
+        - thạc sĩ
+        - tiến sĩ
+        - liên thông
+        - văn bằng 2
+
+  # Loại sinh viên
+  - student_type:
+      values:
+        - sinh viên chính quy
+        - sinh viên tại chức
+        - sinh viên liên thông
+        - sinh viên chuyển tiếp
+        - sinh viên quốc tế
+        - sinh viên trao đổi
+
+  # Tình trạng tài chính
+  - financial_status:
+      values:
+        - khó khăn
+        - nghèo
+        - cận nghèo
+        - gia đình chính sách
+        - con liệt sĩ
+        - dân tộc thiểu số
+        - vùng sâu vùng xa
+
+  # Chứng chỉ ngoại ngữ
+  - language_certificate:
+      values:
+        - IELTS
+        - TOEFL
+        - TOEIC
+        - VSK
+        - JLPT
+        - TOPIK
+        - HSK
+        - DELF
+        - DELE
+
+  # Khu vực địa lý
+  - geographical_area:
+      values:
+        - khu vực 1
+        - khu vực 2
+        - khu vực 3
+        - NT1
+        - NT2
+        - NT3
+        - miền Bắc
+        - miền Trung
+        - miền Nam
+        - TP.HCM
+        - Hà Nội
+        - Đà Nẵng
+
+  # Loại hoạt động ngoại khóa
+  - extracurricular_activity:
+      values:
+        - hoạt động tình nguyện
+        - hoạt động xã hội
+        - thể thao
+        - văn nghệ
+        - học thuật
+        - nghiên cứu khoa học
+        - startup
+        - dự án cộng đồng
+
+  # Phòng ban
+  - department:
+      values:
+        - phòng đào tạo
+        - phòng công tác sinh viên
+        - phòng tài chính kế toán
+        - phòng hành chính
+        - phòng quản lý chất lượng
+        - thư viện
+        - trung tâm tin học
+        - ban giám hiệu
+
+# Synonyms - Đồng nghĩa
+synonyms:
+  - synonym: công nghệ thông tin
+    examples: |
+      - CNTT
+      - cntt
+      - IT
+      - it
+      - cong nghe thong tin
+      
+  - synonym: quản trị kinh doanh
+    examples: |
+      - QTKD
+      - qtkd
+      - quan tri kinh doanh
+      - qtrikinhdoanh
+      
+  - synonym: marketing
+    examples: |
+      - MKT
+      - mkt
+      - tiep thi
+      
+  - synonym: kế toán
+    examples: |
+      - ke toan
+      - KT
+      - kt
+      
+  - synonym: du lịch
+    examples: |
+      - DL
+      - dl
+      - du lich
+
+# Regex patterns để cải thiện intent recognition
+regex:
+  - name: tuyen_sinh
+    pattern: (tuyển sinh|tuyển|xét tuyển|xét|phương thức tuyển|phương thức xét|hình thức tuyển|hình thức xét)
+    
+  - name: co_so
+    pattern: (cơ sở|campus|địa chỉ các cơ sở|cơ sở chính|cơ sở \d+)
+    
+  - name: hoc_phi
+    pattern: (học phí|hoc phi|tuition|tiền học|đóng học)
+    
+  - name: hoc_bong
+    pattern: (học bổng|hoc bong|scholarship|trợ cấp)
+
+# Lookup Tables - Danh sách tra cứu để cải thiện entity extraction
+# Sử dụng file riêng để dễ quản lý và mở rộng
+lookup:
+  - name: program
+    path: lookups/programs.txt
+  
+  - name: subject
+    path: lookups/subjects.txt
+  
+  - name: campus
+    path: lookups/campuses.txt
+  
+  - name: scholarship_type
+    path: lookups/scholarship_types.txt
+  
+  - name: exam_type
+    path: lookups/exam_types.txt

@@ -1,0 +1,197 @@
+version: "3.1"
+
+stories:
+
+- story: greet user
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: goodbye user
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: thank user
+  steps:
+    - intent: thank
+    - action: utter_thank
+
+- story: ask about school
+  steps:
+    - intent: ask_about_school
+    - action: utter_about_school
+
+- story: list programs
+  steps:
+    - intent: ask_list_programs
+    - action: utter_list_programs
+
+- story: program info
+  steps:
+    - intent: ask_program_info
+    - action: action_program_info
+
+- story: tuition info
+  steps:
+    - intent: ask_tuition
+    - action: utter_tuition
+
+- story: scholarship info
+  steps:
+    - intent: ask_scholarship
+    - action: utter_scholarship
+
+- story: admission methods
+  steps:
+    - intent: ask_admission_methods
+    - action: utter_admission_methods
+
+- story: admission documents
+  steps:
+    - intent: ask_admission_documents
+    - action: utter_admission_documents
+
+- story: school location
+  steps:
+    - intent: ask_location
+    - action: utter_location
+
+- story: contact info
+  steps:
+    - intent: ask_contact
+    - action: utter_contact
+
+- story: schedule info
+  steps:
+    - intent: ask_schedule
+    - action: utter_schedule
+
+- story: facility info
+  steps:
+    - intent: ask_facility
+    - action: utter_facility
+
+- story: dorm info
+  steps:
+    - intent: ask_dorm
+    - action: utter_dorm
+
+- story: club info
+  steps:
+    - intent: ask_club
+    - action: utter_club
+
+- story: student support
+  steps:
+    - intent: ask_support
+    - action: utter_support
+
+- story: bot challenge
+  steps:
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+
+# Stories cho các intents với custom actions
+- story: tuition specific info with action
+  steps:
+    - intent: ask_tuition_specific
+    - action: action_tuition_specific
+
+- story: scholarship condition info with action
+  steps:
+    - intent: ask_scholarship_condition
+    - action: action_scholarship_condition
+
+- story: exam schedule info with action
+  steps:
+    - intent: ask_exam_schedule
+    - action: action_exam_schedule
+
+- story: campuses info with action
+  steps:
+    - intent: ask_campuses
+    - action: action_campuses_info
+
+- story: support problem info with action
+  steps:
+    - intent: ask_support_problem
+    - action: action_support_problem
+
+- story: program info with action
+  steps:
+    - intent: ask_program_info
+    - action: action_program_info
+
+- story: major count info
+  steps:
+    - intent: ask_major_count
+    - action: utter_major_count
+
+- story: study mode info
+  steps:
+    - intent: ask_study_mode
+    - action: utter_study_mode
+
+- story: admission time info
+  steps:
+    - intent: ask_admission_time
+    - action: utter_admission_time
+
+- story: fee payment info
+  steps:
+    - intent: ask_fee_payment
+    - action: utter_fee_payment
+
+# Complex conversation stories
+- story: user asks about specific program tuition
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_tuition_specific
+      entities:
+        - program: "Công nghệ thông tin"
+    - action: action_tuition_specific
+    - intent: thank
+    - action: utter_thank
+
+- story: user asks about scholarship conditions and then specific program
+  steps:
+    - intent: ask_scholarship_condition
+    - action: action_scholarship_condition
+    - intent: ask_tuition_specific
+      entities:
+        - program: "Marketing"
+    - action: action_tuition_specific
+
+- story: user asks about exam schedule and then campus info
+  steps:
+    - intent: ask_exam_schedule
+    - action: action_exam_schedule
+    - intent: ask_campuses
+    - action: action_campuses_info
+
+- story: user needs support and then asks about admission time
+  steps:
+    - intent: ask_support_problem
+    - action: action_support_problem
+    - intent: ask_admission_time
+    - action: utter_admission_time
+
+- story: user asks about study modes and fee payment
+  steps:
+    - intent: ask_study_mode
+    - action: utter_study_mode
+    - intent: ask_fee_payment
+    - action: utter_fee_payment
+
+- story: user asks about program info then tuition
+  steps:
+    - intent: ask_program_info
+      entities:
+        - program: "CNTT"
+    - action: action_program_info
+    - intent: ask_tuition_specific
+      entities:
+        - program: "CNTT"
+    - action: action_tuition_specific

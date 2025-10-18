@@ -1,0 +1,151 @@
+version: "3.1"
+
+rules:
+
+- rule: greet user anytime
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: respond to thank
+  steps:
+    - intent: thank
+    - action: utter_thank
+
+- rule: handle about school
+  steps:
+    - intent: ask_about_school
+    - action: utter_about_school
+
+- rule: list programs
+  steps:
+    - intent: ask_list_programs
+    - action: utter_list_programs
+
+# Removed duplicate rule - using action_program_info instead
+
+- rule: tuition info
+  steps:
+    - intent: ask_tuition
+    - action: utter_tuition
+
+- rule: scholarship info
+  steps:
+    - intent: ask_scholarship
+    - action: utter_scholarship
+
+- rule: admission methods
+  steps:
+    - intent: ask_admission_methods
+    - action: utter_admission_methods
+
+- rule: admission documents
+  steps:
+    - intent: ask_admission_documents
+    - action: utter_admission_documents
+
+- rule: school location
+  steps:
+    - intent: ask_location
+    - action: utter_location
+
+- rule: contact info
+  steps:
+    - intent: ask_contact
+    - action: utter_contact
+
+- rule: schedule info
+  steps:
+    - intent: ask_schedule
+    - action: utter_schedule
+
+- rule: facility info
+  steps:
+    - intent: ask_facility
+    - action: utter_facility
+
+- rule: dorm info
+  steps:
+    - intent: ask_dorm
+    - action: utter_dorm
+
+- rule: club info
+  steps:
+    - intent: ask_club
+    - action: utter_club
+
+- rule: support info
+  steps:
+    - intent: ask_support
+    - action: utter_support
+
+- rule: bot challenge
+  steps:
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+
+- rule: fallback khi không hiểu
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback
+
+# Rules cho các intents mới
+- rule: tuition specific info
+  steps:
+    - intent: ask_tuition_specific
+    - action: action_tuition_specific
+
+- rule: scholarship condition info
+  steps:
+    - intent: ask_scholarship_condition
+    - action: action_scholarship_condition
+
+- rule: exam schedule info
+  steps:
+    - intent: ask_exam_schedule
+    - action: action_exam_schedule
+
+- rule: campuses info
+  steps:
+    - intent: ask_campuses
+    - action: action_campuses_info
+
+- rule: support problem info
+  steps:
+    - intent: ask_support_problem
+    - action: action_support_problem
+
+- rule: program info with action
+  steps:
+    - intent: ask_program_info
+    - action: action_program_info
+
+- rule: major count info
+  steps:
+    - intent: ask_major_count
+    - action: utter_major_count
+
+- rule: study mode info
+  steps:
+    - intent: ask_study_mode
+    - action: utter_study_mode
+
+- rule: admission time info
+  steps:
+    - intent: ask_admission_time
+    - action: utter_admission_time
+
+- rule: fee payment info
+  steps:
+    - intent: ask_fee_payment
+    - action: utter_fee_payment
+
+- rule: Out of scope
+  steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope

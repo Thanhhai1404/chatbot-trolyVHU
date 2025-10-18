@@ -1,0 +1,48 @@
+{
+  "contact": {
+    "university_name": "Đại học Văn Hiến",
+    "university_code": "VHU",
+    "main_campus": {
+      "address": "665-667-669 Điện Biên Phủ, Phường 1, Quận 3, TP.HCM",
+      "phone": "028 7301 5555",
+      "hotline": "1900 2088",
+      "fax": "028 3930 0091",
+      "email": "info@vhu.edu.vn",
+      "website": "www.vhu.edu.vn"
+    },
+    "departments": {
+      "admissions": {
+        "name": "Phòng Tuyển sinh",
+        "phone": "028 7301 5558",
+        "email": "tuyensinh@vhu.edu.vn",
+        "hotline": "0909 123 456"
+      },
+      "student_affairs": {
+        "name": "Phòng Công tác sinh viên",
+        "phone": "028 7301 5559",
+        "email": "ctsv@vhu.edu.vn"
+      },
+      "academic_affairs": {
+        "name": "Phòng Đào tạo",
+        "phone": "028 7301 5560",
+        "email": "daotao@vhu.edu.vn"
+      },
+      "finance": {
+        "name": "Phòng Tài chính - Kế toán",
+        "phone": "028 7301 5561",
+        "email": "taichinh@vhu.edu.vn"
+      }
+    },
+    "social_media": {
+      "facebook": "facebook.com/DaiHocVanHien",
+      "youtube": "youtube.com/VanHienUniversity",
+      "zalo": "Zalo OA: Đại học Văn Hiến",
+      "instagram": "instagram.com/vhu.official"
+    },
+    "working_hours": {
+      "weekdays": "7:00 - 17:00",
+      "saturday": "7:00 - 12:00",
+      "sunday": "Nghỉ"
+    }
+  }
+}

@@ -1,0 +1,328 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank
+  - ask_about_school
+  - ask_list_programs
+  - ask_program_info
+  - ask_tuition
+  - ask_scholarship
+  - ask_admission_methods
+  - ask_admission_documents
+  - ask_location
+  - ask_contact
+  - ask_schedule
+  - ask_facility
+  - ask_club
+  - ask_support
+  - ask_dorm        
+  - ask_major_count     # Hỏi có bao nhiêu ngành
+  - ask_study_mode      # Hỏi hình thức học
+  - ask_admission_time  # Hỏi thời gian tuyển sinh
+  - ask_fee_payment     # Hỏi cách đóng học phí
+  - bot_challenge
+  - nlu_fallback        # COMMENT: intent fallback mặc định của Rasa
+  - ask_tuition_specific # Hỏi học phí theo một ngành cụ thể.
+  - ask_scholarship_condition # Hỏi về điều kiện để nhận học bổng.
+  - ask_exam_schedule # Hỏi về lịch thi.
+  - ask_campuses # Hỏi thông tin về các cơ sở (campus) của trường.
+  - ask_support_problem # Hỏi về cách giải quyết một vấn đề cụ thể cần hỗ trợ.
+  - out_of_scope # Câu hỏi ngoài phạm vi
+
+# Entities - Các thực thể cần trích xuất
+entities:
+  - program
+  - subject
+  - exam_type
+  - semester
+  - class
+  - campus
+  - location
+  - facility
+  - document
+  - support_type
+  - system
+  - payment
+  - scholarship_type
+  - contact_type
+  - club_type
+  - time
+  - academic_level
+  - admission_method
+  - education_level
+  - student_type
+  - financial_status
+  - language_certificate
+  - geographical_area
+  - extracurricular_activity
+  - department
+  - required_documents
+  - grade_score
+
+# Slots để lưu trữ thông tin entities
+slots:
+  program:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: program
+    
+  subject:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: subject
+    
+  exam_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: exam_type
+    
+  semester:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: semester
+    
+  campus:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: campus
+    
+  location:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: location
+    
+  facility:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: facility
+    
+  document:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: document
+    
+  support_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: support_type
+    
+  scholarship_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: scholarship_type
+    
+  contact_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: contact_type
+
+responses:
+  utter_greet:
+    - text: "Chào bạn 👋! Mình là trợ lý ảo của Đại học Văn Hiến. Bạn muốn tìm hiểu thông tin gì nè?"
+    - text: "Xin chào! Mình là trợ lý Văn Hiến, có thể giúp gì cho bạn hôm nay?"
+    - text: "Rất vui được gặp bạn👋! mình có thể giúp gì được cho bạn?"
+    - text: "Bạn cứ đưa ra bất kì câu hỏi nào, mình sẽ giúp bạn trong khả năng của mình."
+
+  utter_goodbye:
+    - text: "Tạm biệt nhé! Chúc bạn một ngày học tập vui vẻ 💪"
+    - text: "Hẹn gặp lại bạn nha 👋"
+    - text: "Mình rất vui khi được giúp đỡ bạn, nếu có gì thắc mắc cứ hỏi mình nhé!"
+
+  utter_thank:
+    - text: "Rất vui được giúp bạn 😊"
+    - text: "Không có gì đâu nè, chúc bạn học tốt nha!"
+    - text: "Cảm ơn bạn đã tin tưởng trợ lý Văn Hiến 💖"
+
+  utter_about_school:
+    - text: |
+        🎓 Đại học Văn Hiến (VHU) là trường đại học tư thục thành lập năm 1997,
+        trực thuộc Bộ Giáo dục & Đào tạo.
+        Trường hướng đến đào tạo toàn diện cả kiến thức và nhân cách cho sinh viên.
+
+  utter_list_programs:
+    - text: |
+        Trường có nhiều ngành đào tạo nổi bật như:
+        - Công nghệ thông tin  
+        - Quản trị kinh doanh  
+        - Du lịch - Nhà hàng - Khách sạn  
+        - Ngôn ngữ Anh, Nhật, Trung  
+        - Tâm lý học  
+        - Truyền thông đa phương tiện  
+        - Kế toán - Tài chính  
+
+  utter_tuition:
+    - text: "💰 Học phí trung bình khoảng 20–25 triệu đồng/năm tùy ngành và chương trình học nha."
+
+  utter_scholarship:
+    - text: |
+        🎓 Trường có nhiều loại học bổng:
+        - Học bổng tuyển sinh (dành cho tân sinh viên)
+        - Học bổng thành tích học tập
+        - Học bổng hỗ trợ tài chính cho sinh viên có hoàn cảnh khó khăn.
+
+  utter_admission_methods:
+    - text: |
+        📝 Trường tuyển sinh bằng 4 phương thức:
+        1️⃣ Xét điểm thi THPT  
+        2️⃣ Xét học bạ  
+        3️⃣ Xét điểm đánh giá năng lực  
+        4️⃣ Xét tuyển thẳng theo quy định của Bộ GD&ĐT.
+
+  utter_admission_documents:
+    - text: |
+        📂 Hồ sơ gồm có:
+        - Phiếu đăng ký  
+        - Bản sao học bạ THPT  
+        - CMND/CCCD  
+        - Giấy khai sinh  
+        - 4 ảnh 3x4.
+
+  utter_admission_time:
+    - text: "⏰ Thời gian tuyển sinh thường bắt đầu từ tháng 3 đến tháng 9 hàng năm nhé!"
+
+  utter_location:
+    - text: |
+        🏫 Cơ sở chính: 665-667-669 Điện Biên Phủ, Quận 3, TP.HCM  
+        🏢 Cơ sở 2: 624 Âu Cơ, Quận Tân Bình, TP.HCM
+
+  utter_contact:
+    - text: |
+        📞 Hotline: 028 6295 1517  
+        📧 Email: tuyensinh@vhu.edu.vn  
+        🌐 Website: [www.vhu.edu.vn](https://www.vhu.edu.vn)
+
+  utter_schedule:
+    - text: |
+        🗓️ Lịch học kỳ I thường bắt đầu vào **tháng 9 hằng năm**,  
+        và học kỳ II bắt đầu vào **tháng 2 năm sau**.  
+        Xem chi tiết trên **cổng thông tin sinh viên VHU Portal** nhé.
+
+  utter_facility:
+    - text: |
+        🏢 Trường có hệ thống **phòng học hiện đại, đầy đủ máy lạnh, projector**.  
+        Ngoài ra còn có **thư viện lớn, khu tự học, căn tin, ký túc xá và phòng thực hành máy tính** cho sinh viên.
+
+  utter_dorm:
+    - text: |
+        🏠 Trường Đại học Văn Hiến **có ký túc xá dành cho sinh viên**,  
+        nằm gần khuôn viên trường, đầy đủ tiện nghi: phòng máy lạnh, wifi, khu sinh hoạt chung và căn tin.  
+        Liên hệ **Phòng Công tác Sinh viên (P.CTSV)** để được hỗ trợ đăng ký chỗ ở nhé!
+
+  utter_club:
+    - text: |
+        🎶 Đại học Văn Hiến có hơn **15 câu lạc bộ sinh viên** như:  
+        - CLB Âm nhạc  
+        - CLB Tiếng Anh  
+        - CLB Tình nguyện  
+        - CLB Nhiếp ảnh  
+        - Và nhiều CLB khác nữa!  
+        Đăng ký tại **Phòng Công tác Sinh viên** nha.
+
+  utter_support:
+    - text: |
+        💡 Nếu bạn cần hỗ trợ học vụ (đăng ký môn, đổi lớp, xem điểm...),  
+        hãy liên hệ **Phòng Đào tạo** hoặc **Phòng CTSV** qua cổng **student.vhu.edu.vn**.  
+        Trường cũng có hỗ trợ **tài chính, tâm lý học đường, và học bổng khuyến khích học tập**.
+
+  utter_bot_challenge:
+    - text: "Mình là trợ lý ảo của Đại học Văn Hiến 🤖, được tạo ra để hỗ trợ sinh viên và thí sinh tìm hiểu thông tin về trường!"
+
+  utter_fallback:            # COMMENT: phản hồi khi bot không hiểu
+    - text: "Mình chưa hiểu ý bạn lắm 😅, bạn có thể nói lại rõ hơn được không?"
+    - text: "Xin lỗi nha, câu này hơi khó hiểu. Bạn thử nói lại ngắn gọn giúp mình nhé!"
+    - text: |
+        Xin lỗi, mình chưa hiểu rõ câu hỏi của bạn. 🤔
+        
+        Bạn có thể hỏi rõ hơn được không? Ví dụ:
+        • "Học phí ngành công nghệ thông tin"
+        • "Điều kiện nhận học bổng"
+        • "Phương thức tuyển sinh"
+        
+        Hoặc liên hệ: 028 7301 5555 để được tư vấn trực tiếp!
+
+  utter_major_count:
+    - text: |
+        📊 Trường Đại học Văn Hiến hiện có **hơn 20 ngành đào tạo** bậc đại học và cao đẳng,
+        bao gồm các lĩnh vực: Công nghệ thông tin, Kinh tế - Quản lý, Ngoại ngữ,
+        Du lịch - Khách sạn, Truyền thông, Tâm lý học và nhiều ngành khác!
+
+  utter_study_mode:
+    - text: |
+        📚 Trường có các hình thức đào tạo:
+        - **Chính quy**: Học tại trường từ thứ 2 đến thứ 6
+        - **Vừa làm vừa học**: Học cuối tuần (thứ 7, chủ nhật)
+        - **Liên thông**: Dành cho sinh viên đã có bằng cao đẳng
+        - **Văn bằng 2**: Dành cho người đã có bằng đại học ngành khác
+
+  utter_fee_payment:
+    - text: |
+        💳 Các cách đóng học phí tại VHU:
+        - **Trực tiếp** tại phòng Tài chính - Kế toán
+        - **Chuyển khoản** vào tài khoản trường
+        - **Qua ứng dụng** ngân hàng (có thông tin TK trên website)
+        - **Trả góp** theo từng học kỳ
+        Bạn có thể liên hệ phòng Tài chính để biết thêm chi tiết!
+
+  utter_out_of_scope:
+    - text: |
+        Xin lỗi, câu hỏi này nằm ngoài phạm vi hỗ trợ của mình. 😅
+        
+        Mình chỉ có thể giúp bạn về:
+        • 📚 Thông tin ngành học, học phí
+        • 🎓 Học bổng, tuyển sinh
+        • 🏫 Cơ sở vật chất, địa chỉ
+        • 📞 Thông tin liên hệ
+        
+        Bạn có câu hỏi nào về VHU không?
+    - text: |
+        Ồ, mình chỉ trả lời về Đại học Văn Hiến thôi nhé! 😊
+        
+        Hỏi mình về học phí, tuyển sinh, học bổng hay thông tin liên hệ đi!
+        
+        📞 Hoặc gọi: 028 7301 5555
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_thank
+  - utter_about_school
+  - utter_list_programs
+  - utter_tuition
+  - utter_scholarship
+  - utter_admission_methods
+  - utter_admission_documents
+  - utter_admission_time
+  - utter_location
+  - utter_contact
+  - utter_schedule
+  - utter_facility
+  - utter_dorm
+  - utter_club
+  - utter_support
+  - utter_bot_challenge
+  - utter_fallback
+  - utter_out_of_scope
+  - utter_major_count
+  - utter_study_mode
+  - utter_fee_payment
+  - action_hello
+  - action_tuition_specific
+  - action_scholarship_condition
+  - action_program_info
+  - action_campuses_info
+  - action_support_problem
+  - action_exam_schedule
+  - action_default_fallback

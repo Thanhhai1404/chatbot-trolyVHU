@@ -1,0 +1,136 @@
+{
+  "academic_year": "2024-2025",
+  "currency": "VNĐ",
+  "tuition_fees": [
+    {
+      "program_id": "cntt",
+      "program_name": "Công nghệ thông tin",
+      "fee_per_credit": 450000,
+      "total_credits": 140,
+      "estimated_total": 63000000,
+      "fee_per_semester": "7-9 triệu đồng",
+      "fee_per_year": "15-18 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "qtkd",
+      "program_name": "Quản trị kinh doanh",
+      "fee_per_credit": 380000,
+      "total_credits": 135,
+      "estimated_total": 51300000,
+      "fee_per_semester": "6-8 triệu đồng",
+      "fee_per_year": "12-16 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "ke-toan",
+      "program_name": "Kế toán",
+      "fee_per_credit": 380000,
+      "total_credits": 135,
+      "estimated_total": 51300000,
+      "fee_per_semester": "6-8 triệu đồng",
+      "fee_per_year": "12-16 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "marketing",
+      "program_name": "Marketing",
+      "fee_per_credit": 380000,
+      "total_credits": 135,
+      "estimated_total": 51300000,
+      "fee_per_semester": "6-8 triệu đồng",
+      "fee_per_year": "12-16 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "ngoai-ngu-anh",
+      "program_name": "Ngôn ngữ Anh",
+      "fee_per_credit": 400000,
+      "total_credits": 135,
+      "estimated_total": 54000000,
+      "fee_per_semester": "6.5-8.5 triệu đồng",
+      "fee_per_year": "13-17 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "tam-ly-hoc",
+      "program_name": "Tâm lý học",
+      "fee_per_credit": 400000,
+      "total_credits": 135,
+      "estimated_total": 54000000,
+      "fee_per_semester": "6.5-8.5 triệu đồng",
+      "fee_per_year": "13-17 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "luat",
+      "program_name": "Luật kinh tế",
+      "fee_per_credit": 420000,
+      "total_credits": 140,
+      "estimated_total": 58800000,
+      "fee_per_semester": "7-9 triệu đồng",
+      "fee_per_year": "14-18 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "du-lich",
+      "program_name": "Quản trị du lịch",
+      "fee_per_credit": 380000,
+      "total_credits": 135,
+      "estimated_total": 51300000,
+      "fee_per_semester": "6-8 triệu đồng",
+      "fee_per_year": "12-16 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "logistics",
+      "program_name": "Logistics",
+      "fee_per_credit": 380000,
+      "total_credits": 135,
+      "estimated_total": 51300000,
+      "fee_per_semester": "6-8 triệu đồng",
+      "fee_per_year": "12-16 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    },
+    {
+      "program_id": "thiet-ke-do-hoa",
+      "program_name": "Thiết kế đồ họa",
+      "fee_per_credit": 450000,
+      "total_credits": 135,
+      "estimated_total": 60750000,
+      "fee_per_semester": "7.5-9.5 triệu đồng",
+      "fee_per_year": "15-19 triệu đồng",
+      "note": "Học phí có thể thay đổi theo từng năm học"
+    }
+  ],  "general_info": {
+    "average_fee_range": "12-18 triệu đồng/năm",
+    "payment_methods": [
+      "Chuyển khoản ngân hàng",
+      "Thanh toán trực tiếp tại phòng Tài chính",
+      "Thanh toán qua cổng thanh toán điện tử",
+      "Thanh toán qua ứng dụng Mobile Banking"
+    ],
+    "payment_schedule": "Đóng theo học kỳ, trước khi bắt đầu học kỳ",
+    "payment_deadline": "Trong vòng 2 tuần đầu của học kỳ",
+    "late_payment_fee": "50,000 VNĐ/ngày trễ hạn",
+    "installment_available": true,
+    "installment_note": "Có thể trả góp 2-3 lần trong học kỳ",
+    "bank_info": {
+      "bank_name": "Ngân hàng Vietcombank",
+      "account_number": "0123456789",
+      "account_name": "TRUONG DAI HOC VAN HIEN",
+      "branch": "Chi nhánh TP.HCM"
+    },
+    "discount_policy": [
+      "Giảm 10% học phí cho con em gia đình chính sách",
+      "Giảm 5% học phí khi đóng đủ 1 năm",
+      "Miễn giảm 20-50% cho sinh viên đạt thành tích xuất sắc"
+    ],
+    "contact": {
+      "department": "Phòng Tài chính - Kế toán",
+      "phone": "028 7301 5555 (ext. 102)",
+      "email": "taichinh@vhu.edu.vn",
+      "office_hours": "Thứ 2 - Thứ 6: 7h30 - 16h30 | Thứ 7: 7h30 - 11h30"
+    }
+  }
+}
