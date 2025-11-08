@@ -1,134 +1,111 @@
 {
-  "campuses": [
+  "general_info": {
+    "university": "Đại học Văn Hiến",
+    "university_code": "VHU",
+    "established": 2010,
+    "total_locations": 7,
+    "main_campus": 1,
+    "training_campuses": 6
+  },
+  "headquarters": {
+    "id": "tru-so-chinh",
+    "name": "Trụ sở chính - HungHau House",
+    "address": "613 Âu Cơ, phường Tân Phú, Quận Tân Phú, TP. Hồ Chí Minh",
+    "phone": "1800 1568",
+    "hotline": "028 6295 1517",
+    "email": "tuyensinh@vhu.edu.vn",
+    "website": "www.vhu.edu.vn",
+    "functions": [
+      "Văn phòng hành chính",
+      "Ban giám hiệu",
+      "Phòng Tuyển sinh"
+    ]
+  },
+  "training_campuses": [
     {
-      "id": "co-so-1",
-      "name": "Cơ sở 1 (Cơ sở chính)",
-      "address": "665-667-669 Điện Biên Phủ, Phường 1, Quận 3, TP.HCM",
-      "phone": "028 7301 5555",
-      "fax": "028 3930 0091",
-      "email": "info@vhu.edu.vn",
-      "facilities": [
-        "Phòng học lý thuyết hiện đại",
-        "Phòng thực hành máy tính",
-        "Thư viện điện tử",
-        "Hội trường",
-        "Căn tin",
-        "Sân thể thao",
-        "Wifi toàn trường",
-        "Bãi xe rộng rãi"
-      ],
-      "programs": [
-        "Công nghệ thông tin",
-        "Quản trị kinh doanh",
-        "Kế toán",
-        "Marketing",
-        "Luật kinh tế"
-      ],
-      "transport": [
-        "Bus 05, 26, 28, 45",
-        "Gần ga metro Tân Sơn Nhất (đang xây dựng)",
-        "Khoảng 5km từ sân bay Tân Sơn Nhất"
-      ]
-    },
-    {
-      "id": "co-so-2",
-      "name": "Cơ sở 2",
-      "address": "736 Nguyễn Kiệm, Phường 3, Quận Gò Vấp, TP.HCM",
-      "phone": "028 7301 5556",
-      "email": "info@vhu.edu.vn",
+      "id": "harmony-campus",
+      "name": "Harmony Campus",
+      "address": "624 Âu Cơ, phường Bảy Hiền, TP. Hồ Chí Minh",
+      "phone": "028 6295 1517",
+      "description": "Cơ sở đào tạo chính",
       "facilities": [
         "Phòng học hiện đại",
-        "Phòng thực hành",
         "Thư viện",
-        "Căn tin",
-        "Wifi miễn phí",
-        "Bãi xe"
-      ],
-      "programs": [
-        "Ngôn ngữ Anh",
-        "Tâm lý học",
-        "Du lịch",
-        "Logistics",
-        "Thiết kế đồ họa"
+        "Căn tin"
       ],
       "transport": [
-        "Bus 01, 28, 50, 53",
-        "Gần chợ Gò Vấp",
-        "Khoảng 8km từ trung tâm quận 1"
-      ]
-    }
-  ],  "general_info": {
-    "total_campuses": 2,
-    "shuttle_bus": {
-      "available": true,
-      "route": "Cơ sở 1 ⇄ Cơ sở 2",
-      "schedule": "Sáng: 6h30, 7h30 | Chiều: 16h30, 17h30",
-      "frequency": "Mỗi giờ trong giờ cao điểm",
-      "free": true,
-      "note": "Chỉ dành cho sinh viên và giảng viên có thẻ"
-    },
-    "office_hours": {
-      "weekday": "Thứ 2 - Thứ 6: 7h00 - 17h00",
-      "saturday": "Thứ 7: 7h00 - 12h00",
-      "sunday": "Nghỉ"
-    },
-    "parking": {
-      "available": true,
-      "motorcycle": "Miễn phí cho sinh viên có thẻ xe",
-      "car": "20,000 VNĐ/lượt",
-      "bicycle": "Miễn phí"
-    },
-    "transportation_guide": {
-      "from_airport": {
-        "taxi": "20-30 phút, khoảng 100,000-150,000 VNĐ",
-        "bus": "Bus số 109, 152 đến bến xe miền Tây, sau đó chuyển bus 05 hoặc 26"
-      },
-      "from_district1": {
-        "taxi": "15-20 phút, khoảng 70,000-100,000 VNĐ",
-        "bus": "Bus 05, 26, 28"
-      },
-      "from_bus_station": {
-        "mien_dong": "Bus 50, 53 (40 phút)",
-        "mien_tay": "Bus 05, 26 (30 phút)"
-      }
-    },
-    "nearby_facilities": {
-      "coso1": [
-        "Bệnh viện 115 (500m)",
-        "Chợ Tân Định (1km)",
-        "Công viên Lê Văn Tám (300m)",
-        "Cafe, nhà hàng xung quanh"
-      ],
-      "coso2": [
-        "Chợ Gò Vấp (200m)",
-        "Bệnh viện Gò Vấp (1km)",
-        "Siêu thị Emart (500m)",
-        "Cafe, quán ăn sinh viên"
+        "Xe buýt: 03, 18, 65, 93"
       ]
     },
-    "dormitory": {
-      "available": true,
-      "location": "Gần cơ sở 1 (273 An Dương Vương, Q.5) và cơ sở 2",
-      "capacity": "300-500 sinh viên",
-      "room_types": [
-        {"type": "Phòng 4 người", "fee": "800,000 VNĐ/tháng"},
-        {"type": "Phòng 6 người", "fee": "600,000 VNĐ/tháng"},
-        {"type": "Phòng 8 người", "fee": "450,000 VNĐ/tháng"}
+    {
+      "id": "hunghau-campus",
+      "name": "HungHau Campus",
+      "address": "13E Đại lộ Nguyễn Văn Linh, xã Bình Hưng, TP. Hồ Chí Minh",
+      "phone": "028 6295 1517",
+      "description": "Cơ sở đào tạo tại Nguyễn Văn Linh",
+      "facilities": [
+        "Phòng học",
+        "Phòng thực hành"
       ],
-      "facilities": ["Điều hòa", "Wifi", "Máy nước nóng", "Giường tầng", "Tủ cá nhân"],
-      "utilities_included": "Điện nước (theo mức sử dụng)",
-      "registration_time": "Tháng 7-8 hàng năm",
-      "contact": {
-        "phone": "028 7301 5557",
-        "email": "ktx@vhu.edu.vn"
-      }
+      "transport": [
+        "Xe buýt qua Nguyễn Văn Linh"
+      ]
     },
-    "contact_main": {
-      "hotline": "028 7301 5555",
-      "email": "info@vhu.edu.vn",
-      "website": "www.vhu.edu.vn",
-      "facebook": "facebook.com/daihocvanhien",
-      "working_hours": "Thứ 2 - Thứ 6: 7h30 - 16h30"
+    {
+      "id": "myu-campus",
+      "name": "myU Campus",
+      "address": "665-667-669 Điện Biên Phủ, phường Bàn Cờ, TP. Hồ Chí Minh",
+      "phone": "028 6295 1517",
+      "description": "Cơ sở hiện đại tại Điện Biên Phủ",
+      "facilities": [
+        "Phòng học thông minh",
+        "Thư viện số"
+      ],
+      "transport": [
+        "Xe buýt: 01, 03, 109"
+      ]
+    },
+    {
+      "id": "nguyen-ba-tuyen-campus",
+      "name": "Nguyễn Bá Tuyển Campus",
+      "address": "8-14 Nguyễn Bá Tuyển, phường Bảy Hiền, TP. Hồ Chí Minh",
+      "phone": "028 6295 1517",
+      "description": "Cơ sở đào tạo tại Nguyễn Bá Tuyển",
+      "facilities": [
+        "Phòng học",
+        "Phòng Lab"
+      ],
+      "transport": [
+        "Xe buýt: 18, 93"
+      ]
+    },
+    {
+      "id": "quoc-lo-1a-campus",
+      "name": "Quốc lộ 1A Campus",
+      "address": "2A2 Quốc lộ 1A, xã Thới An, TP. Hồ Chí Minh",
+      "phone": "028 6295 1517",
+      "description": "Cơ sở đào tạo tại Quốc lộ 1A",
+      "facilities": [
+        "Phòng học",
+        "Căn tin"
+      ],
+      "transport": [
+        "Xe buýt qua Quốc lộ 1A"
+      ]
+    },
+    {
+      "id": "615-au-co-campus",
+      "name": "615 Âu Cơ Campus",
+      "address": "615 Âu Cơ, phường Tân Phú, Quận Tân Phú, TP. Hồ Chí Minh",
+      "phone": "028 6295 1517",
+      "description": "Cơ sở đào tạo tại 615 Âu Cơ",
+      "facilities": [
+        "Phòng học",
+        "Phòng thực hành"
+      ],
+      "transport": [
+        "Xe buýt: 03, 18, 65"
+      ]
     }
-  }
+  ]
 }

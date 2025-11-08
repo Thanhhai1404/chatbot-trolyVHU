@@ -1,0 +1,439 @@
+version: "3.1"
+
+# =============================================================================
+# SYNONYMS - Từ đồng nghĩa cho entities
+# =============================================================================
+# Giúp bot hiểu nhiều cách nói khác nhau cho cùng một khái niệm
+
+nlu:
+  # ========================
+  # PROGRAM SYNONYMS (Ngành học)
+  # ========================
+  - synonym: Công nghệ thông tin
+    examples: |
+      - CNTT
+      - IT
+      - công nghệ thông tin
+      - cong nghe thong tin
+      - cntt
+      - it
+      - Information Technology
+      - Khoa CNTT
+      - ngành IT
+      - ngành CNTT
+      - tin học
+      - khoa học máy tính
+
+  - synonym: Quản trị kinh doanh
+    examples: |
+      - QTKD
+      - quản trị kinh doanh
+      - quan tri kinh doanh
+      - qtkd
+      - Business Administration
+      - BA
+      - Quản trị
+      - kinh doanh
+      - ngành quản trị
+      
+  - synonym: Marketing
+    examples: |
+      - MKT
+      - marketing
+      - mkt
+      - tiếp thị
+      - Marketing truyền thông
+      - Digital Marketing
+      - Marketing số
+      
+  - synonym: Kế toán
+    examples: |
+      - KT
+      - kế toán
+      - ke toan
+      - kt
+      - Accounting
+      - kế toán doanh nghiệp
+      - kiểm toán
+      
+  - synonym: Ngôn ngữ Anh
+    examples: |
+      - tiếng Anh
+      - Tiếng Anh
+      - English
+      - ngoại ngữ Anh
+      - Anh văn
+      - ngôn ngữ anh
+      - tieng anh
+      - English Language
+      
+  - synonym: Tâm lý học
+    examples: |
+      - tâm lý
+      - tam ly
+      - Psychology
+      - tâm lý học
+      - tam ly hoc
+      - tham vấn tâm lý
+      
+  - synonym: Du lịch
+    examples: |
+      - du lịch
+      - du lich
+      - Tourism
+      - quản trị du lịch
+      - QTDL
+      - tour guide
+      - hướng dẫn du lịch
+      
+  - synonym: Luật
+    examples: |
+      - luật
+      - luat
+      - Law
+      - luật kinh tế
+      - luật dân sự
+      - luật thương mại
+      
+  - synonym: Logistics
+    examples: |
+      - logistics
+      - Logistics
+      - chuỗi cung ứng
+      - SCM
+      - Supply Chain
+      - quản lý chuỗi cung ứng
+        - synonym: Khoa học dữ liệu
+    examples: |
+      - KHĐL
+      - Data Science
+      - khoa học dữ liệu
+      - khoa hoc du lieu
+      - data
+      - big data
+      - phân tích dữ liệu
+
+  - synonym: Piano
+    examples: |
+      - Piano
+      - piano
+      - đàn piano
+      - dan piano
+      - nghệ thuật piano
+      - biểu diễn piano
+      
+  - synonym: Thanh nhạc
+    examples: |
+      - Thanh nhạc
+      - thanh nhạc
+      - thanh nhac
+      - ca hát
+      - ca hat
+      - nghệ thuật thanh nhạc
+      - biểu diễn thanh nhạc
+      - vocal
+      
+  - synonym: Đạo diễn điện ảnh
+    examples: |
+      - Đạo diễn điện ảnh
+      - dao dien dien anh
+      - đạo diễn phim
+      - đạo diễn
+      - film director
+      - directing
+      
+  - synonym: Công nghệ điện ảnh
+    examples: |
+      - Công nghệ điện ảnh
+      - cong nghe dien anh
+      - kỹ thuật điện ảnh
+      - công nghệ phim
+      - film technology
+      
+  - synonym: Quản trị nhà hàng
+    examples: |
+      - Quản trị nhà hàng
+      - quan tri nha hang
+      - quản lý nhà hàng
+      - restaurant management
+      - F&B management
+      - nhà hàng
+      
+  - synonym: Quản trị lữ hành
+    examples: |
+      - Quản trị lữ hành
+      - quan tri lu hanh
+      - quản lý lữ hành
+      - tour operator
+      - travel management
+      - lữ hành
+      
+  - synonym: Truyền thông đa phương tiện
+    examples: |
+      - Truyền thông đa phương tiện
+      - truyen thong da phuong tien
+      - đa phương tiện
+      - multimedia
+      - digital media
+      - truyền thông số
+      
+  - synonym: Việt Nam học
+    examples: |
+      - Việt Nam học
+      - viet nam hoc
+      - Vietnamese studies
+      - văn hóa Việt Nam
+      - nghiên cứu Việt Nam
+      
+  - synonym: Trung Quốc học
+    examples: |
+      - Trung Quốc học
+      - trung quoc hoc
+      - Chinese studies
+      - Hán học
+      - văn hóa Trung Quốc
+      - tiếng Trung
+      
+  - synonym: Đông phương học
+    examples: |
+      - Đông phương học
+      - dong phuong hoc
+      - Asian studies
+      - Á Đông học
+      - văn hóa phương Đông
+      
+  - synonym: Quan hệ công chúng
+    examples: |
+      - Quan hệ công chúng
+      - quan he cong chung
+      - QHCC
+      - PR
+      - Public Relations
+      - truyền thông PR
+      
+  - synonym: Ngôn ngữ Nhật
+    examples: |
+      - Ngôn ngữ Nhật
+      - ngon ngu nhat
+      - tiếng Nhật
+      - tieng nhat
+      - Japanese
+      - Nhật ngữ
+      - Nhật Bản
+      
+  - synonym: Ngôn ngữ Pháp
+    examples: |
+      - Ngôn ngữ Pháp
+      - ngon ngu phap
+      - tiếng Pháp
+      - tieng phap
+      - French
+      - Pháp ngữ
+      
+  - synonym: Dược học
+    examples: |
+      - Dược học
+      - duoc hoc
+      - dược
+      - pharmacy
+      - dược sĩ
+      - y dược
+      
+  - synonym: Điều dưỡng
+    examples: |
+      - Điều dưỡng
+      - dieu duong
+      - y tá
+      - nursing
+      - chăm sóc sức khỏe
+      - y tế
+      
+  - synonym: Kỹ thuật xây dựng
+    examples: |
+      - Kỹ thuật xây dựng
+      - ky thuat xay dung
+      - xây dựng
+      - xay dung
+      - civil engineering
+      - kiến trúc xây dựng
+      
+  - synonym: Công nghệ thực phẩm
+    examples: |
+      - Công nghệ thực phẩm
+      - cong nghe thuc pham
+      - thực phẩm
+      - food technology
+      - chế biến thực phẩm
+      
+  - synonym: Kỹ thuật môi trường
+    examples: |
+      - Kỹ thuật môi trường
+      - ky thuat moi truong
+      - môi trường
+      - environmental engineering
+      - bảo vệ môi trường
+      
+  - synonym: Kỹ thuật Điện tử
+    examples: |
+      - Kỹ thuật Điện tử
+      - ky thuat dien tu
+      - điện tử
+      - electronics
+      - kỹ thuật điện
+      - điện tử viễn thông
+
+  # ========================
+  # SCHOLARSHIP SYNONYMS (Học bổng)
+  # ========================
+  - synonym: học bổng
+    examples: |
+      - học bổng
+      - hoc bong
+      - scholarship
+      - học bổng toàn phần
+      - học bổng một phần
+      - hỗ trợ học phí
+      - miễn giảm học phí
+      - trợ cấp
+      
+  - synonym: học bổng khuyến khích học tập
+    examples: |
+      - học bổng khuyến khích
+      - hbkk
+      - học bổng học lực
+      - học bổng thành tích
+      
+  - synonym: học bổng tài năng
+    examples: |
+      - học bổng tài năng
+      - tài năng
+      - học bổng xuất sắc
+
+  # ========================
+  # EXAM TYPE SYNONYMS (Loại thi)
+  # ========================
+  - synonym: thi cuối kỳ
+    examples: |
+      - thi cuối kỳ
+      - thi ck
+      - cuối kỳ
+      - final exam
+      - thi kết thúc học phần
+      
+  - synonym: thi giữa kỳ
+    examples: |
+      - thi giữa kỳ
+      - thi gk
+      - giữa kỳ
+      - midterm exam
+      - kiểm tra giữa kỳ
+
+  # ========================
+  # SEMESTER SYNONYMS (Học kỳ)
+  # ========================
+  - synonym: học kỳ 1
+    examples: |
+      - học kỳ 1
+      - hk1
+      - học kỳ I
+      - semester 1
+      - kỳ 1
+      - kỳ fall
+      
+  - synonym: học kỳ 2
+    examples: |
+      - học kỳ 2
+      - hk2
+      - học kỳ II
+      - semester 2
+      - kỳ 2
+      - kỳ spring
+      
+  - synonym: học kỳ hè
+    examples: |
+      - học kỳ hè
+      - hkh
+      - kỳ hè
+      - summer semester
+      - summer
+
+  # ========================
+  # CAMPUS SYNONYMS (Cơ sở)
+  # ========================
+  - synonym: cơ sở 1
+    examples: |
+      - cơ sở 1
+      - cs1
+      - cơ sở chính
+      - trụ sở chính
+      - Gò Vấp
+      - cơ sở Gò Vấp
+      
+  - synonym: cơ sở 2
+    examples: |
+      - cơ sở 2
+      - cs2
+      - cơ sở phụ
+      - Bình Dương
+      - cơ sở Bình Dương
+
+  # ========================
+  # TUITION SYNONYMS (Học phí)
+  # ========================
+  - synonym: học phí
+    examples: |
+      - học phí
+      - hoc phi
+      - tuition
+      - tiền học
+      - chi phí học
+      - đóng học phí
+      - học phí mỗi năm
+      - học phí mỗi học kỳ
+      - học phí tín chỉ
+      
+  # ========================
+  # ADMISSION SYNONYMS (Tuyển sinh)
+  # ========================
+  - synonym: tuyển sinh
+    examples: |
+      - tuyển sinh
+      - tuyen sinh
+      - admission
+      - xét tuyển
+      - nhập học
+      - đăng ký nhập học
+      - hồ sơ nhập học
+
+  # ========================
+  # SUPPORT SYNONYMS (Hỗ trợ)
+  # ========================
+  - synonym: hỗ trợ sinh viên
+    examples: |
+      - hỗ trợ
+      - ho tro
+      - support
+      - trợ giúp
+      - giúp đỡ
+      - tư vấn
+      - cần giúp
+
+  # ========================
+  # TIME SYNONYMS (Thời gian)
+  # ========================
+  - synonym: hiện tại
+    examples: |
+      - hiện tại
+      - bây giờ
+      - lúc này
+      - now
+      - hôm nay
+      - năm nay
+      
+  - synonym: sắp tới
+    examples: |
+      - sắp tới
+      - tương lai
+      - sau này
+      - năm sau
+      - kỳ sau

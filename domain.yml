@@ -4,6 +4,7 @@ intents:
   - greet
   - goodbye
   - thank
+  - inform  # BƯỚC 2: Intent để user cung cấp thông tin cho form
   - ask_about_school
   - ask_list_programs
   - ask_program_info
@@ -30,6 +31,9 @@ intents:
   - ask_campuses # Hỏi thông tin về các cơ sở (campus) của trường.
   - ask_support_problem # Hỏi về cách giải quyết một vấn đề cụ thể cần hỗ trợ.
   - out_of_scope # Câu hỏi ngoài phạm vi
+  - ask_recommend_programs # Tư vấn ngành theo tổ hợp môn và sở thích
+  - ask_directions # Hỏi đường đến trường (CHỨC NĂNG MỚI - CHỈ ĐƯỜNG)
+  - confirm_transit_info # Xác nhận muốn biết thông tin xe buýt (CHỨC NĂNG MỚI)
 
 # Entities - Các thực thể cần trích xuất
 entities:
@@ -60,74 +64,254 @@ entities:
   - department
   - required_documents
   - grade_score
+  - subject_combination  # Tổ hợp môn (A00, D01, C00...)
+  - interest  # Sở thích/ngành quan tâm
 
-# Slots để lưu trữ thông tin entities
+# =============================================================================
+# SLOTS - Lưu trữ thông tin ngữ cảnh hội thoại
+# =============================================================================
+# Slots giúp bot "nhớ" thông tin trong suốt cuộc hội thoại
+
 slots:
+  # ========================
+  # PROGRAM/MAJOR (Ngành học)
+  # ========================
   program:
     type: text
+    influence_conversation: true  # Ảnh hưởng đến flow hội thoại
     mappings:
     - type: from_entity
       entity: program
-    
+  
+  program_id:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  # ========================
+  # ACADEMIC INFO (Thông tin học tập)
+  # ========================
   subject:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: subject
-    
+  
   exam_type:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: exam_type
-    
+  
   semester:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: semester
-    
+  
+  academic_year:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: academic_year
+  
+  # ========================
+  # CAMPUS & LOCATION (Cơ sở & Địa điểm)
+  # ========================
   campus:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: campus
-    
+  
   location:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: location
-    
+  
+  # CHỨC NĂNG MỚI - CHỈ ĐƯỜNG
+  user_location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: directions_form
+          requested_slot: user_location
+  
+  target_campus:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: directions_form
+          requested_slot: target_campus
+  
+  want_transit_info:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      intent: confirm_transit_info
+      value: true
+    - type: from_intent
+      intent: deny
+      value: false
+  
   facility:
     type: text
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: facility
-    
-  document:
-    type: text
+  
+  # ========================
+  # FINANCIAL (Tài chính)
+  # ========================
+  tuition_amount:
+    type: float
+    influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: document
-    
-  support_type:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: support_type
-    
+    - type: custom
+  
   scholarship_type:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: scholarship_type
-    
+  
+  scholarship_value:
+    type: float
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  # ========================
+  # DOCUMENTS & SUPPORT (Hồ sơ & Hỗ trợ)
+  # ========================
+  document:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: document
+  
+  support_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: support_type
+  
   contact_type:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: contact_type
+  
+  # ========================
+  # USER CONTEXT (Ngữ cảnh người dùng)
+  # ========================
+  user_name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  user_student_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: student_type
+  
+  user_gpa:
+    type: float
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  # ========================
+  # CONVERSATION STATE (Trạng thái hội thoại)
+  # ========================
+  last_intent:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  conversation_stage:
+    type: categorical
+    values:
+      - greeting
+      - exploring
+      - specific_query
+      - follow_up
+      - closing
+    influence_conversation: true
+    mappings:
+    - type: custom
+  
+  previous_programs_mentioned:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  topics_discussed:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  # ========================
+  # PROGRAM RECOMMENDATION (Tư vấn ngành)
+  # ========================
+  subject_combination:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: subject_combination
+  
+  interest:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: interest
+  
+  recommended_programs:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  # ========================
+  # FEEDBACK & QUALITY (Phản hồi & Chất lượng)
+  # ========================
+  user_satisfied:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  needs_human_handoff:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
 
 responses:
   utter_greet:
@@ -209,12 +393,14 @@ responses:
 
   utter_location:
     - text: |
-        Mình cho bạn địa chỉ 2 cơ sở nha:
+        Trụ sở chính của VHU nằm tại:
         
-        🏫 **Cơ sở MyU Campus**: 665-667-669 Điện Biên Phủ, Phường 1, Quận 3, TP.HCM
-        🏢 **Cơ sở Harmony Campus**: 624 Âu Cơ, Phường 10, Quận Tân Bình, TP.HCM
+        🏢 **HungHau House**
+        📍 613 Âu Cơ, Phường Tân Phú, Quận Tân Phú, TP. Hồ Chí Minh
         
-        Bạn muốn đến thăm cơ sở nào không nè? 😊
+        ☎️ **Hotline**: 028 6295 1517 | 1800 1568 (miễn phí)
+        
+        💡 Bạn muốn xem **danh sách tất cả các cơ sở** của VHU không nè? 🏫
 
   utter_contact:
     - text: |
@@ -286,18 +472,9 @@ responses:
   utter_bot_challenge:
     - text: "Mình là trợ lý ảo của Đại học Văn Hiến đây 🤖, được tạo ra để giúp đỡ bạn tìm hiểu thông tin về trường nha! Cứ hỏi mình thoải mái! 😊"
 
-  utter_fallback:
-    - text: "Mình chưa hiểu ý bạn lắm 😅, bạn có thể nói lại rõ hơn được không nè?"
-    - text: "Ủa, câu này hơi khó hiểu quá! Bạn thử nói lại ngắn gọn giúp mình nhé! 🤔"
-    - text: |
-        Xin lỗi bạn nha, mình chưa hiểu rõ câu hỏi. 🤔
-        
-        Bạn có thể hỏi rõ hơn không nè? Ví dụ:
-        💡 "Học phí ngành công nghệ thông tin"
-        💡 "Điều kiện nhận học bổng"
-        💡 "Phương thức tuyển sinh"
-        
-        Hoặc gọi: **028 6295 1517** để được tư vấn trực tiếp nha!
+  # REMOVED utter_fallback - Now using action_gemini_fallback for intelligent responses
+  # This response has been replaced by Gemini AI to provide intelligent answers
+  # to out-of-scope questions instead of generic fallback messages
 
   utter_major_count:
     - text: |
@@ -353,6 +530,154 @@ responses:
         
         📞 Hoặc gọi: **028 6295 1517** để được tư vấn nhé!
 
+  # =============================================================================
+  # RESPONSE VARIATIONS - Nhiều cách trả lời để tránh lặp lại (BƯỚC 2)
+  # =============================================================================
+  
+  # ASKING FOR MORE INFO
+  utter_ask_program_friendly:
+    - text: "Bạn muốn hỏi về ngành nào nè? 🎓"
+    - text: "Ngành nào bạn quan tâm vậy? 😊"
+    - text: "Cho mình biết tên ngành bạn đang tìm hiểu nha! 📚"
+    - text: "Bạn đang tìm hiểu ngành gì đấy? 💡"
+    - text: "Ngành nào mà bạn thích vậy? ✨"
+  
+  utter_ask_scholarship_type_friendly:
+    - text: "Bạn muốn biết về loại học bổng nào nè? 🎓"
+    - text: "Học bổng nào mà bạn quan tâm vậy? 💰"
+    - text: "Cho mình biết bạn đang tìm hiểu học bổng gì nha! 🌟"
+  
+  utter_ask_campus_friendly:
+    - text: "Bạn muốn biết về cơ sở nào nè? 🏫"
+    - text: "Cơ sở 1 hay cơ sở 2 vậy bạn? 📍"
+    - text: "Bạn quan tâm đến cơ sở nào ở VHU? 🏢"
+  
+  # ACKNOWLEDGMENTS
+  utter_got_it:
+    - text: "Oke, mình hiểu rồi nha! ✅"
+    - text: "Được rồi, để mình check giúp bạn nè! 🔍"
+    - text: "Uhm uhm, mình nắm rồi! 👌"
+    - text: "Okii, mình tra ngay cho bạn nha! 🚀"
+    - text: "Rồi rồi, mình tìm giúp bạn liền! 💪"
+  
+  utter_checking:
+    - text: "Đợi mình xíu nha, đang tra thông tin... ⏳"
+    - text: "Mình đang tìm kiếm thông tin cho bạn đây... 🔍"
+    - text: "Chờ mình một chút nha, mình sẽ tra ngay! ⌛"
+  
+  # CLARIFICATIONS
+  utter_clarify_program:
+    - text: "Bạn ơi, bạn đang nói về ngành **{program}** đúng không nè? 🤔"
+    - text: "Xác nhận lại nha, bạn hỏi về **{program}** phải không? ✅"
+    - text: "Để mình chắc chắn nè, bạn muốn biết về ngành **{program}** đúng không? 💡"
+  
+  utter_did_that_help:
+    - text: "Thông tin này có giúp ích cho bạn không nè? 😊"
+    - text: "Bạn còn cần biết thêm gì nữa không? 💬"
+    - text: "Mình đã trả lời đủ chưa bạn? 🤗"
+    - text: "Còn gì cần mình giúp thêm không nè? ✨"
+  
+  # FOLLOW-UP SUGGESTIONS
+  utter_suggest_scholarship:
+    - text: "À mà bạn có muốn biết về học bổng cho ngành này không? 🎓"
+    - text: "Ngoài ra, bạn quan tâm đến học bổng không nè? 💰"
+    - text: "Bạn có thể xem thêm về các học bổng VHU cung cấp đó! 🌟"
+  
+  utter_suggest_admission:
+    - text: "Bạn muốn biết thêm về tuyển sinh cho ngành này không? 📝"
+    - text: "À, bạn có muốn tìm hiểu cách đăng ký nhập học không? 📋"
+    - text: "Nếu bạn thích ngành này, mình có thể tư vấn về tuyển sinh nha! ✨"
+  
+  utter_suggest_campus:
+    - text: "Bạn có muốn biết ngành này học ở cơ sở nào không? 🏫"
+    - text: "À, bạn quan tâm đến địa điểm học không nè? 📍"
+  
+  utter_suggest_career:
+    - text: "Bạn có muốn biết cơ hội việc làm sau khi ra trường không? 💼"
+    - text: "Mình có thể kể cho bạn nghe về nghề nghiệp sau này luôn nè! 🚀"
+  
+  # CHỨC NĂNG MỚI - CHỈ ĐƯỜNG
+  utter_ask_user_location:
+    - text: "Bạn đang ở đâu vậy? 📍\nVí dụ: 'Tôi ở đường Tân Hương, Tân Phú'"
+    - text: "Cho mình biết địa chỉ hiện tại của bạn nha! 📍\n(VD: 'Quận 9' hoặc '123 Lê Văn Việt, Quận 9')"
+    - text: "Bạn xuất phát từ đâu vậy? 🗺️\nNhập địa chỉ giúp mình nhé!"
+  
+  utter_ask_target_campus:
+    - text: |
+        Bạn muốn đến cơ sở nào của VHU nè? 🏫
+        
+        1️⃣ **Trụ sở chính** - HungHau House: 613 Âu Cơ, Tân Phú
+        2️⃣ **Harmony Campus** - 624 Âu Cơ, Bảy Hiền
+        3️⃣ **HungHau Campus** - 13E Đại lộ Nguyễn Văn Linh, Bình Hưng
+        4️⃣ **myU Campus** - 665-667-669 Điện Biên Phủ, Bàn Cờ
+        5️⃣ **Nguyễn Bá Tuyển Campus** - 8-14 Nguyễn Bá Tuyển, Bảy Hiền
+        6️⃣ **Quốc lộ 1A Campus** - 2A2 Quốc lộ 1A, Thới An
+        7️⃣ **615 Âu Cơ Campus** - 615 Âu Cơ, Tân Phú
+        
+        Bạn chọn số hoặc gõ tên cơ sở nhé! 😊
+  
+  utter_directions_processing:
+    - text: "Đợi mình xíu nha, đang tìm đường đi tối ưu cho bạn... 🗺️"
+    - text: "Để mình tính toán đường đi giúp bạn nè... 🧭"
+  
+  # CONTEXT-AWARE RESPONSES
+  utter_remember_program:
+    - text: "À, bạn vừa hỏi về **{program}** mà nhỉ? 🤔"
+    - text: "Đúng rồi, bạn đang tìm hiểu về **{program}** phải không? 💡"
+  
+  utter_multiple_programs_discussed:
+    - text: "Uhm, bạn đã hỏi về vài ngành rồi nè. Bạn muốn so sánh chúng không? 📊"
+    - text: "Mình thấy bạn quan tâm đến nhiều ngành đó! Bạn đang phân vân lựa chọn à? 🤷"
+  
+  # ENCOURAGEMENT
+  utter_encourage:
+    - text: "Chúc bạn tìm được ngành mình thích nha! 💪"
+    - text: "Hy vọng thông tin này hữu ích cho bạn! ✨"
+    - text: "Cố gắng nha bạn, tương lai tươi sáng lắm! 🌟"
+    - text: "Mình tin bạn sẽ chọn được ngành phù hợp! 🎓"
+  
+  # APOLOGIZING
+  utter_cant_help:
+    - text: "Híc, mình chưa có thông tin này nè. Bạn có thể gọi hotline **028 7301 5555** để được tư vấn chi tiết hơn nha! 📞"
+    - text: "Ôi bạn ơi, phần này mình chưa rõ lắm. Liên hệ phòng tuyển sinh để được giúp đỡ tốt hơn nha: **028 7301 5555** 💙"
+    - text: "Xin lỗi bạn nha, mình chưa được học về phần này. Hãy gọi cho bộ phận hỗ trợ ở **028 7301 5555** nhé! 🙏"
+  
+  # SMALL TALK
+  utter_how_are_you:
+    - text: "Mình là bot nên luôn khỏe ạ! 😄 Còn bạn thì sao nè?"
+    - text: "Mình vẫn ổn nè, cảm ơn bạn đã hỏi! 💙 Bạn có cần mình giúp gì không?"
+  
+  utter_compliment_response:
+    - text: "Aww, cảm ơn bạn nha! 🥰 Mình sẽ cố gắng giúp bạn tốt nhất có thể!"
+    - text: "Hehe, bạn khen mình ngại quá! 😊 Có gì cần giúp cứ hỏi nha!"
+  
+  # ERROR HANDLING
+  utter_default_fallback_friendly:
+    - text: "Ôi bạn ơi, mình chưa hiểu lắm nè. Bạn có thể nói lại rõ hơn được không? 😅"
+    - text: "Híc, mình hơi bối rối với câu hỏi này. Bạn thử hỏi cách khác được không? 🤔"
+    - text: "Xin lỗi bạn, mình chưa nắm được ý bạn. Có thể diễn đạt lại không nè? 🙏"
+  
+  # PROACTIVE HELP
+  utter_offer_help:
+    - text: "Bạn có muốn mình giới thiệu thêm về VHU không nè? 😊"
+    - text: "Mình có thể giúp bạn tìm hiểu về học phí, học bổng, tuyển sinh... Bạn cần gì nè? 💡"
+    - text: "Ngoài ra, bạn còn muốn biết thêm điều gì không? Mình sẵn sàng giúp nha! ✨"
+  
+  # COMPARISON
+  utter_compare_programs:
+    - text: "Bạn muốn so sánh 2 ngành này không nè? Mình có thể so sánh học phí, thời gian học, cơ hội việc làm luôn đó! 📊"
+  
+  # WRAP UP
+  utter_anything_else:
+    - text: "Còn gì mình có thể giúp nữa không bạn? 💬"
+    - text: "Bạn có câu hỏi nào khác không nè? 🤗"
+    - text: "Hỏi mình thêm đi bạn, đừng ngại nha! 😊"
+  
+  utter_wrap_up:
+    - text: "Chúc bạn lựa chọn được ngành mình yêu thích và thành công nha! 🎓✨"
+    - text: "Hy vọng mình đã giúp bạn có thêm thông tin hữu ích! Chúc bạn may mắn! 🍀"
+    - text: "Nếu còn thắc mắc gì, cứ quay lại hỏi mình nha bạn! Chúc học tốt! 💪"
+
 actions:
   - utter_greet
   - utter_goodbye
@@ -372,16 +697,82 @@ actions:
   - utter_club
   - utter_support
   - utter_bot_challenge
-  - utter_fallback
+  # REMOVED: utter_fallback - Now using action_gemini_fallback
   - utter_out_of_scope
   - utter_major_count
   - utter_study_mode
   - utter_fee_payment
   - action_hello
+  - action_list_all_programs
   - action_tuition_specific
   - action_scholarship_condition
   - action_program_info
   - action_campuses_info
   - action_support_problem
   - action_exam_schedule
-  - action_default_fallback
+  # REMOVED: action_default_fallback - Now using action_gemini_fallback
+  # BƯỚC 2: Follow-up actions
+  - action_suggest_scholarship
+  - action_suggest_admission
+  - action_suggest_career
+  - action_suggest_campus_location
+  - action_compare_programs
+  - action_proactive_help
+  - action_remember_context
+  - action_update_previous_programs
+  - action_set_slots_to_none  # Reset slots trước khi tư vấn ngành
+  - action_recommend_programs  # Tư vấn ngành theo tổ hợp môn và sở thích
+  - action_suggest_program_recommendation  # Gợi ý tư vấn ngành (proactive)
+  # BƯỚC 2: Custom ask actions
+  - action_ask_program
+  - action_ask_scholarship_type
+  - action_ask_campus
+  - action_track_conversation
+  # BƯỚC 2: Form validation actions
+  - validate_tuition_form
+  - validate_scholarship_form
+  - validate_admission_form
+  - validate_campus_form
+  # GIAI ĐOẠN 3: Gemini AI Integration
+  - action_gemini_fallback
+  # CHỨC NĂNG MỚI - CHỈ ĐƯỜNG (Goong Maps)
+  - action_ask_user_location
+  - action_ask_target_campus
+  - action_get_directions
+  - action_show_transit_info
+  - validate_directions_form
+
+# =============================================================================
+# FORMS - Thu thập thông tin qua slot filling (BƯỚC 2)
+# =============================================================================
+
+forms:
+  tuition_form:
+    required_slots:
+      - program
+  
+  scholarship_form:
+    required_slots:
+      - scholarship_type
+  
+  admission_form:
+    required_slots:
+      - program
+  
+  campus_form:
+    required_slots:
+      - campus
+  
+  # CHỨC NĂNG MỚI - CHỈ ĐƯỜNG
+  directions_form:
+    required_slots:
+      - user_location
+      - target_campus
+
+# =============================================================================
+# SESSION CONFIG - Cấu hình phiên làm việc
+# =============================================================================
+
+session_config:
+  session_expiration_time: 60  # minutes
+  carry_over_slots_to_new_session: true

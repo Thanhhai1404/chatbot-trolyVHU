@@ -1,0 +1,173 @@
+version: "3.1"
+
+# =============================================================================
+# REGEX FEATURES - Patterns để nhận diện các mẫu đặc biệt
+# =============================================================================
+
+nlu:
+  # ========================
+  # PROGRAM CODE (Mã ngành)
+  # ========================
+  - regex: program_code
+    examples: |
+      - \b7\d{6}\b
+      - \b[A-Z]{2,5}\b
+      
+  # Explanation:
+  # - \b7\d{6}\b : Mã ngành 7 chữ số (VD: 7480201, 7340101)
+  # - \b[A-Z]{2,5}\b : Mã viết tắt 2-5 chữ in hoa (VD: CNTT, QTKD, IT)
+
+  # ========================
+  # STUDENT ID (Mã sinh viên)
+  # ========================
+  - regex: student_id
+    examples: |
+      - \b\d{8,10}\b
+      - \bSV\d{6,8}\b
+      
+  # Explanation:
+  # - \b\d{8,10}\b : 8-10 chữ số (VD: 20241234, 2024123456)
+  # - \bSV\d{6,8}\b : SV + 6-8 chữ số (VD: SV202412, SV20241234)
+
+  # ========================
+  # SEMESTER (Học kỳ)
+  # ========================
+  - regex: semester_pattern
+    examples: |
+      - học kỳ\s*[123IHh]
+      - HK\s*[123]
+      - kỳ\s*[123]
+      - semester\s*[123]
+      
+  # Explanation:
+  # Bắt các mẫu: "học kỳ 1", "HK1", "kỳ 2", "học kỳ hè", v.v.
+
+  # ========================
+  # ACADEMIC YEAR (Năm học)
+  # ========================
+  - regex: academic_year
+    examples: |
+      - \b20\d{2}-20\d{2}\b
+      - năm học\s*20\d{2}
+      
+  # Explanation:
+  # - \b2024-2025\b : Format năm học (VD: 2024-2025, 2025-2026)
+  # - năm học 2024 : Năm học + 4 chữ số
+
+  # ========================
+  # PHONE NUMBER (Số điện thoại)
+  # ========================
+  - regex: phone_number
+    examples: |
+      - \b0\d{9}\b
+      - \b\+84\d{9}\b
+      - \b028\s*\d{7,8}\b
+      
+  # Explanation:
+  # - 0xxxxxxxxx : 10 chữ số bắt đầu bằng 0
+  # - +84xxxxxxxxx : Format quốc tế
+  # - 028 xxxxxxx : Số cố định TP.HCM
+
+  # ========================
+  # EMAIL
+  # ========================
+  - regex: email
+    examples: |
+      - \b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
+      
+  # Explanation:
+  # Format email chuẩn (VD: info@vhu.edu.vn, student@gmail.com)
+
+  # ========================
+  # CREDIT HOURS (Số tín chỉ)
+  # ========================
+  - regex: credit_hours
+    examples: |
+      - \b\d{1,3}\s*tín chỉ
+      - \b\d{1,3}\s*tc
+      - \b\d{1,3}\s*credits?
+      
+  # Explanation:
+  # Bắt số tín chỉ (VD: 140 tín chỉ, 15 tc, 3 credits)
+
+  # ========================
+  # TUITION FEE (Số tiền học phí)
+  # ========================
+  - regex: tuition_amount
+    examples: |
+      - \b\d{1,3}([.,]\d{3})*\s*(VNĐ|vnđ|đồng|triệu|tr)
+      - \b\d{1,3}([.,]\d{3})*\s*k
+      
+  # Explanation:
+  # Bắt các format tiền:
+  # - 450,000 VNĐ
+  # - 7.5 triệu
+  # - 450k
+
+  # ========================
+  # GPA (Điểm GPA)
+  # ========================
+  - regex: gpa_score
+    examples: |
+      - \b[0-3]\.\d{1,2}\b
+      - \b4\.0{1,2}\b
+      - GPA\s*[0-4]\.\d{1,2}
+      
+  # Explanation:
+  # Bắt điểm GPA (VD: 3.5, 2.75, GPA 3.8)
+
+  # ========================
+  # GRADE (Điểm số)
+  # ========================
+  - regex: grade_score
+    examples: |
+      - \b[0-9](\.\d{1,2})?\s*/\s*10
+      - điểm\s*[0-9](\.\d{1,2})?
+      
+  # Explanation:
+  # Bắt điểm số (VD: 8.5/10, điểm 9)
+
+  # ========================
+  # DATE (Ngày tháng)
+  # ========================
+  - regex: date_pattern
+    examples: |
+      - \b\d{1,2}/\d{1,2}/\d{4}\b
+      - \b\d{1,2}-\d{1,2}-\d{4}\b
+      - ngày\s*\d{1,2}\s*tháng\s*\d{1,2}
+      
+  # Explanation:
+  # Bắt các format ngày: 18/10/2025, 18-10-2025, ngày 18 tháng 10
+
+  # ========================
+  # COURSE CODE (Mã môn học)
+  # ========================
+  - regex: course_code
+    examples: |
+      - \b[A-Z]{2,4}\d{3,4}\b
+      
+  # Explanation:
+  # Mã môn học (VD: CS101, MATH2015, ENG101)
+
+  # ========================
+  # PERCENTAGE (Phần trăm)
+  # ========================
+  - regex: percentage
+    examples: |
+      - \b\d{1,3}%
+      - \b\d{1,3}\s*phần trăm
+      
+  # Explanation:
+  # Bắt % (VD: 20%, 50 phần trăm)
+
+  # ========================
+  # BUILDING/ROOM (Phòng/Tòa nhà)
+  # ========================
+  - regex: room_building
+    examples: |
+      - \b[A-Z]\d{2,3}\b
+      - phòng\s*[A-Z]?\d{2,3}
+      - tòa\s*[A-Z]
+      
+  # Explanation:
+  # Bắt tên phòng/tòa (VD: A101, phòng B205, tòa C)

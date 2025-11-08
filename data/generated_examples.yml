@@ -1,0 +1,133 @@
+# ============================================
+# AUTO-GENERATED TRAINING EXAMPLES
+# ============================================
+
+# TUITION QUERIES
+  - intent: ask_tuition_specific
+    examples: |
+    - học Luật kinh tế tốn bao nhiêu
+    - học phí ngành MKT là bao nhiêu
+    - đóng học phí Khoa học dữ liệu bao nhiêu
+    - Khoa học dữ liệu học phí bao nhiêu vậy
+    - học phí của Luật thế nào
+    - học Luật mất bao nhiêu tiền
+    - học phí mỗi năm ngành Quản trị kinh doanh
+    - chi phí học Khoa học dữ liệu là bao nhiêu
+    - cho mình biết học phí IT
+    - chi phí học MKT là bao nhiêu
+    - học phí ngành Luật là bao nhiêu
+    - giá học phí Du lịch
+    - giá học phí Luật
+    - học phí ngành Logistics là bao nhiêu
+    - đóng học phí KT bao nhiêu
+    - học Công nghệ thông tin mất bao nhiêu tiền
+    - tổng học phí Công nghệ thông tin cả khóa
+    - học phí tín chỉ Tâm lý
+    - Marketing học phí 1 năm bao nhiêu
+    - mình muốn hỏi học phí ngành Quản trị kinh doanh
+    - học phí tín chỉ Khoa học dữ liệu
+    - đóng học phí MKT bao nhiêu
+    - tổng học phí Kế toán cả khóa
+    - học phí mỗi năm ngành Logistics
+    - tính học phí CNTT như thế nào
+    - đóng học phí KT bao nhiêu
+    - tính học phí Quản trị du lịch như thế nào
+    - cho mình biết học phí Marketing
+    - học phí ngành Du lịch là bao nhiêu
+    - học phí của Tâm lý thế nào
+
+# PROGRAM INFO QUERIES
+  - intent: ask_program_info
+    examples: |
+    - điều kiện vào ngành MKT
+    - tổ hợp môn xét tuyển Luật
+    - Tiếng Anh ra trường làm gì
+    - Luật học những môn gì
+    - QTKD học mấy năm
+    - tổ hợp môn xét tuyển Luật kinh tế
+    - thông tin ngành QTKD
+    - Công nghệ thông tin ra trường làm gì
+    - ngành Khoa học dữ liệu như thế nào
+    - giới thiệu về Luật kinh tế
+    - giới thiệu về Luật
+    - thông tin ngành QTKD
+    - điều kiện vào ngành Du lịch
+    - IT học ở cơ sở nào
+    - Tâm lý học mấy năm
+    - ngành Luật như thế nào
+    - giới thiệu về Du lịch
+    - Công nghệ thông tin học ở cơ sở nào
+    - học Tiếng Anh có tốt không
+    - cho mình biết về ngành IT
+    - Quản trị du lịch học ở cơ sở nào
+    - ngành IT như thế nào
+    - học MKT có tốt không
+    - cho mình biết về ngành CNTT
+    - cơ hội việc làm của QTKD
+    - thông tin ngành Công nghệ thông tin
+    - QTKD học ở cơ sở nào
+    - học QTKD có tốt không
+    - điều kiện vào ngành Ngôn ngữ Anh
+    - tổ hợp môn xét tuyển Marketing
+
+# SCHOLARSHIP QUERIES
+  - intent: ask_scholarship_condition
+    examples: |
+    - học bổng toàn phần
+    - làm sao để có học bổng 100%
+    - hạn nộp học bổng khuyến khích học tập
+    - mức học bổng 50%
+    - học bổng 50% là gì
+    - hồ sơ xin học bổng toàn phần
+    - học bổng khuyến khích học tập là gì
+    - điều kiện nhận học bổng 100%
+    - làm sao để có học bổng toàn phần
+    - điều kiện nhận học bổng toàn phần
+    - làm sao để có học bổng toàn phần
+    - làm sao để có học bổng khuyến khích học tập
+    - hạn nộp học bổng một phần
+    - học bổng tài năng
+    - đăng ký học bổng một phần
+    - học bổng một phần là gì
+    - hồ sơ xin học bổng tài năng
+    - mức học bổng một phần
+    - học bổng toàn phần là gì
+    - học bổng khuyến khích học tập là gì
+
+# LOCATION QUERIES
+  - intent: ask_location
+    examples: |
+    - trường ở đâu
+    - địa chỉ trường
+    - xe bus nào đến trường
+    - Gò Vấp nằm ở đâu
+    - cơ sở 1 nằm ở đâu
+    - cách đi đến cơ sở 2
+    - trường ở đâu
+    - cơ sở 1 nằm ở đâu
+    - trường ở đâu
+    - cách đi đến Gò Vấp
+    - đi đến trường như thế nào
+    - trường ở đâu
+    - địa chỉ trường
+    - cơ sở 2 nằm ở đâu
+    - cách đi đến cơ sở 1
+
+# CONTACT QUERIES
+  - intent: ask_contact
+    examples: |
+    - email Tài chính
+    - email Tài chính
+    - phòng Tuyển sinh số điện thoại
+    - email liên hệ
+    - tư vấn qua điện thoại
+    - email liên hệ
+    - email Công tác sinh viên
+    - hotline tư vấn
+    - liên hệ tư vấn tuyển sinh
+    - email Đào tạo
+    - phòng Tài chính số điện thoại
+    - số điện thoại trường
+    - số điện thoại trường
+    - gọi điện cho ai để hỏi
+    - số điện thoại trường

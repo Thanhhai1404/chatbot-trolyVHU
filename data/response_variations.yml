@@ -1,0 +1,185 @@
+version: "3.1"
+
+# =============================================================================
+# RESPONSE VARIATIONS - Nhiều cách trả lời để tránh lặp lại
+# =============================================================================
+# Bot sẽ random pick một response để hội thoại tự nhiên hơn
+
+responses:
+  
+  # ========================
+  # ASKING FOR MORE INFO (Hỏi thêm thông tin)
+  # ========================
+  
+  utter_ask_program_friendly:
+    - text: "Bạn muốn hỏi về ngành nào nè? 🎓"
+    - text: "Ngành nào bạn quan tâm vậy? 😊"
+    - text: "Cho mình biết tên ngành bạn đang tìm hiểu nha! 📚"
+    - text: "Bạn đang tìm hiểu ngành gì đấy? 💡"
+    - text: "Ngành nào mà bạn thích vậy? ✨"
+  
+  utter_ask_scholarship_type_friendly:
+    - text: "Bạn muốn biết về loại học bổng nào nè? 🎓"
+    - text: "Học bổng nào mà bạn quan tâm vậy? 💰"
+    - text: "Cho mình biết bạn đang tìm hiểu học bổng gì nha! 🌟"
+  
+  utter_ask_campus_friendly:
+    - text: "Bạn muốn biết về cơ sở nào nè? 🏫"
+    - text: "Cơ sở 1 hay cơ sở 2 vậy bạn? 📍"
+    - text: "Bạn quan tâm đến cơ sở nào ở VHU? 🏢"
+  
+  # ========================
+  # ACKNOWLEDGMENTS (Xác nhận hiểu)
+  # ========================
+  
+  utter_got_it:
+    - text: "Oke, mình hiểu rồi nha! ✅"
+    - text: "Được rồi, để mình check giúp bạn nè! 🔍"
+    - text: "Uhm uhm, mình nắm rồi! 👌"
+    - text: "Okii, mình tra ngay cho bạn nha! 🚀"
+    - text: "Rồi rồi, mình tìm giúp bạn liền! 💪"
+  
+  utter_checking:
+    - text: "Đợi mình xíu nha, đang tra thông tin... ⏳"
+    - text: "Mình đang tìm kiếm thông tin cho bạn đây... 🔍"
+    - text: "Chờ mình một chút nha, mình sẽ tra ngay! ⌛"
+  
+  # ========================
+  # CLARIFICATIONS (Làm rõ)
+  # ========================
+  
+  utter_clarify_program:
+    - text: "Bạn ơi, bạn đang nói về ngành **{program}** đúng không nè? 🤔"
+    - text: "Xác nhận lại nha, bạn hỏi về **{program}** phải không? ✅"
+    - text: "Để mình chắc chắn nè, bạn muốn biết về ngành **{program}** đúng không? 💡"
+  
+  utter_did_that_help:
+    - text: "Thông tin này có giúp ích cho bạn không nè? 😊"
+    - text: "Bạn còn cần biết thêm gì nữa không? 💬"
+    - text: "Mình đã trả lời đủ chưa bạn? 🤗"
+    - text: "Còn gì cần mình giúp thêm không nè? ✨"
+  
+  # ========================
+  # FOLLOW-UP SUGGESTIONS (Gợi ý tiếp theo)
+  # ========================
+  
+  utter_suggest_scholarship:
+    - text: "À mà bạn có muốn biết về học bổng cho ngành này không? 🎓"
+    - text: "Ngoài ra, bạn quan tâm đến học bổng không nè? 💰"
+    - text: "Bạn có thể xem thêm về các học bổng VHU cung cấp đó! 🌟"
+  
+  utter_suggest_admission:
+    - text: "Bạn muốn biết thêm về tuyển sinh cho ngành này không? 📝"
+    - text: "À, bạn có muốn tìm hiểu cách đăng ký nhập học không? 📋"
+    - text: "Nếu bạn thích ngành này, mình có thể tư vấn về tuyển sinh nha! ✨"
+  
+  utter_suggest_campus:
+    - text: "Bạn có muốn biết ngành này học ở cơ sở nào không? 🏫"
+    - text: "À, bạn quan tâm đến địa điểm học không nè? 📍"
+  
+  utter_suggest_career:
+    - text: "Bạn có muốn biết cơ hội việc làm sau khi ra trường không? 💼"
+    - text: "Mình có thể kể cho bạn nghe về nghề nghiệp sau này luôn nè! 🚀"
+  
+  # ========================
+  # CONTEXT-AWARE RESPONSES (Phản hồi dựa trên ngữ cảnh)
+  # ========================
+  
+  utter_remember_program:
+    - text: "À, bạn vừa hỏi về **{program}** mà nhỉ? 🤔"
+    - text: "Đúng rồi, bạn đang tìm hiểu về **{program}** phải không? 💡"
+  
+  utter_multiple_programs_discussed:
+    - text: "Uhm, bạn đã hỏi về vài ngành rồi nè. Bạn muốn so sánh chúng không? 📊"
+    - text: "Mình thấy bạn quan tâm đến nhiều ngành đó! Bạn đang phân vân lựa chọn à? 🤷"
+  
+  # ========================
+  # ENCOURAGEMENT (Động viên)
+  # ========================
+  
+  utter_encourage:
+    - text: "Chúc bạn tìm được ngành mình thích nha! 💪"
+    - text: "Hy vọng thông tin này hữu ích cho bạn! ✨"
+    - text: "Cố gắng nha bạn, tương lai tươi sáng lắm! 🌟"
+    - text: "Mình tin bạn sẽ chọn được ngành phù hợp! 🎓"
+  
+  # ========================
+  # APOLOGIZING (Xin lỗi khi không có thông tin)
+  # ========================
+  
+  utter_cant_help:
+    - text: "Híc, mình chưa có thông tin này nè. Bạn có thể gọi hotline **028 7301 5555** để được tư vấn chi tiết hơn nha! 📞"
+    - text: "Ôi bạn ơi, phần này mình chưa rõ lắm. Liên hệ phòng tuyển sinh để được giúp đỡ tốt hơn nha: **028 7301 5555** 💙"
+    - text: "Xin lỗi bạn nha, mình chưa được học về phần này. Hãy gọi cho bộ phận hỗ trợ ở **028 7301 5555** nhé! 🙏"
+  
+  # ========================
+  # SMALL TALK (Trò chuyện nhẹ nhàng)
+  # ========================
+  
+  utter_how_are_you:
+    - text: "Mình là bot nên luôn khỏe ạ! 😄 Còn bạn thì sao nè?"
+    - text: "Mình vẫn ổn nè, cảm ơn bạn đã hỏi! 💙 Bạn có cần mình giúp gì không?"
+  
+  utter_compliment_response:
+    - text: "Aww, cảm ơn bạn nha! 🥰 Mình sẽ cố gắng giúp bạn tốt nhất có thể!"
+    - text: "Hehe, bạn khen mình ngại quá! 😊 Có gì cần giúp cứ hỏi nha!"
+  
+  # ========================
+  # ERROR HANDLING (Xử lý lỗi)
+  # ========================
+  
+  utter_default_fallback:
+    - text: "Ôi bạn ơi, mình chưa hiểu lắm nè. Bạn có thể nói lại rõ hơn được không? 😅"
+    - text: "Híc, mình hơi bối rối với câu hỏi này. Bạn thử hỏi cách khác được không? 🤔"
+    - text: "Xin lỗi bạn, mình chưa nắm được ý bạn. Có thể diễn đạt lại không nè? 🙏"
+  
+  # ========================
+  # PROACTIVE HELP (Chủ động giúp đỡ)
+  # ========================
+  
+  utter_offer_help:
+    - text: "Bạn có muốn mình giới thiệu thêm về VHU không nè? 😊"
+    - text: "Mình có thể giúp bạn tìm hiểu về học phí, học bổng, tuyển sinh... Bạn cần gì nè? 💡"
+    - text: "Ngoài ra, bạn còn muốn biết thêm điều gì không? Mình sẵn sàng giúp nha! ✨"
+  
+  # ========================
+  # COMPARISON (So sánh)
+  # ========================
+  
+  utter_compare_programs:
+    - text: "Bạn muốn so sánh 2 ngành này không nè? Mình có thể so sánh học phí, thời gian học, cơ hội việc làm luôn đó! 📊"
+  
+  # ========================
+  # WRAP UP (Kết thúc)
+  # ========================
+  
+  utter_anything_else:
+    - text: "Còn gì mình có thể giúp nữa không bạn? 💬"
+    - text: "Bạn có câu hỏi nào khác không nè? 🤗"
+    - text: "Hỏi mình thêm đi bạn, đừng ngại nha! 😊"
+  
+  utter_wrap_up:
+    - text: "Chúc bạn lựa chọn được ngành mình yêu thích và thành công nha! 🎓✨"
+    - text: "Hy vọng mình đã giúp bạn có thêm thông tin hữu ích! Chúc bạn may mắn! 🍀"
+    - text: "Nếu còn thắc mắc gì, cứ quay lại hỏi mình nha bạn! Chúc học tốt! 💪"
+
+# =============================================================================
+# FORMS - Định nghĩa forms để thu thập thông tin
+# =============================================================================
+
+forms:
+  tuition_form:
+    required_slots:
+      - program
+  
+  scholarship_form:
+    required_slots:
+      - scholarship_type
+  
+  admission_form:
+    required_slots:
+      - program
+  
+  campus_form:
+    required_slots:
+      - campus

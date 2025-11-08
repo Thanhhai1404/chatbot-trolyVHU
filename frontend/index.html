@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VHU Chatbot - Trợ Lý Ảo Tư Vấn Tuyển Sinh</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/logo-vhu.jpg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vhu-blue': '#0066CC',
+                        'vhu-gold': '#FFB800',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+      <!-- Header -->
+    <header class="bg-vhu-blue text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <!-- VHU Logo -->
+                    <img src="assets/image/logo-vhu.jpg" alt="VHU Logo" class="h-12 w-12 rounded-lg object-contain bg-white p-1">
+                    <div>
+                        <h1 class="text-2xl font-bold">VHU Chatbot</h1>
+                        <p class="text-sm text-blue-200">Trợ lý ảo tư vấn tuyển sinh thông minh</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <span class="text-sm"><i class="fas fa-brain"></i> AI Powered</span>
+                    <span class="text-sm"><i class="fas fa-chart-line"></i> 99.9% Accuracy</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-vhu-blue to-blue-700 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                Chào mừng đến với VHU Chatbot! 👋
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                Trợ lý ảo thông minh hỗ trợ tư vấn tuyển sinh 24/7
+            </p>
+            <button onclick="openChat()" class="bg-vhu-gold text-vhu-blue px-8 py-4 rounded-full text-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 shadow-lg">
+                <i class="fas fa-comments"></i> Bắt đầu trò chuyện ngay
+            </button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                🌟 Tính Năng Nổi Bật
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h4 class="text-xl font-bold mb-2 text-vhu-blue">44 Ngành Đào Tạo</h4>
+                    <p class="text-gray-700">Tra cứu thông tin chi tiết về 44 chương trình đào tạo chất lượng cao</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h4 class="text-xl font-bold mb-2 text-green-700">Tính Học Phí</h4>
+                    <p class="text-gray-700">Tính toán học phí tự động, so sánh chi phí giữa các ngành</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h4 class="text-xl font-bold mb-2 text-purple-700">Tư Vấn Chọn Ngành</h4>
+                    <p class="text-gray-700">Gợi ý ngành học phù hợp dựa trên tổ hợp môn và sở thích</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+                    <div class="text-4xl mb-4">🗺️</div>
+                    <h4 class="text-xl font-bold mb-2 text-yellow-700">Chỉ Đường GPS</h4>
+                    <p class="text-gray-700">Hướng dẫn đường đi đến 7 cơ sở VHU với Goong Maps</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+                    <div class="text-4xl mb-4">🏅</div>
+                    <h4 class="text-xl font-bold mb-2 text-red-700">Học Bổng</h4>
+                    <p class="text-gray-700">Tư vấn các loại học bổng và điều kiện nhận học bổng</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h4 class="text-xl font-bold mb-2 text-indigo-700">Gemini AI</h4>
+                    <p class="text-gray-700">Trả lời câu hỏi ngoài phạm vi với công nghệ AI tiên tiến</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                📊 Thống Kê Ấn Tượng
+            </h3>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-vhu-blue mb-2">99.9%</div>
+                    <p class="text-gray-600">Độ chính xác</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-green-600 mb-2">44</div>
+                    <p class="text-gray-600">Ngành đào tạo</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">30</div>
+                    <p class="text-gray-600">Intents xử lý</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-orange-600 mb-2">7</div>
+                    <p class="text-gray-600">Cơ sở VHU</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-vhu-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-4">Sẵn sàng khám phá?</h3>
+            <p class="text-xl mb-8 text-blue-100">Bắt đầu trò chuyện với VHU Chatbot ngay bây giờ!</p>
+            <button onclick="openChat()" class="bg-vhu-gold text-vhu-blue px-8 py-4 rounded-full text-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 shadow-lg">
+                <i class="fas fa-robot"></i> Chat với Bot
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Đại học Văn Hiến</h4>
+                    <p class="text-gray-400">Trường đại học tư thục uy tín tại TP.HCM</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Liên hệ</h4>
+                    <p class="text-gray-400"><i class="fas fa-phone"></i> 1800 6097</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope"></i> tuvantuyensinh@vhu.edu.vn</p>
+                    <p class="text-gray-400"><i class="fas fa-map-marker-alt"></i> 613 Âu Cơ, Tân Phú, TP.HCM</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Công nghệ</h4>
+                    <p class="text-gray-400">🤖 Built with Rasa</p>
+                    <p class="text-gray-400">🧠 Powered by Gemini AI</p>
+                    <p class="text-gray-400">🗺️ Maps by Goong</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>Made with ❤️ by Hải - Sinh viên VHU | © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget (Floating) -->
+    <div id="chatWidget" class="fixed bottom-6 right-6 z-50 hidden">
+        <!-- Chat Container -->
+        <div class="bg-white rounded-2xl shadow-2xl w-96 h-[600px] flex flex-col overflow-hidden">
+              <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-vhu-blue to-blue-700 text-white p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <!-- VHU Logo as Bot Avatar -->
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="assets/image/logo-vhu.jpg" alt="VHU Bot" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="font-bold">VHU Bot</h3>
+                        <p class="text-xs text-blue-200">
+                            <span class="inline-block w-2 h-2 bg-green-400 rounded-full mr-1"></span>
+                            Online
+                        </p>
+                    </div>
+                </div>
+                <div class="flex space-x-2">
+                    <button onclick="minimizeChat()" class="hover:bg-blue-600 p-2 rounded-lg transition">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button onclick="closeChat()" class="hover:bg-blue-600 p-2 rounded-lg transition">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div><!-- Chat Messages -->
+            <div id="messagesContainer" class="flex-1 overflow-y-auto p-4 bg-gray-50">
+                <!-- Welcome message will be added by JavaScript -->
+            </div>            <!-- Typing Indicator -->
+            <div id="typingIndicator" class="px-4 pb-2 hidden">
+                <div class="flex items-center space-x-2">
+                    <!-- VHU Logo Avatar -->
+                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden border-2 border-vhu-blue">
+                        <img src="assets/image/logo-vhu.jpg" alt="VHU Bot" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm">
+                        <div class="typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-4 bg-white border-t border-gray-200">
+                <div class="flex space-x-2">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Nhập tin nhắn..."
+                        class="flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:border-vhu-blue"
+                        onkeypress="handleKeyPress(event)"
+                    >
+                    <button 
+                        id="sendButton"
+                        onclick="sendMessage()" 
+                        class="bg-vhu-blue text-white px-4 py-2 rounded-full hover:bg-blue-700 transition"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                    </button>                </div>
+                <div class="flex justify-between mt-2 text-xs text-gray-500">
+                    <span><i class="fas fa-shield-alt"></i> Bảo mật</span>
+                    <button onclick="clearChat()" class="clear-chat-btn text-red-500 hover:text-red-700">
+                        <i class="fas fa-trash"></i> Xóa chat
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Chat Button (Floating) -->
+    <button 
+        id="chatButton" 
+        onclick="toggleChat()" 
+        class="fixed bottom-6 right-6 bg-vhu-blue text-white w-16 h-16 rounded-full shadow-2xl hover:bg-blue-700 transition-all transform hover:scale-110 z-40 flex items-center justify-center text-2xl"
+    >
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/ui.js"></script>
+
+</body>
+</html>

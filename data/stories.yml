@@ -25,17 +25,18 @@ stories:
 - story: list programs
   steps:
     - intent: ask_list_programs
-    - action: utter_list_programs
+    - action: action_list_all_programs
 
 - story: program info
   steps:
     - intent: ask_program_info
     - action: action_program_info
 
-- story: tuition info
-  steps:
-    - intent: ask_tuition
-    - action: utter_tuition
+# TEMPORARILY DISABLED - Conflicts with tuition form rule
+# - story: tuition info
+#   steps:
+#     - intent: ask_tuition
+#     - action: utter_tuition
 
 - story: scholarship info
   steps:
@@ -195,3 +196,312 @@ stories:
       entities:
         - program: "CNTT"
     - action: action_tuition_specific
+
+# =============================================================================
+# BƯỚC 2: MULTI-TURN CONVERSATION STORIES - Hội thoại đa lượt
+# =============================================================================
+
+# TEMPORARILY DISABLED - Conflicts with rules
+# - story: Tuition inquiry with scholarship follow-up
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: ask_tuition_specific
+#       entities:
+#         - program: "Công nghệ thông tin"
+#     - action: action_tuition_specific
+#     - action: action_suggest_scholarship
+#     - intent: ask_scholarship_condition
+#     - action: action_scholarship_condition
+#     - intent: thank
+#     - action: utter_thank
+
+# - story: Program exploration with admission follow-up
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: ask_program_info
+#       entities:
+#         - program: "Marketing"
+#     - action: action_program_info
+#     - action: action_suggest_admission
+#     - intent: ask_admission_methods
+#     - action: utter_admission_methods
+#     - intent: thank
+#     - action: utter_thank
+
+# - story: Campus inquiry with location details
+#   steps:
+#     - intent: ask_campuses
+#     - action: action_campuses_info
+#     - action: action_suggest_campus_location
+#     - intent: ask_location
+#     - action: utter_location
+#     - intent: thank
+#     - action: utter_thank
+
+# TEMPORARILY DISABLED - Conflicts with rules
+# - story: Multiple program comparison
+#   steps:
+#     - intent: ask_program_info
+#       entities:
+#         - program: "CNTT"
+#     - action: action_program_info
+#     - action: action_update_previous_programs
+#     - intent: ask_program_info
+#       entities:
+#         - program: "Marketing"
+#     - action: action_program_info
+#     - action: action_update_previous_programs
+#     - action: action_compare_programs
+#     - intent: thank
+#     - action: utter_thank
+
+# - story: Form-based tuition query
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: ask_tuition_specific
+#     - action: tuition_form
+#     - active_loop: tuition_form
+#     - slot_was_set:
+#       - program: "Quản trị kinh doanh"
+#     - active_loop: null
+#     - action: action_tuition_specific
+#     - action: action_suggest_scholarship
+#     - intent: thank
+#     - action: utter_thank
+
+# - story: Form-based scholarship query
+#   steps:
+#     - intent: ask_scholarship_condition
+#     - action: scholarship_form
+#     - active_loop: scholarship_form
+#     - slot_was_set:
+#       - scholarship_type: "học bổng tuyển sinh"
+#     - active_loop: null
+#     - action: action_scholarship_condition
+#     - intent: thank
+#     - action: utter_thank
+
+# TEMPORARILY DISABLED - Conflicts with rules
+# - story: Context-aware conversation
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - action: action_track_conversation
+#     - intent: ask_program_info
+#       entities:
+#         - program: "Tâm lý học"
+#     - action: action_program_info
+#     - action: action_update_previous_programs
+#     - action: action_track_conversation
+#     - intent: ask_tuition_specific
+#     - action: action_remember_context
+#     - action: action_tuition_specific
+#     - action: action_suggest_scholarship
+#     - action: action_track_conversation
+#     - intent: thank
+#     - action: utter_thank
+
+# - story: Proactive help after multiple queries
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: ask_list_programs
+#     - action: action_list_all_programs
+#     - intent: ask_tuition
+#     - action: utter_tuition
+#     - intent: ask_scholarship
+#     - action: utter_scholarship
+#     - action: action_proactive_help
+#     - intent: ask_contact
+#     - action: utter_contact
+#     - intent: thank
+#     - action: utter_thank
+
+# - story: Career suggestion after program info
+#   steps:
+#     - intent: ask_program_info
+#       entities:
+#         - program: "Du lịch"
+#     - action: action_program_info
+#     - action: action_suggest_career
+#     - intent: thank
+#     - action: utter_thank
+
+# TEMPORARILY DISABLED - Conflicts with rules
+# - story: Full exploration journey
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - action: action_track_conversation
+#     - intent: ask_list_programs
+#     - action: action_list_all_programs
+#     - intent: ask_program_info
+#       entities:
+#         - program: "Công nghệ thông tin"
+#     - action: action_program_info
+#     - action: action_update_previous_programs
+#     - action: action_suggest_admission
+#     - intent: ask_tuition_specific
+#       entities:
+#         - program: "Công nghệ thông tin"
+#     - action: action_remember_context
+#     - action: action_tuition_specific
+#     - action: action_suggest_scholarship
+#     - intent: ask_scholarship_condition
+#     - action: action_scholarship_condition
+#     - intent: ask_campuses
+#     - action: action_campuses_info
+#     - action: action_suggest_campus_location
+#     - intent: ask_contact
+#     - action: utter_contact
+#     - intent: thank
+#     - action: utter_thank
+#     - action: utter_wrap_up
+
+# =============================================================================
+# PROGRAM RECOMMENDATION STORIES - Tư vấn ngành
+# =============================================================================
+
+- story: recommend programs with subject combination
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - subject_combination: "A00"
+    - action: action_recommend_programs
+
+- story: recommend programs with interest
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - interest: "công nghệ"
+    - action: action_recommend_programs
+
+- story: recommend programs with both subject and interest
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - subject_combination: "D01"
+        - interest: "kinh doanh"
+    - action: action_recommend_programs
+
+- story: recommend then ask tuition
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - subject_combination: "A00"
+        - interest: "công nghệ"
+    - action: action_recommend_programs
+    - intent: ask_tuition_specific
+      entities:
+        - program: "Công nghệ thông tin"
+    - action: action_tuition_specific
+
+- story: recommend then ask program info
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - subject_combination: "C00"
+        - interest: "truyền thông"
+    - action: action_recommend_programs
+    - intent: ask_program_info
+      entities:
+        - program: "Báo chí"
+    - action: action_program_info
+
+- story: greet then recommend programs
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_recommend_programs
+      entities:
+        - subject_combination: "A01"
+        - interest: "IT"
+    - action: action_recommend_programs
+    - intent: thank
+    - action: utter_thank
+
+# =============================================================================
+# TƯ VẤN NGÀNH HỌC STORIES
+# =============================================================================
+
+- story: user wants program recommendation without details
+  steps:
+    - intent: ask_recommend_programs
+    - action: action_recommend_programs
+    - intent: inform
+      entities:
+        - subject_combination: A00
+        - interest: công nghệ
+    - action: action_recommend_programs
+
+- story: user wants program recommendation with subject combo
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - subject_combination: D01
+    - action: action_recommend_programs
+
+- story: user wants program recommendation with interest
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - interest: kinh doanh
+    - action: action_recommend_programs
+
+- story: user wants program recommendation full info
+  steps:
+    - intent: ask_recommend_programs
+      entities:
+        - subject_combination: A00
+        - interest: công nghệ
+    - action: action_recommend_programs
+    - intent: ask_tuition_specific
+      entities:
+        - program: Công nghệ thông tin
+    - action: action_tuition_specific
+
+# =============================================================================
+# GỢI Ý TƯ VẤN NGÀNH - PROACTIVE STORIES
+# =============================================================================
+
+# TEMPORARILY DISABLED - Conflicts with rules
+# - story: suggest program recommendation after exploring
+#   steps:
+#     - intent: ask_about_school
+#     - action: utter_about_school
+#     - action: action_suggest_program_recommendation
+#     - intent: ask_recommend_programs
+#     - action: action_recommend_programs
+
+# - story: suggest program recommendation after tuition general
+#   steps:
+#     - intent: ask_tuition
+#     - action: utter_tuition
+#     - action: action_suggest_program_recommendation
+#     - intent: ask_recommend_programs
+#       entities:
+#         - subject_combination: A01
+#     - action: action_recommend_programs
+
+# - story: suggest program recommendation after listing programs
+#   steps:
+#     - intent: ask_list_programs
+#     - action: action_list_all_programs
+#     - action: action_suggest_program_recommendation
+#     - intent: ask_recommend_programs
+#       entities:
+#         - interest: marketing
+#     - action: action_recommend_programs
+
+# - story: user accepts recommendation suggestion
+#   steps:
+#     - intent: ask_admission_methods
+#     - action: utter_admission_methods
+#     - action: action_suggest_program_recommendation
+#     - intent: thank
+#     - action: utter_thank
+    - intent: ask_recommend_programs
+    - action: action_recommend_programs

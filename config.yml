@@ -1,43 +1,91 @@
+# VHU Chatbot Configuration - FULL POWER MODE
+# Tối ưu cho độ chính xác cao nhất (trade-off: train lâu hơn)
+
 language: vi
 
+# =============================================================================
+# NLU PIPELINE - FULL POWER
+# =============================================================================
 pipeline:
+  # Tokenizer - Tách từ
   - name: WhitespaceTokenizer
+  
+  # Regex Features - Bắt patterns đặc biệt
   - name: RegexFeaturizer
+    case_sensitive: False
+  
+  # Lexical & Syntactic Features
   - name: LexicalSyntacticFeaturizer
+  
+  # Count Vectors - Word level (FULL)
   - name: CountVectorsFeaturizer
     analyzer: word
     min_ngram: 1
-    max_ngram: 3
+    max_ngram: 5  # Tăng lên 5 để bắt cụm từ dài hơn
+    OOV_token: "_OOV_"
+  
+  # Count Vectors - Character level (FULL)
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 2
-    max_ngram: 5
+    max_ngram: 6  # Tăng lên 6
+    # DIET Classifier - FULL POWER
   - name: DIETClassifier
-    epochs: 300
+    epochs: 300  # Tăng lên 300 (trade-off: train lâu hơn)
     entity_recognition: true
     intent_classification: true
-    use_masked_language_model: true
-    transformer_size: 256
-    number_of_transformer_layers: 3
-    drop_rate: 0.2
-    weight_sparsity: 0.7
+    use_masked_language_model: true  # BẬT để hiểu context tốt hơn
+    transformer_size: 256  # Tăng lên 256 (model lớn hơn)
+    number_of_transformer_layers: 4  # Tăng lên 4 layers
+    drop_rate: 0.2  # Giảm dropout để học nhiều hơn
+    weight_sparsity: 0.8  # Tăng sparsity
     ranking_length: 10
+    constrain_similarities: true
+    model_confidence: softmax
+    embedding_dimension: 30  # Tăng từ 20 → 30
+    number_of_negative_examples: 50  # Tăng để học tốt hơn
+    maximum_positive_similarity: 0.85
+    maximum_negative_similarity: -0.4
+    connection_density: 0.2
+  
+  # Entity Synonym Mapper
   - name: EntitySynonymMapper
+    # Response Selector - FULL POWER
   - name: ResponseSelector
-    epochs: 150
+    epochs: 150  # Tăng lên 150
+    transformer_size: 256
+    number_of_transformer_layers: 4
+    drop_rate: 0.2
+    weight_sparsity: 0.8
+  
+  # Fallback Classifier
   - name: FallbackClassifier
-    threshold: 0.6
-    ambiguity_threshold: 0.05
+    threshold: 0.6  # Tăng threshold (chỉ fallback khi thực sự không chắc)
+    ambiguity_threshold: 0.05  # Giảm để phát hiện ambiguous tốt hơn
 
+# =============================================================================
+# POLICIES - FULL POWER
+# =============================================================================
 policies:
+  # Ghi nhớ conversations đã học
   - name: MemoizationPolicy
-    max_history: 5
+    max_history: 8  # Tăng từ 5 → 8 (nhớ nhiều hơn)
+  
+  # Rule-based policy
   - name: RulePolicy
     core_fallback_threshold: 0.3
-    core_fallback_action_name: "utter_fallback"
+    core_fallback_action_name: action_default_fallback
+    # TED Policy - FULL POWER
   - name: TEDPolicy
-    max_history: 5
-    epochs: 150
+    max_history: 8  # Tăng từ 5 → 8
+    epochs: 200  # Tăng từ 50 → 200 (train lâu nhưng chính xác hơn)
     constrain_similarities: true
-    batch_size: [32, 64]
-    weight_sparsity: 0.7
+    batch_size:
+      - 64
+      - 128
+    weight_sparsity: 0.8
+
+# =============================================================================
+# ASSISTANT ID
+# =============================================================================
+assistant_id: vhu_chatbot_full_power

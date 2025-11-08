@@ -2,6 +2,10 @@ version: "3.1"
 
 rules:
 
+# =============================================================================
+# BASIC RULES - Simple responses
+# =============================================================================
+
 - rule: greet user anytime
   steps:
     - intent: greet
@@ -25,14 +29,7 @@ rules:
 - rule: list programs
   steps:
     - intent: ask_list_programs
-    - action: utter_list_programs
-
-# Removed duplicate rule - using action_program_info instead
-
-- rule: tuition info
-  steps:
-    - intent: ask_tuition
-    - action: utter_tuition
+    - action: action_list_all_programs
 
 - rule: scholarship info
   steps:
@@ -89,23 +86,58 @@ rules:
     - intent: bot_challenge
     - action: utter_bot_challenge
 
-- rule: fallback khi không hiểu
-  steps:
-    - intent: nlu_fallback
-    - action: utter_fallback
+# REMOVED - Now using action_gemini_fallback (see end of file)
+# - rule: fallback
+#   steps:
+#     - intent: nlu_fallback
+#     - action: utter_fallback
 
-# Rules cho các intents mới
-- rule: tuition specific info
+- rule: major count
+  steps:
+    - intent: ask_major_count
+    - action: utter_major_count
+
+- rule: study mode
+  steps:
+    - intent: ask_study_mode
+    - action: utter_study_mode
+
+- rule: admission time
+  steps:
+    - intent: ask_admission_time
+    - action: utter_admission_time
+
+- rule: fee payment
+  steps:
+    - intent: ask_fee_payment
+    - action: utter_fee_payment
+
+# REMOVED - Now using action_gemini_fallback (see end of file)
+# - rule: out of scope
+#   steps:
+#     - intent: out_of_scope
+#     - action: utter_out_of_scope
+
+# =============================================================================
+# CUSTOM ACTION RULES
+# =============================================================================
+
+- rule: program info
+  steps:
+    - intent: ask_program_info
+    - action: action_program_info
+
+- rule: tuition specific
   steps:
     - intent: ask_tuition_specific
     - action: action_tuition_specific
 
-- rule: scholarship condition info
+- rule: scholarship condition
   steps:
     - intent: ask_scholarship_condition
     - action: action_scholarship_condition
 
-- rule: exam schedule info
+- rule: exam schedule
   steps:
     - intent: ask_exam_schedule
     - action: action_exam_schedule
@@ -115,37 +147,116 @@ rules:
     - intent: ask_campuses
     - action: action_campuses_info
 
-- rule: support problem info
+- rule: support problem
   steps:
     - intent: ask_support_problem
     - action: action_support_problem
 
-- rule: program info with action
+- rule: recommend programs by subject combination and interest
   steps:
-    - intent: ask_program_info
-    - action: action_program_info
+    - intent: ask_recommend_programs
+    - action: action_recommend_programs
 
-- rule: major count info
+# =============================================================================
+# TƯ VẤN NGÀNH HỌC RULES
+# =============================================================================
+
+- rule: recommend programs when asked
   steps:
-    - intent: ask_major_count
-    - action: utter_major_count
+    - intent: ask_recommend_programs
+    - action: action_set_slots_to_none  # Reset slots trước khi hỏi
+    - action: action_recommend_programs
 
-- rule: study mode info
+# =============================================================================
+# GỢI Ý TƯ VẤN NGÀNH (PROACTIVE SUGGESTIONS)
+# =============================================================================
+# TEMPORARILY DISABLED - These rules conflict with stories
+# =============================================================================
+
+# - rule: suggest program recommendation after tuition question
+#   steps:
+#     - intent: ask_tuition
+#     - action: utter_tuition
+#     - action: action_suggest_program_recommendation
+
+# - rule: suggest program recommendation after listing programs
+#   steps:
+#     - intent: ask_list_programs
+#     - action: action_list_all_programs
+#     - action: action_suggest_program_recommendation
+
+# - rule: suggest program recommendation after school info
+#   steps:
+#     - intent: ask_about_school
+#     - action: utter_about_school
+#     - action: action_suggest_program_recommendation
+
+# - rule: suggest program recommendation after admission methods
+#   steps:
+#     - intent: ask_admission_methods
+#     - action: utter_admission_methods
+#     - action: action_suggest_program_recommendation
+
+# =============================================================================
+# FORM RULES - BƯỚC 2 (SIMPLIFIED)
+# =============================================================================
+# Forms activate only for general questions (missing entity)
+# Follow-up actions handled in stories to avoid conflicts
+
+- rule: Activate tuition form
   steps:
-    - intent: ask_study_mode
-    - action: utter_study_mode
+    - intent: ask_tuition
+    - action: tuition_form
+    - active_loop: tuition_form
 
-- rule: admission time info
+- rule: Submit tuition form
+  condition:
+  - active_loop: tuition_form
   steps:
-    - intent: ask_admission_time
-    - action: utter_admission_time
+  - action: tuition_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_tuition_specific
 
-- rule: fee payment info
-  steps:
-    - intent: ask_fee_payment
-    - action: utter_fee_payment
+# =============================================================================
+# GEMINI AI FALLBACK - GIAI ĐOẠN 3
+# =============================================================================
+# Xử lý câu hỏi ngoài phạm vi bằng Gemini AI
 
-- rule: Out of scope
+- rule: Gemini AI fallback for out-of-scope questions
   steps:
     - intent: out_of_scope
-    - action: utter_out_of_scope
+    - action: action_gemini_fallback
+
+- rule: Gemini AI fallback for nlu_fallback
+  steps:
+    - intent: nlu_fallback
+    - action: action_gemini_fallback
+
+- rule: Track conversation context
+  steps:
+    - action: action_track_conversation
+
+# =============================================================================
+# DIRECTIONS RULES - Chức năng chỉ đường (CHỨC NĂNG MỚI)
+# =============================================================================
+
+- rule: Activate directions form
+  steps:
+    - intent: ask_directions
+    - action: directions_form
+    - active_loop: directions_form
+
+- rule: Submit directions form
+  condition:
+    - active_loop: directions_form
+  steps:
+    - action: directions_form
+    - active_loop: null
+    - action: action_get_directions
+
+- rule: Show transit info when user confirms
+  steps:
+    - intent: confirm_transit_info
+    - action: action_show_transit_info

@@ -36,6 +36,58 @@ nlu:
     - cảm ơn bot
     - bạn giúp mình nhiều lắm
 
+# 3.1. Inform - Cung cấp thông tin (BƯỚC 2)
+- intent: inform
+  examples: |
+    - [Công nghệ thông tin](program)
+    - [CNTT](program)
+    - [Marketing](program)
+    - [Kế toán](program)
+    - [Tâm lý học](program)
+    - [Du lịch](program)
+    - [Luật](program)
+    - [Quản trị kinh doanh](program)
+    - [Thiết kế đồ họa](program)
+    - [Tiếng Anh](program)
+
+# 3.2. Chỉ đường đến trường (CHỈ ĐƯỜNG - CHỨC NĂNG MỚI)
+- intent: ask_directions
+  examples: |
+    - chỉ đường đến trường
+    - đến trường như thế nào
+    - tôi muốn đến VHU
+    - làm sao đến cơ sở
+    - hướng dẫn đường đi
+    - cách đi đến trường
+    - từ chỗ tôi đến trường
+    - muốn đến trường
+    - tôi ở [Tân Phú](location) muốn đến trường
+    - từ [Quận 9](location) đến VHU
+    - chỉ đường từ [Bình Thạnh](location)
+    - đường đi đến cơ sở
+    - cách di chuyển đến trường
+    - tôi muốn biết đường đến trường
+    - bạn có thể hỗ trợ tôi đến trường không
+    - giúp tôi đến trường
+    - tôi cần đến cơ sở
+    - tôi ở [41 nguyễn ngọc nhựt](location) và tôi muốn đến cơ sở
+    - tôi ở [đường tân hương](location) muốn đến cơ sở [613 âu cơ](location)
+    - từ [bình thạnh](location) đến [cơ sở 1](campus)
+    - làm sao đi từ nhà tôi đến trường
+
+# 3.3. Xác nhận muốn biết thông tin xe buýt (CHỈ ĐƯỜNG)
+- intent: confirm_transit_info
+  examples: |
+    - có
+    - có muốn biết
+    - cho tôi biết về xe buýt
+    - tôi muốn đi xe buýt
+    - xe buýt có tuyến nào
+    - thông tin xe buýt
+    - cho biết xe buýt
+    - tôi muốn biết xe buýt
+    - có xe buýt nào không
+
 # 4. Thông tin trường
 - intent: ask_about_school
   examples: |
@@ -58,16 +110,132 @@ nlu:
 # 6. Thông tin ngành cụ thể
 - intent: ask_program_info
   examples: |
-    - thông tin ngành [công nghệ thông tin](program)
+    - chi tiết ngành [Quản trị kinh doanh](program)
+    - thông tin ngành [Quản trị kinh doanh](program)
+    - [Quản trị kinh doanh](program) ra trường làm gì
+    - chi tiết ngành [QTKD](program)
+    - chi tiết ngành [Marketing](program)
+    - thông tin ngành [Marketing](program)
+    - [Marketing](program) ra trường làm gì
+    - chi tiết ngành [Kinh doanh thương mại](program)
+    - thông tin ngành [Kinh doanh thương mại](program)
+    - [Kinh doanh thương mại](program) ra trường làm gì
+    - chi tiết ngành [Thương mại điện tử](program)
+    - [Thương mại điện tử](program) ra trường làm gì
+    - chi tiết ngành [Quản trị nhân lực](program)
+    - thông tin ngành [Quản trị nhân lực](program)
+    - chi tiết ngành [Logistics và Quản lý chuỗi cung ứng](program)
+    - [Logistics và Quản lý chuỗi cung ứng](program) ra trường làm gì
+    - chi tiết ngành [Kinh doanh quốc tế](program)
+    - chi tiết ngành [Tài chính doanh nghiệp](program)
+    - thông tin ngành [Tài chính doanh nghiệp](program)
+    - chi tiết ngành [Công nghệ tài chính](program)
+    - [Công nghệ tài chính](program) ra trường làm gì
+    - chi tiết ngành [Kế toán](program)
+    - thông tin ngành [Kế toán](program)
+    - [Kế toán](program) ra trường làm gì
+    - chi tiết ngành [Kiểm toán](program)
+    - chi tiết ngành [Luật](program)
+    - thông tin ngành [Luật](program)
+    - [Luật](program) ra trường làm gì
+    - chi tiết ngành [Luật kinh tế](program)
+    - chi tiết ngành [Khoa học dữ liệu](program)
+    - thông tin ngành [Khoa học dữ liệu](program)
+    - chi tiết ngành [Công nghệ thông tin](program)
+    - thông tin ngành [Công nghệ thông tin](program)
+    - [Công nghệ thông tin](program) ra trường làm gì
+    - chi tiết ngành [CNTT](program)
+    - chi tiết ngành [Mạng máy tính và Truyền thông](program)
+    - thông tin ngành [Mạng máy tính và Truyền thông](program)
+    - chi tiết ngành [Công nghệ sinh học](program)
+    - thông tin ngành [Công nghệ sinh học](program)
+    - [Công nghệ sinh học](program) ra trường làm gì
+    - chi tiết ngành [Kỹ thuật Điện tử - Viễn thông](program)
+    - chi tiết ngành [Kỹ thuật môi trường](program)
+    - thông tin ngành [Kỹ thuật môi trường](program)
+    - chi tiết ngành [Công nghệ thực phẩm](program)
+    - thông tin ngành [Công nghệ thực phẩm](program)
+    - [Công nghệ thực phẩm](program) ra trường làm gì
+    - chi tiết ngành [Kỹ thuật xây dựng](program)
+    - chi tiết ngành [Điều dưỡng](program)
+    - thông tin ngành [Điều dưỡng](program)
+    - [Điều dưỡng](program) ra trường làm gì
+    - chi tiết ngành [Dược học](program)
+    - chi tiết ngành [Ngôn ngữ Anh](program)
+    - thông tin ngành [Ngôn ngữ Anh](program)
+    - [Ngôn ngữ Anh](program) ra trường làm gì
+    - chi tiết ngành [Tiếng Anh](program)
+    - chi tiết ngành [Ngôn ngữ Pháp](program)
+    - chi tiết ngành [Ngôn ngữ Trung Quốc](program)
+    - thông tin ngành [Ngôn ngữ Trung Quốc](program)
+    - chi tiết ngành [Tiếng Trung](program)
+    - chi tiết ngành [Ngôn ngữ Nhật](program)
+    - chi tiết ngành [Quan hệ quốc tế](program)
+    - thông tin ngành [Quan hệ quốc tế](program)
+    - chi tiết ngành [Đông phương học](program)
+    - chi tiết ngành [Trung Quốc học](program)
+    - chi tiết ngành [Văn học](program)
+    - thông tin ngành [Văn học](program)
+    - chi tiết ngành [Việt Nam học](program)
+    - chi tiết ngành [Xã hội học](program)
+    - thông tin ngành [Xã hội học](program)
+    - chi tiết ngành [Tâm lý học](program)
+    - thông tin ngành [Tâm lý học](program)
+    - [Tâm lý học](program) ra trường làm gì
+    - chi tiết ngành [Quan hệ công chúng](program)
+    - chi tiết ngành [Truyền thông đa phương tiện](program)
+    - thông tin ngành [Truyền thông đa phương tiện](program)
+    - chi tiết ngành [Quản trị du lịch](program)
+    - [Quản trị du lịch](program) ra trường làm gì
+    - chi tiết ngành [Du lịch](program)
+    - chi tiết ngành [Quản trị lữ hành](program)
+    - chi tiết ngành [Quản trị khách sạn](program)
+    - thông tin ngành [Quản trị khách sạn](program)
+    - chi tiết ngành [Quản trị nhà hàng và dịch vụ ăn uống](program)
+    - chi tiết ngành [Đạo diễn điện ảnh, truyền hình](program)
+    - thông tin ngành [Đạo diễn điện ảnh, truyền hình](program)
+    - chi tiết ngành [Công nghệ điện ảnh, truyền hình](program)
+    - chi tiết ngành [Thanh nhạc](program)
+    - thông tin ngành [Thanh nhạc](program)
+    - chi tiết ngành [Piano](program)
+    - thông tin ngành [Piano](program)
     - ngành [quản trị kinh doanh](program) học gì
-    - học phí ngành [ngôn ngữ anh](program) bao nhiêu
-    - chương trình đào tạo ngành [tâm lý học](program) thế nao
     - cho mình biết thêm về ngành [truyền thông đa phương tiện](program)
-    - ngành [kế toán](program) ra trường làm gì
-    - [CNTT](program) có khó không
-    - điều kiện đầu vào ngành [luật](program)
-    - ngành [du lịch](program) học những môn gì
     - [marketing](program) có tương lai không
+
+# 6.5. Tư vấn ngành theo tổ hợp môn và sở thích
+- intent: ask_recommend_programs
+  examples: |
+    - Tôi học khối [A00](subject_combination) và thích [công nghệ](interest)
+    - Tổ hợp [D01](subject_combination), thích [kinh doanh](interest)
+    - Em học [A01](subject_combination) nên học ngành gì
+    - Khối [C00](subject_combination) phù hợp với ngành nào
+    - Tôi thích [lập trình](interest), nên học ngành gì
+    - Sở thích [du lịch](interest), tổ hợp môn [D01](subject_combination)
+    - Tư vấn ngành cho khối [A00](subject_combination)
+    - Học [toán lý hóa](subject_combination) thì học ngành gì tốt
+    - Khối [A01](subject_combination), yêu thích [công nghệ thông tin](interest)
+    - Em học [văn sử địa](subject_combination), thích [truyền thông](interest)
+    - Tổ hợp [B00](subject_combination) nên chọn ngành gì
+    - Thích [thiết kế](interest) và học khối [C00](subject_combination)
+    - Tư vấn ngành học dựa trên tổ hợp môn
+    - Ngành nào phù hợp với khối [A00](subject_combination)
+    - Em thích [marketing](interest), học khối [D01](subject_combination)
+    - Khối [A02](subject_combination), quan tâm đến [y tế](interest)
+    - Tổ hợp [C04](subject_combination), muốn học [luật](interest)
+    - Học [toán anh văn](subject_combination) nên học gì
+    - Sở thích [tài chính](interest), khối [A00](subject_combination)
+    - Tư vấn ngành cho em với
+    - Tôi muốn tư vấn ngành học
+    - Bạn có thể tư vấn ngành học cho tôi không
+    - Giúp tôi chọn ngành học
+    - Tư vấn giúp em chọn ngành
+    - Mình đang phân vân chưa biết chọn ngành gì
+    - Bạn tư vấn ngành học đi
+    - Muốn được tư vấn về ngành học
+    - Giúp em chọn ngành phù hợp
+    - Tư vấn ngành nào phù hợp với em
+    - Chưa biết nên học ngành gì
 
 # 7. Học phí
 - intent: ask_tuition
@@ -91,6 +259,40 @@ nlu:
     - học phí ở đây như thế nào
     - học phí của các ngành
     - tổng quan học phí
+    - học phí ngành [Piano](program)
+    - học phí ngành [Thanh nhạc](program)
+    - học phí ngành [Đạo diễn điện ảnh](program)
+    - học phí ngành [Công nghệ điện ảnh](program)
+    - học phí ngành [Quản trị nhà hàng](program)
+    - học phí ngành [Quản trị lữ hành](program)
+    - học phí ngành [Truyền thông đa phương tiện](program)
+    - học phí ngành [Việt Nam học](program)
+    - học phí ngành [Trung Quốc học](program)
+    - học phí ngành [Đông phương học](program)
+    - học phí ngành [Quan hệ công chúng](program)
+    - học phí ngành [Ngôn ngữ Nhật](program)
+    - học phí ngành [Ngôn ngữ Pháp](program)
+    - học phí ngành [Dược học](program)
+    - học phí ngành [Điều dưỡng](program)
+    - học phí ngành [Kỹ thuật xây dựng](program)
+    - học phí ngành [Công nghệ thực phẩm](program)
+    - học phí ngành [Kỹ thuật môi trường](program)
+    - học phí ngành [Kỹ thuật Điện tử](program)
+    - [Piano](program) học phí bao nhiêu
+    - [Thanh nhạc](program) học phí bao nhiêu
+    - [Dược học](program) học phí bao nhiêu
+    - [Điều dưỡng](program) học phí bao nhiêu
+    - học [Piano](program) tốn bao nhiêu tiền
+    - học [Thanh nhạc](program) tốn bao nhiêu tiền
+    - mức học phí [Quản trị nhà hàng](program)
+    - mức học phí [Quản trị lữ hành](program)
+    - chi phí học [Truyền thông đa phương tiện](program)
+    - chi phí học [Việt Nam học](program)
+    - [Đông phương học](program) học phí thế nào
+    - [Kỹ thuật xây dựng](program) tốn bao nhiêu
+    - chi phí [Công nghệ thực phẩm](program)
+    - [Kỹ thuật môi trường](program) học phí
+    - tiền học [Kỹ thuật Điện tử](program)
 
 # 8. Học bổng
 - intent: ask_scholarship
@@ -144,9 +346,10 @@ nlu:
   examples: |
     - trường ở đâu
     - địa chỉ đại học văn hiến
-    - cơ sở của trường nằm ở đâu
-    - trường có mấy cơ sở
-    - cơ sở chính ở quận mấy
+    - trụ sở chính ở đâu
+    - địa chỉ trường
+    - trường nằm ở quận nào
+    - văn phòng trường ở đâu
 
 # 12. Liên hệ
 - intent: ask_contact
@@ -314,6 +517,13 @@ nlu:
 - intent: ask_campuses
   examples: |
     - Trường mình có mấy cơ sở ạ?
+    - Trường có bao nhiêu cơ sở?
+    - Trường có bao nhiêu cơ sở đào tạo?
+    - VHU có mấy cơ sở?
+    - Có bao nhiêu cơ sở?
+    - Có mấy cơ sở?
+    - Số lượng cơ sở của trường
+    - Trường mình có bao nhiêu cơ sở
     - Địa chỉ các cơ sở của trường
     - Cơ sở chính của trường ở đâu?
     - Ngành [Marketing](program) học ở cơ sở nào?
@@ -333,6 +543,14 @@ nlu:
     - Thông tin về [cơ sở 3](campus)
     - Cơ sở nào gần [bến xe](location) nhất?
     - Di chuyển từ [cơ sở 1](campus) đến [cơ sở 2](campus) mất bao lâu?
+    - Cơ sở đào tạo [Quận 12](location)
+    - Cơ sở ở [Quận 12](location) ở đâu
+    - Địa chỉ cơ sở [Quận 12](location)
+    - Trường có cơ sở ở [Quận 12](location) không
+    - Cơ sở [Bình Chánh](location) ở đâu
+    - Cơ sở ở [Tân Phú](location)
+    - Campus [Quận 3](location)
+    - Cơ sở [Tân Bình](location)
 
 # hỗ trợ 
 - intent: ask_support_problem
@@ -505,6 +723,77 @@ entities:
         - học kỳ 2
         - học kỳ 3
         - học kỳ hè
+
+  # Tổ hợp môn thi (cho tư vấn ngành)
+  - subject_combination:
+      values:
+        - A00
+        - A01
+        - A02
+        - A03
+        - B00
+        - B01
+        - B02
+        - C00
+        - C01
+        - C04
+        - C05
+        - D01
+        - D07
+        - D09
+        - toán lý hóa
+        - toán lý anh
+        - toán lý sinh
+        - toán hóa sinh
+        - văn sử địa
+        - văn toán lý
+        - văn sử anh
+        - toán anh văn
+        - toán hóa anh
+        - khối A
+        - khối B
+        - khối C
+        - khối D
+
+  # Sở thích/ngành quan tâm (cho tư vấn ngành)
+  - interest:
+      values:
+        - công nghệ
+        - công nghệ thông tin
+        - lập trình
+        - máy tính
+        - CNTT
+        - IT
+        - kinh doanh
+        - marketing
+        - quản trị
+        - thương mại
+        - bán hàng
+        - tài chính
+        - kế toán
+        - ngân hàng
+        - kiểm toán
+        - luật
+        - pháp luật
+        - du lịch
+        - khách sạn
+        - nhà hàng
+        - ngoại ngữ
+        - tiếng anh
+        - tiếng nhật
+        - thiết kế
+        - đồ họa
+        - kiến trúc
+        - truyền thông
+        - báo chí
+        - media
+        - tâm lý
+        - tư vấn
+        - giáo dục
+        - y tế
+        - điều dưỡng
+        - nghệ thuật
+        - âm nhạc
         - hk1
         - hk2
         - hk3
@@ -544,8 +833,16 @@ entities:
         - Quận 5
         - Quận 7
         - Quận 9
+        - Quận 12
+        - Bình Chánh
         - Bình Thạnh
         - Tân Bình
+        - Tân Phú
+        - Âu Cơ
+        - Nguyễn Văn Linh
+        - Điện Biên Phủ
+        - Nguyễn Bá Tuyển
+        - Quốc lộ 1A
         - trung tâm thành phố
         - bến xe
         - ga tàu

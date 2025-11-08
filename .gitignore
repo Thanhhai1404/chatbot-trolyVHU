@@ -20,6 +20,10 @@ models/*.tar.gz
 .vscode/
 .idea/
 
+# Environment Variables (BẢO MẬT)
+.env
+*.env
+
 # OS
 .DS_Store
 Thumbs.db

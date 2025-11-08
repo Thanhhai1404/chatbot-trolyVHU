@@ -1,136 +1,377 @@
 {
-  "academic_year": "2024-2025",
-  "currency": "VNĐ",
-  "tuition_fees": [
-    {
-      "program_id": "cntt",
-      "program_name": "Công nghệ thông tin",
-      "fee_per_credit": 450000,
-      "total_credits": 140,
-      "estimated_total": 63000000,
-      "fee_per_semester": "7-9 triệu đồng",
-      "fee_per_year": "15-18 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+  "academic_year": "2025-2026",
+  "last_updated": "2025-01-15",
+  "source": "VHU. TB chinh sach hoc phi-hoc bong NH 2025-2026_FInal.pdf",
+  "programs": {
+    "french": {
+      "name": "Ngôn ngữ Pháp",
+      "tuition_per_credit": 728000,
+      "tuition_semester_1": 8736000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 69888000
     },
-    {
-      "program_id": "qtkd",
-      "program_name": "Quản trị kinh doanh",
-      "fee_per_credit": 380000,
-      "total_credits": 135,
-      "estimated_total": 51300000,
-      "fee_per_semester": "6-8 triệu đồng",
-      "fee_per_year": "12-16 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "vietnam_studies_vn": {
+      "name": "Việt Nam học (dành cho người Việt Nam)",
+      "tuition_per_credit": 728000,
+      "tuition_semester_1": 8736000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 69888000
     },
-    {
-      "program_id": "ke-toan",
-      "program_name": "Kế toán",
-      "fee_per_credit": 380000,
-      "total_credits": 135,
-      "estimated_total": 51300000,
-      "fee_per_semester": "6-8 triệu đồng",
-      "fee_per_year": "12-16 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "sociology": {
+      "name": "Xã hội học",
+      "tuition_per_credit": 904000,
+      "tuition_semester_1": 10848000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 86784000
     },
-    {
-      "program_id": "marketing",
-      "program_name": "Marketing",
-      "fee_per_credit": 380000,
-      "total_credits": 135,
-      "estimated_total": 51300000,
-      "fee_per_semester": "6-8 triệu đồng",
-      "fee_per_year": "12-16 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "environmental_engineering": {
+      "name": "Kỹ thuật môi trường",
+      "tuition_per_credit": 1022000,
+      "tuition_semester_1": 12264000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 98112000
     },
-    {
-      "program_id": "ngoai-ngu-anh",
-      "program_name": "Ngôn ngữ Anh",
-      "fee_per_credit": 400000,
-      "total_credits": 135,
-      "estimated_total": 54000000,
-      "fee_per_semester": "6.5-8.5 triệu đồng",
-      "fee_per_year": "13-17 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "literature": {
+      "name": "Văn học",
+      "tuition_per_credit": 1169000,
+      "tuition_semester_1": 14028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 112224000
     },
-    {
-      "program_id": "tam-ly-hoc",
-      "program_name": "Tâm lý học",
-      "fee_per_credit": 400000,
-      "total_credits": 135,
-      "estimated_total": 54000000,
-      "fee_per_semester": "6.5-8.5 triệu đồng",
-      "fee_per_year": "13-17 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "biotechnology": {
+      "name": "Công nghệ sinh học",
+      "tuition_per_credit": 1169000,
+      "tuition_semester_1": 14028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 112224000
     },
-    {
-      "program_id": "luat",
-      "program_name": "Luật kinh tế",
-      "fee_per_credit": 420000,
-      "total_credits": 140,
-      "estimated_total": 58800000,
-      "fee_per_semester": "7-9 triệu đồng",
-      "fee_per_year": "14-18 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "film_directing": {
+      "name": "Đạo diễn điện ảnh, truyền hình",
+      "tuition_per_credit": 1257000,
+      "tuition_semester_1": 15084000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 120672000
     },
-    {
-      "program_id": "du-lich",
-      "program_name": "Quản trị du lịch",
-      "fee_per_credit": 380000,
-      "total_credits": 135,
-      "estimated_total": 51300000,
-      "fee_per_semester": "6-8 triệu đồng",
-      "fee_per_year": "12-16 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "japanese": {
+      "name": "Ngôn ngữ Nhật",
+      "tuition_per_credit": 1257000,
+      "tuition_semester_1": 15084000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 120672000
     },
-    {
-      "program_id": "logistics",
-      "program_name": "Logistics",
-      "fee_per_credit": 380000,
-      "total_credits": 135,
-      "estimated_total": 51300000,
-      "fee_per_semester": "6-8 triệu đồng",
-      "fee_per_year": "12-16 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "english": {
+      "name": "Ngôn ngữ Anh",
+      "tuition_per_credit": 1257000,
+      "tuition_semester_1": 15084000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 120672000
     },
-    {
-      "program_id": "thiet-ke-do-hoa",
-      "program_name": "Thiết kế đồ họa",
-      "fee_per_credit": 450000,
-      "total_credits": 135,
-      "estimated_total": 60750000,
-      "fee_per_semester": "7.5-9.5 triệu đồng",
-      "fee_per_year": "15-19 triệu đồng",
-      "note": "Học phí có thể thay đổi theo từng năm học"
+    "fintech": {
+      "name": "Công nghệ tài chính",
+      "tuition_per_credit": 1257000,
+      "tuition_semester_1": 15084000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 120672000
+    },
+    "food_technology": {
+      "name": "Công nghệ thực phẩm",
+      "tuition_per_credit": 1257000,
+      "tuition_semester_1": 15084000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 120672000
+    },
+    "hotel_management": {
+      "name": "Quản trị khách sạn",
+      "tuition_per_credit": 1257000,
+      "tuition_semester_1": 15084000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 120672000
+    },
+    "economics": {
+      "name": "Kinh tế",
+      "tuition_per_credit": 1257000,
+      "tuition_semester_1": 15084000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 120672000
+    },
+    "civil_engineering": {
+      "name": "Kỹ thuật xây dựng",
+      "tuition_per_credit": 1193000,
+      "tuition_semester_1": 14316000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 114528000
+    },
+    "tourism": {
+      "name": "Du lịch",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "hrm": {
+      "name": "Quản trị nhân lực",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "international_relations": {
+      "name": "Quan hệ quốc tế",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "computer_science": {
+      "name": "Khoa học máy tính",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "computer_networks": {
+      "name": "Mạng máy tính và Truyền thông dữ liệu",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "psychology": {
+      "name": "Tâm lý học",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "vocal_music": {
+      "name": "Thanh nhạc",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "piano": {
+      "name": "Piano",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "business_admin": {
+      "name": "Quản trị kinh doanh",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "finance_banking": {
+      "name": "Tài chính - Ngân hàng",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "accounting": {
+      "name": "Kế toán",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "marketing": {
+      "name": "Marketing",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "restaurant_management": {
+      "name": "Quản trị Nhà hàng và Dịch vụ ăn uống",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "chinese_studies": {
+      "name": "Trung Quốc học",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "oriental_studies": {
+      "name": "Đông phương học",
+      "tuition_per_credit": 1316000,
+      "tuition_semester_1": 15792000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 126336000
+    },
+    "electronics_telecom": {
+      "name": "Kỹ thuật Điện tử - Viễn thông",
+      "tuition_per_credit": 1240000,
+      "tuition_semester_1": 14880000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 119040000
+    },
+    "film_technology": {
+      "name": "Công nghệ điện ảnh, truyền hình",
+      "tuition_per_credit": 1368000,
+      "tuition_semester_1": 16416000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 131328000
+    },
+    "commercial_business": {
+      "name": "Kinh doanh thương mại",
+      "tuition_per_credit": 1368000,
+      "tuition_semester_1": 16416000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 131328000
+    },
+    "economic_law": {
+      "name": "Luật kinh tế",
+      "tuition_per_credit": 1368000,
+      "tuition_semester_1": 16416000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 131328000
+    },
+    "information_technology": {
+      "name": "Công nghệ thông tin",
+      "tuition_per_credit": 1368000,
+      "tuition_semester_1": 16416000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 131328000
+    },
+    "nursing": {
+      "name": "Điều dưỡng",
+      "tuition_per_credit": 1287000,
+      "tuition_semester_1": 15444000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 123552000
+    },
+    "travel_management": {
+      "name": "Quản trị dịch vụ Du lịch & Lữ hành",
+      "tuition_per_credit": 1419000,
+      "tuition_semester_1": 17028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 136224000
+    },
+    "chinese": {
+      "name": "Ngôn ngữ Trung Quốc",
+      "tuition_per_credit": 1419000,
+      "tuition_semester_1": 17028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 136224000
+    },
+    "public_relations": {
+      "name": "Quan hệ công chúng",
+      "tuition_per_credit": 1419000,
+      "tuition_semester_1": 17028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 136224000
+    },
+    "multimedia": {
+      "name": "Truyền thông đa phương tiện",
+      "tuition_per_credit": 1419000,
+      "tuition_semester_1": 17028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 136224000
+    },
+    "ecommerce": {
+      "name": "Thương mại điện tử",
+      "tuition_per_credit": 1419000,
+      "tuition_semester_1": 17028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 136224000
+    },
+    "logistics": {
+      "name": "Logistics và Quản lý chuỗi cung ứng",
+      "tuition_per_credit": 1419000,
+      "tuition_semester_1": 17028000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 136224000
+    },
+    "vietnam_studies_intl": {
+      "name": "Việt Nam học (dành cho người nước ngoài)",
+      "tuition_per_credit": 1456000,
+      "tuition_semester_1": 17472000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 139776000
+    },
+    "law": {
+      "name": "Luật",
+      "tuition_per_credit": 1456000,
+      "tuition_semester_1": 17472000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 139776000
+    },
+    "auditing": {
+      "name": "Kiểm toán",
+      "tuition_per_credit": 1838000,
+      "tuition_semester_1": 22056000,
+      "credits_semester_1": 12,
+      "estimated_total_4_years": 176448000
     }
-  ],  "general_info": {
-    "average_fee_range": "12-18 triệu đồng/năm",
-    "payment_methods": [
-      "Chuyển khoản ngân hàng",
-      "Thanh toán trực tiếp tại phòng Tài chính",
-      "Thanh toán qua cổng thanh toán điện tử",
-      "Thanh toán qua ứng dụng Mobile Banking"
-    ],
-    "payment_schedule": "Đóng theo học kỳ, trước khi bắt đầu học kỳ",
-    "payment_deadline": "Trong vòng 2 tuần đầu của học kỳ",
-    "late_payment_fee": "50,000 VNĐ/ngày trễ hạn",
-    "installment_available": true,
-    "installment_note": "Có thể trả góp 2-3 lần trong học kỳ",
-    "bank_info": {
-      "bank_name": "Ngân hàng Vietcombank",
-      "account_number": "0123456789",
-      "account_name": "TRUONG DAI HOC VAN HIEN",
-      "branch": "Chi nhánh TP.HCM"
+  },
+  "scholarships": [
+    {
+      "type": "Học bổng tài năng",
+      "description": "Thủ khoa đầu vào cấp trường: Miễn 100% học phí toàn khóa"
     },
-    "discount_policy": [
-      "Giảm 10% học phí cho con em gia đình chính sách",
-      "Giảm 5% học phí khi đóng đủ 1 năm",
-      "Miễn giảm 20-50% cho sinh viên đạt thành tích xuất sắc"
-    ],
-    "contact": {
-      "department": "Phòng Tài chính - Kế toán",
-      "phone": "028 7301 5555 (ext. 102)",
-      "email": "taichinh@vhu.edu.vn",
-      "office_hours": "Thứ 2 - Thứ 6: 7h30 - 16h30 | Thứ 7: 7h30 - 11h30"
+    {
+      "type": "Học bổng tài năng",
+      "description": "Á khoa đầu vào cấp trường (02 suất): Giảm 50% học phí toàn khóa"
+    },
+    {
+      "type": "Học bổng tài năng",
+      "description": "Thủ khoa đầu vào các ngành: Giảm 30% học phí"
+    },
+    {
+      "type": "Đóng trước",
+      "description": "Đóng hết 1 năm: Giảm 10%"
+    },
+    {
+      "type": "Đóng trước",
+      "description": "Đóng hết 2 năm: Giảm 15%"
+    },
+    {
+      "type": "Đóng trước",
+      "description": "Đóng hết 3 năm: Giảm 20%"
+    },
+    {
+      "type": "Đóng trước",
+      "description": "Đóng học phí toàn khóa: Giảm 25%"
+    },
+    {
+      "type": "Học tập suốt đời",
+      "description": "26-30 tuổi: Giảm 35%"
+    },
+    {
+      "type": "Học tập suốt đời",
+      "description": "31-40 tuổi: Giảm 50%"
+    },
+    {
+      "type": "Học tập suốt đời",
+      "description": "41-50 tuổi: Giảm 70%"
+    },
+    {
+      "type": "Học tập suốt đời",
+      "description": "51-60 tuổi: Giảm 85%"
+    },
+    {
+      "type": "Học tập suốt đời",
+      "description": ">60 tuổi: Miễn 100%"
+    },
+    {
+      "type": "Anh chị em ruột",
+      "description": "Giảm 20% học phí toàn khóa (áp dụng cho 1 người)"
     }
-  }
+  ],
+  "notes": [
+    "Nhà trường cam kết không tăng học phí trong suốt khóa học",
+    "Các chương trình học bổng, chính sách hỗ trợ được xét duyệt hàng năm",
+    "Tặng phí giữ xe, dịch vụ hành chính, balo, đồng phục thể dục (all-in-one)",
+    "Website: https://tuyensinh.vhu.edu.vn/",
+    "Tổng đài tư vấn: 1800 1568",
+    "Email: tuyensinh@vhu.edu.vn"
+  ]
 }

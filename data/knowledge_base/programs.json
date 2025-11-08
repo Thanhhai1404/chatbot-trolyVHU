@@ -20,6 +20,8 @@
       "id": "7340101",
       "name": "Quản trị kinh doanh",
       "aliases": [
+        "Quản trị kinh doanh",
+        "quản trị kinh doanh",
         "QTKD",
         "Business Administration",
         "Quản trị kinh doanh tổng hợp",
@@ -48,6 +50,8 @@
       "id": "7340115",
       "name": "Marketing",
       "aliases": [
+        "Marketing",
+        "marketing",
         "MKT",
         "Marketing truyền thông",
         "Quản trị Marketing",
@@ -76,6 +80,8 @@
       "id": "7340121",
       "name": "Kinh doanh thương mại",
       "aliases": [
+        "Kinh doanh thương mại",
+        "kinh doanh thương mại",
         "KDTM",
         "Trade",
         "Thương mại"
@@ -103,6 +109,8 @@
       "id": "7340122",
       "name": "Thương mại điện tử",
       "aliases": [
+        "Thương mại điện tử",
+        "thương mại điện tử",
         "TMĐT",
         "E-commerce",
         "E-Commerce"
@@ -130,6 +138,8 @@
       "id": "7340404",
       "name": "Quản trị nhân lực",
       "aliases": [
+        "Quản trị nhân lực",
+        "quản trị nhân lực",
         "QTNL",
         "HR",
         "Human Resources",
@@ -158,6 +168,8 @@
       "id": "7510605",
       "name": "Logistics và Quản lý chuỗi cung ứng",
       "aliases": [
+        "Logistics và Quản lý chuỗi cung ứng",
+        "logistics và quản lý chuỗi cung ứng",
         "Logistics",
         "SCM",
         "Supply Chain",
@@ -186,6 +198,8 @@
       "id": "7310101",
       "name": "Kinh doanh quốc tế",
       "aliases": [
+        "Kinh doanh quốc tế",
+        "kinh doanh quốc tế",
         "KDQT",
         "International Business",
         "Kinh tế",
@@ -214,6 +228,8 @@
       "id": "7340201",
       "name": "Tài chính doanh nghiệp",
       "aliases": [
+        "Tài chính doanh nghiệp",
+        "tài chính doanh nghiệp",
         "TCDN",
         "Corporate Finance",
         "Tài chính ngân hàng",
@@ -242,6 +258,8 @@
       "id": "7340205",
       "name": "Công nghệ tài chính",
       "aliases": [
+        "Công nghệ tài chính",
+        "công nghệ tài chính",
         "Fintech",
         "FinTech",
         "Ngân hàng số",
@@ -270,6 +288,8 @@
       "id": "7340301",
       "name": "Kế toán",
       "aliases": [
+        "Kế toán",
+        "kế toán",
         "KT",
         "Accounting",
         "Kế toán doanh nghiệp"
@@ -297,6 +317,8 @@
       "id": "7340302",
       "name": "Kiểm toán",
       "aliases": [
+        "Kiểm toán",
+        "kiểm toán",
         "Auditing",
         "Audit",
         "Kiểm toán nội bộ"
@@ -324,6 +346,8 @@
       "id": "7380101",
       "name": "Luật",
       "aliases": [
+        "Luật",
+        "luật",
         "Law",
         "Luật dân sự",
         "Luật thương mại quốc tế",
@@ -352,6 +376,8 @@
       "id": "7380107",
       "name": "Luật kinh tế",
       "aliases": [
+        "Luật kinh tế",
+        "luật kinh tế",
         "Economic Law",
         "Luật KT"
       ],
@@ -378,6 +404,8 @@
       "id": "7480101",
       "name": "Khoa học dữ liệu",
       "aliases": [
+        "Khoa học dữ liệu",
+        "khoa học dữ liệu",
         "Data Science",
         "KHĐL",
         "Hệ thống thông tin",
@@ -406,7 +434,10 @@
       "id": "7480201",
       "name": "Công nghệ thông tin",
       "aliases": [
+        "Công nghệ thông tin",
+        "công nghệ thông tin",
         "CNTT",
+        "cntt",
         "IT",
         "Information Technology",
         "Thiết kế đồ họa",
@@ -435,6 +466,8 @@
       "id": "7480102",
       "name": "Mạng máy tính và Truyền thông",
       "aliases": [
+        "Mạng máy tính và Truyền thông",
+        "mạng máy tính và truyền thông",
         "Network",
         "MMTT",
         "An toàn thông tin",
@@ -463,6 +496,8 @@
       "id": "7420201",
       "name": "Công nghệ sinh học",
       "aliases": [
+        "Công nghệ sinh học",
+        "công nghệ sinh học",
         "Biotechnology",
         "CNSH",
         "Công nghệ sinh học y sinh",
@@ -491,6 +526,8 @@
       "id": "7520207",
       "name": "Kỹ thuật Điện tử - Viễn thông",
       "aliases": [
+        "Kỹ thuật Điện tử - Viễn thông",
+        "kỹ thuật điện tử - viễn thông",
         "Electronics",
         "KTĐT-VT",
         "Hệ thống nhúng và IoT",
@@ -519,6 +556,8 @@
       "id": "7520320",
       "name": "Kỹ thuật môi trường",
       "aliases": [
+        "Kỹ thuật môi trường",
+        "kỹ thuật môi trường",
         "KTMT",
         "Environmental Engineering",
         "Môi trường"
@@ -546,6 +585,8 @@
       "id": "7540101",
       "name": "Công nghệ thực phẩm",
       "aliases": [
+        "Công nghệ thực phẩm",
+        "công nghệ thực phẩm",
         "CNTP",
         "Food Technology",
         "Công nghệ chế biến thực phẩm"
@@ -573,6 +614,8 @@
       "id": "7580201",
       "name": "Kỹ thuật xây dựng",
       "aliases": [
+        "Kỹ thuật xây dựng",
+        "kỹ thuật xây dựng",
         "KTXD",
         "Civil Engineering",
         "Xây dựng"
@@ -600,6 +643,8 @@
       "id": "7720301",
       "name": "Điều dưỡng",
       "aliases": [
+        "Điều dưỡng",
+        "điều dưỡng",
         "Nursing",
         "Điều dưỡng đa khoa"
       ],
@@ -626,6 +671,8 @@
       "id": "7720201",
       "name": "Dược học",
       "aliases": [
+        "Dược học",
+        "dược học",
         "Pharmacy",
         "Dược sĩ"
       ],
@@ -652,6 +699,8 @@
       "id": "7220201",
       "name": "Ngôn ngữ Anh",
       "aliases": [
+        "Ngôn ngữ Anh",
+        "ngôn ngữ anh",
         "English",
         "Tiếng Anh",
         "Tiếng Anh thương mại",
@@ -682,6 +731,8 @@
       "id": "7220203",
       "name": "Ngôn ngữ Pháp",
       "aliases": [
+        "Ngôn ngữ Pháp",
+        "ngôn ngữ pháp",
         "French",
         "Tiếng Pháp",
         "Tiếng Pháp thương mại"
@@ -709,6 +760,8 @@
       "id": "7220204",
       "name": "Ngôn ngữ Trung Quốc",
       "aliases": [
+        "Ngôn ngữ Trung Quốc",
+        "ngôn ngữ trung quốc",
         "Chinese",
         "Tiếng Trung",
         "Tiếng Trung thương mại",
@@ -737,6 +790,8 @@
       "id": "7220209",
       "name": "Ngôn ngữ Nhật",
       "aliases": [
+        "Ngôn ngữ Nhật",
+        "ngôn ngữ nhật",
         "Japanese",
         "Tiếng Nhật",
         "Tiếng Nhật thương mại",
@@ -766,6 +821,8 @@
       "id": "7310206",
       "name": "Quan hệ quốc tế",
       "aliases": [
+        "Quan hệ quốc tế",
+        "quan hệ quốc tế",
         "International Relations",
         "HTQT",
         "Đối ngoại – Hợp tác quốc tế",
@@ -794,6 +851,8 @@
       "id": "7310608",
       "name": "Đông phương học",
       "aliases": [
+        "Đông phương học",
+        "đông phương học",
         "Oriental Studies",
         "Nhật Bản học",
         "Hàn Quốc học"
@@ -821,6 +880,8 @@
       "id": "7310612",
       "name": "Trung Quốc học",
       "aliases": [
+        "Trung Quốc học",
+        "trung quốc học",
         "Chinese Studies",
         "Trung Hoa học"
       ],
@@ -847,6 +908,8 @@
       "id": "7229030",
       "name": "Văn học",
       "aliases": [
+        "Văn học",
+        "văn học",
         "Literature",
         "Văn – Quản trị văn phòng",
         "Giảng dạy văn học",
@@ -875,6 +938,8 @@
       "id": "7310630",
       "name": "Việt Nam học",
       "aliases": [
+        "Việt Nam học",
+        "việt nam học",
         "Vietnamese Studies"
       ],
       "full_name": "Cử nhân Việt Nam học",
@@ -900,6 +965,8 @@
       "id": "7310301",
       "name": "Xã hội học",
       "aliases": [
+        "Xã hội học",
+        "xã hội học",
         "Sociology",
         "XHTT",
         "Xã hội học truyền thông đại chúng",
@@ -928,6 +995,8 @@
       "id": "7310401",
       "name": "Tâm lý học",
       "aliases": [
+        "Tâm lý học",
+        "tâm lý học",
         "Psychology",
         "Tham vấn và trị liệu tâm lý",
         "Tham vấn tâm lý và quản trị nhân sự"
@@ -955,6 +1024,8 @@
       "id": "7320108",
       "name": "Quan hệ công chúng",
       "aliases": [
+        "Quan hệ công chúng",
+        "quan hệ công chúng",
         "PR",
         "Public Relations",
         "Truyền thông và sáng tạo nội dung",
@@ -983,6 +1054,8 @@
       "id": "7320104",
       "name": "Truyền thông đa phương tiện",
       "aliases": [
+        "Truyền thông đa phương tiện",
+        "truyền thông đa phương tiện",
         "Multimedia",
         "Sản xuất phim và quảng cáo",
         "Công nghệ truyền thông"
@@ -1010,6 +1083,8 @@
       "id": "7810101",
       "name": "Quản trị du lịch",
       "aliases": [
+        "Quản trị du lịch",
+        "quản trị du lịch",
         "Tourism Management",
         "QTDL",
         "Quản trị sự kiện",
@@ -1038,6 +1113,8 @@
       "id": "7810103",
       "name": "Quản trị lữ hành",
       "aliases": [
+        "Quản trị lữ hành",
+        "quản trị lữ hành",
         "Travel Management",
         "Hướng dẫn du lịch",
         "Tour Guide"
@@ -1065,6 +1142,8 @@
       "id": "7810201",
       "name": "Quản trị khách sạn",
       "aliases": [
+        "Quản trị khách sạn",
+        "quản trị khách sạn",
         "Hotel Management",
         "QTKS",
         "Quản trị khách sạn - Khu du lịch"
@@ -1092,6 +1171,8 @@
       "id": "7810202",
       "name": "Quản trị nhà hàng và dịch vụ ăn uống",
       "aliases": [
+        "Quản trị nhà hàng và dịch vụ ăn uống",
+        "quản trị nhà hàng và dịch vụ ăn uống",
         "Restaurant Management",
         "F&B Management"
       ],
@@ -1118,6 +1199,8 @@
       "id": "7210235",
       "name": "Đạo diễn điện ảnh, truyền hình",
       "aliases": [
+        "Đạo diễn điện ảnh, truyền hình",
+        "đạo diễn điện ảnh, truyền hình",
         "Film Director",
         "TV Director",
         "Quay phim"
@@ -1145,6 +1228,8 @@
       "id": "7210302",
       "name": "Công nghệ điện ảnh, truyền hình",
       "aliases": [
+        "Công nghệ điện ảnh, truyền hình",
+        "công nghệ điện ảnh, truyền hình",
         "Film Technology",
         "Dựng phim",
         "Film Editing",
@@ -1174,6 +1259,8 @@
       "id": "7210205",
       "name": "Thanh nhạc",
       "aliases": [
+        "Thanh nhạc",
+        "thanh nhạc",
         "Vocal Music",
         "Thanh nhạc thính phòng",
         "Thanh nhạc nhạc nhẹ"
@@ -1198,6 +1285,8 @@
       "id": "7210208",
       "name": "Piano",
       "aliases": [
+        "Piano",
+        "piano",
         "Piano cổ điển",
         "Piano ứng dụng",
         "Sản xuất âm nhạc",
